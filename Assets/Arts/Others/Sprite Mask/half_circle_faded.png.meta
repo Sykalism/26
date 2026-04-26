@@ -1,0 +1,2873 @@
+fileFormatVersion: 2
+guid: 635779c6aaabe10459a7e542c2c7f76a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2440201119078920983
+    second: half_circle_faded_0
+  - first:
+      213: 4917612013402764211
+    second: half_circle_faded_1
+  - first:
+      213: 283893005524225658
+    second: half_circle_faded_2
+  - first:
+      213: 2184246565124373515
+    second: half_circle_faded_3
+  - first:
+      213: -914411930186897778
+    second: half_circle_faded_4
+  - first:
+      213: -6375875860895223666
+    second: half_circle_faded_5
+  - first:
+      213: -1240166946362955252
+    second: half_circle_faded_6
+  - first:
+      213: -3520848981286129819
+    second: half_circle_faded_7
+  - first:
+      213: 8654701439839304816
+    second: half_circle_faded_8
+  - first:
+      213: 1126201621908624319
+    second: half_circle_faded_9
+  - first:
+      213: 7463405221640718077
+    second: half_circle_faded_10
+  - first:
+      213: -3637895543052946061
+    second: half_circle_faded_11
+  - first:
+      213: -2083932385633483892
+    second: half_circle_faded_12
+  - first:
+      213: 2084943836484980689
+    second: half_circle_faded_13
+  - first:
+      213: -2095757283867562835
+    second: half_circle_faded_14
+  - first:
+      213: 5010397535036081450
+    second: half_circle_faded_15
+  - first:
+      213: -8365913206373382337
+    second: half_circle_faded_16
+  - first:
+      213: -7196520464276374364
+    second: half_circle_faded_17
+  - first:
+      213: 5811218824034687969
+    second: half_circle_faded_18
+  - first:
+      213: -7769850681417219387
+    second: half_circle_faded_19
+  - first:
+      213: -1058336613339040986
+    second: half_circle_faded_20
+  - first:
+      213: 2071323236861149740
+    second: half_circle_faded_21
+  - first:
+      213: 3807039885140887871
+    second: half_circle_faded_22
+  - first:
+      213: 5051884635236474183
+    second: half_circle_faded_23
+  - first:
+      213: -9069799416527316865
+    second: half_circle_faded_24
+  - first:
+      213: 6515457286255021596
+    second: half_circle_faded_25
+  - first:
+      213: 4785665202493094221
+    second: half_circle_faded_26
+  - first:
+      213: -1576273570195479280
+    second: half_circle_faded_27
+  - first:
+      213: 8228771176566084279
+    second: half_circle_faded_28
+  - first:
+      213: 6620039301182006787
+    second: half_circle_faded_29
+  - first:
+      213: 123479217921276356
+    second: half_circle_faded_30
+  - first:
+      213: -7101256517024743829
+    second: half_circle_faded_31
+  - first:
+      213: 7429570362508006673
+    second: half_circle_faded_32
+  - first:
+      213: -6184451158705501373
+    second: half_circle_faded_33
+  - first:
+      213: -8783534208857507255
+    second: half_circle_faded_34
+  - first:
+      213: -7166426347547974275
+    second: half_circle_faded_35
+  - first:
+      213: 1247680862113244816
+    second: half_circle_faded_36
+  - first:
+      213: 938614152705711112
+    second: half_circle_faded_37
+  - first:
+      213: 910766793722098974
+    second: half_circle_faded_38
+  - first:
+      213: -3427402670292333287
+    second: half_circle_faded_39
+  - first:
+      213: 2726532208496085758
+    second: half_circle_faded_40
+  - first:
+      213: 8934316578017473024
+    second: half_circle_faded_41
+  - first:
+      213: 6958527710148930445
+    second: half_circle_faded_42
+  - first:
+      213: -4058871844634484959
+    second: half_circle_faded_43
+  - first:
+      213: 2332963669646968456
+    second: half_circle_faded_44
+  - first:
+      213: -807029075907092912
+    second: half_circle_faded_45
+  - first:
+      213: 1873183466083821844
+    second: half_circle_faded_46
+  - first:
+      213: 584782157545727948
+    second: half_circle_faded_47
+  - first:
+      213: 1296288988141050409
+    second: half_circle_faded_48
+  - first:
+      213: 2993942601303088533
+    second: half_circle_faded_49
+  - first:
+      213: -4673620291603748814
+    second: half_circle_faded_50
+  - first:
+      213: 4985433355278797198
+    second: half_circle_faded_51
+  - first:
+      213: -1571803652553784724
+    second: half_circle_faded_52
+  - first:
+      213: -2050759959765900990
+    second: half_circle_faded_53
+  - first:
+      213: -8807561070897319369
+    second: half_circle_faded_54
+  - first:
+      213: -4713014351324710244
+    second: half_circle_faded_55
+  - first:
+      213: 6446886593563086283
+    second: half_circle_faded_56
+  - first:
+      213: -4249498419866883973
+    second: half_circle_faded_57
+  - first:
+      213: -4868208973376639148
+    second: half_circle_faded_58
+  - first:
+      213: -8255251004379812939
+    second: half_circle_faded_59
+  - first:
+      213: 4612164519998684998
+    second: half_circle_faded_60
+  - first:
+      213: -8864227192797224058
+    second: half_circle_faded_61
+  - first:
+      213: 5886131947461534865
+    second: half_circle_faded_62
+  - first:
+      213: -7307516018339581084
+    second: half_circle_faded_63
+  - first:
+      213: 7642402658698640666
+    second: half_circle_faded_64
+  - first:
+      213: -6831116263749742670
+    second: half_circle_faded_65
+  - first:
+      213: 6573530554829825215
+    second: half_circle_faded_66
+  - first:
+      213: 4695280379818075347
+    second: half_circle_faded_67
+  - first:
+      213: 8197517177733844824
+    second: half_circle_faded_68
+  - first:
+      213: 2259474059604506426
+    second: half_circle_faded_69
+  - first:
+      213: 2108441205489966610
+    second: half_circle_faded_70
+  - first:
+      213: -4269871306345019828
+    second: half_circle_faded_71
+  - first:
+      213: 2340780032202335475
+    second: half_circle_faded_72
+  - first:
+      213: -4441546674472337151
+    second: half_circle_faded_73
+  - first:
+      213: -12384323756196502
+    second: half_circle_faded_74
+  - first:
+      213: 9170380226474862599
+    second: half_circle_faded_75
+  - first:
+      213: 2075748591485204945
+    second: half_circle_faded_76
+  - first:
+      213: -6239062865986759020
+    second: half_circle_faded_77
+  - first:
+      213: 4808854238969609974
+    second: half_circle_faded_78
+  - first:
+      213: 6731592614631226286
+    second: half_circle_faded_79
+  - first:
+      213: -5170969701038208047
+    second: half_circle_faded_80
+  - first:
+      213: -1937855907402940739
+    second: half_circle_faded_81
+  - first:
+      213: -9196265553024293405
+    second: half_circle_faded_82
+  - first:
+      213: -310100103340942505
+    second: half_circle_faded_83
+  - first:
+      213: 407250102738774176
+    second: half_circle_faded_84
+  - first:
+      213: 4854242836232605763
+    second: half_circle_faded_85
+  - first:
+      213: 4579706411661994989
+    second: half_circle_faded_86
+  - first:
+      213: -782988518788452451
+    second: half_circle_faded_87
+  - first:
+      213: 5650497540225962231
+    second: half_circle_faded_88
+  - first:
+      213: 2295150665532849775
+    second: half_circle_faded_89
+  - first:
+      213: 8782651454893950726
+    second: half_circle_faded_90
+  - first:
+      213: -3266630228565212112
+    second: half_circle_faded_91
+  - first:
+      213: 7180201332484802396
+    second: half_circle_faded_92
+  - first:
+      213: -4104537451255894212
+    second: half_circle_faded_93
+  - first:
+      213: -7888639166889761607
+    second: half_circle_faded_94
+  - first:
+      213: 3579644502508748077
+    second: half_circle_faded_95
+  - first:
+      213: -2203047064985681779
+    second: half_circle_faded_96
+  - first:
+      213: 182079551035792989
+    second: half_circle_faded_97
+  - first:
+      213: -3667658434095780555
+    second: half_circle_faded_98
+  - first:
+      213: -3050180416755266468
+    second: half_circle_faded_99
+  - first:
+      213: -5369016184286755573
+    second: half_circle_faded_100
+  - first:
+      213: 2474003560727439490
+    second: half_circle_faded_101
+  - first:
+      213: 1126434333939806508
+    second: half_circle_faded_102
+  - first:
+      213: 3203256093182760411
+    second: half_circle_faded_103
+  - first:
+      213: -1629498877885448904
+    second: half_circle_faded_104
+  - first:
+      213: -2627284255885595444
+    second: half_circle_faded_105
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: half_circle_faded_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 710
+        width: 1728
+        height: 1177
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec4accc20aa22ed0800000000000000
+      internalID: -2440201119078920983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_1
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 833
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3b012521ede3440800000000000000
+      internalID: 4917612013402764211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 793
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e4d743f2790f300800000000000000
+      internalID: 283893005524225658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 825
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cfa18ada0005e10800000000000000
+      internalID: 2184246565124373515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_4
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 808
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86a4dab13b5f43f0800000000000000
+      internalID: -914411930186897778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 835
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e803a537fa65487a0800000000000000
+      internalID: -6375875860895223666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 813
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0aead3abba0acee0800000000000000
+      internalID: -1240166946362955252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_7
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 819
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56fe4aa718e632fc0800000000000000
+      internalID: -3520848981286129819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_8
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 836
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07cfeaeda1dab1870800000000000000
+      internalID: 8654701439839304816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_9
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 823
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb31553886211af00800000000000000
+      internalID: 1126201621908624319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_10
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 837
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6c0ba9187539760800000000000000
+      internalID: 7463405221640718077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 826
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3753a5a2749938dc0800000000000000
+      internalID: -3637895543052946061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 814
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83426259826413e0800000000000000
+      internalID: -2083932385633483892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 835
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dfc35e6f553fec10800000000000000
+      internalID: 2084943836484980689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_14
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 823
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dace2a7aadf5ae2e0800000000000000
+      internalID: -2095757283867562835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 819
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25815b0302888540800000000000000
+      internalID: 5010397535036081450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_16
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 834
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f378d58634e46eb80800000000000000
+      internalID: -8365913206373382337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_17
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 835
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac3afb34c2d02c90800000000000000
+      internalID: -7196520464276374364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_18
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 809
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eb96a63bb895a050800000000000000
+      internalID: 5811218824034687969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_19
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 820
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2cc40c8f1fb2490800000000000000
+      internalID: -7769850681417219387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_20
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 823
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623f22d15780051f0800000000000000
+      internalID: -1058336613339040986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_21
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 838
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c220f147281debc10800000000000000
+      internalID: 2071323236861149740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_22
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 831
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39019fda9255d430800000000000000
+      internalID: 3807039885140887871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_23
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 835
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d16894f46eb1640800000000000000
+      internalID: 5051884635236474183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_24
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 834
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7818d90c79912280800000000000000
+      internalID: -9069799416527316865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_25
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 812
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e0678a1ed8b6a50800000000000000
+      internalID: 6515457286255021596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_26
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 825
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d497c8865291a6240800000000000000
+      internalID: 4785665202493094221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_27
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 836
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01569a31a83ff1ae0800000000000000
+      internalID: -1576273570195479280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_28
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 807
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2d13589c7723270800000000000000
+      internalID: 8228771176566084279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_29
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 810
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30624128baa1fdb50800000000000000
+      internalID: 6620039301182006787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_30
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 805
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c93759c1bfa6b100800000000000000
+      internalID: 123479217921276356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_31
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 838
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6effc362d4437d90800000000000000
+      internalID: -7101256517024743829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_32
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 818
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1155f0391e22b1760800000000000000
+      internalID: 7429570362508006673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_33
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 838
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b0b92107a6c2aa0800000000000000
+      internalID: -6184451158705501373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_34
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 818
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a7e889c2e9a1680800000000000000
+      internalID: -8783534208857507255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_35
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 838
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75276dc43dbb8c90800000000000000
+      internalID: -7166426347547974275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_36
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 812
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09620533227a05110800000000000000
+      internalID: 1247680862113244816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_37
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 819
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c9d215990a60d00800000000000000
+      internalID: 938614152705711112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_38
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 799
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15f60dc291b3ac00800000000000000
+      internalID: 910766793722098974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_39
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 826
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d00073e6b6f60d0800000000000000
+      internalID: -3427402670292333287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_40
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 814
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa021c099696d520800000000000000
+      internalID: 2726532208496085758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_41
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 796
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0027d9777911dfb70800000000000000
+      internalID: 8934316578017473024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_42
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 812
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ba323a518a19060800000000000000
+      internalID: 6958527710148930445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_43
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 837
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f1ab7ef8dfba7c0800000000000000
+      internalID: -4058871844634484959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_44
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 804
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8860333d81a506020800000000000000
+      internalID: 2332963669646968456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_45
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 768
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e552fc45bdcc4f0800000000000000
+      internalID: -807029075907092912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_46
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 835
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419af071072eef910800000000000000
+      internalID: 1873183466083821844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_47
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 774
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7ef7326409d1800800000000000000
+      internalID: 584782157545727948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_48
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 710
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ad56877f75df110800000000000000
+      internalID: 1296288988141050409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_49
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 746
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d549ceeee9c8920800000000000000
+      internalID: 2993942601303088533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_50
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 731
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238a6ef4b17f32fb0800000000000000
+      internalID: -4673620291603748814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_51
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 728
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89c6c00931df2540800000000000000
+      internalID: 4985433355278797198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_52
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 713
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62ced0e7e4df2ae0800000000000000
+      internalID: -1571803652553784724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_53
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 710
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2412f869eac3a83e0800000000000000
+      internalID: -2050759959765900990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_54
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 710
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7323b97ded145c580800000000000000
+      internalID: -8807561070897319369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_55
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 710
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9af8f70b62089eb0800000000000000
+      internalID: -4713014351324710244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_56
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 713
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd4e842331f77950800000000000000
+      internalID: 6446886593563086283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_57
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 728
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b782042b3bfb605c0800000000000000
+      internalID: -4249498419866883973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_58
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 731
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f24894bb5a07cb0800000000000000
+      internalID: -4868208973376639148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_59
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 746
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb214023f47f6d80800000000000000
+      internalID: -8255251004379812939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_60
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 710
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f7e24d133b10040800000000000000
+      internalID: 4612164519998684998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_61
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 835
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683a6f43550fbf480800000000000000
+      internalID: -8864227192797224058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_62
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 774
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194e585f1ddbfa150800000000000000
+      internalID: 5886131947461534865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_63
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 804
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4637460f5ec769a90800000000000000
+      internalID: -7307516018339581084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_64
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 768
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dbb361ab44f0a60800000000000000
+      internalID: 7642402658698640666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_65
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 837
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf8dcf63fff231a0800000000000000
+      internalID: -6831116263749742670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_66
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 812
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4eec8263fd93b50800000000000000
+      internalID: 6573530554829825215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_67
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 796
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4eae7f0acf82140800000000000000
+      internalID: 4695280379818075347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_68
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 814
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f0dfad07e63c170800000000000000
+      internalID: 8197517177733844824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_69
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 799
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a37bfed9fa34b5f10800000000000000
+      internalID: 2259474059604506426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_70
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 826
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e960bfa10b24d10800000000000000
+      internalID: 2108441205489966610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_71
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 819
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c460cac6bae5eb4c0800000000000000
+      internalID: -4269871306345019828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_72
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 812
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f46fbc890f1c7020800000000000000
+      internalID: 2340780032202335475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_73
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 838
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10142c6f4d47c52c0800000000000000
+      internalID: -4441546674472337151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_74
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 818
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d7abde58004dff0800000000000000
+      internalID: -12384323756196502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_75
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 838
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708ec4eaa3cb34f70800000000000000
+      internalID: 9170380226474862599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_76
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 818
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d93e7e985a8ecc10800000000000000
+      internalID: 2075748591485204945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_77
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 838
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 496578d11656a69a0800000000000000
+      internalID: -6239062865986759020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_78
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 805
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe3a62b37b7cb240800000000000000
+      internalID: 4808854238969609974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_79
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 810
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabbcb741db6b6d50800000000000000
+      internalID: 6731592614631226286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_80
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 807
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db4f4134760d38b0800000000000000
+      internalID: -5170969701038208047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_81
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 836
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbefa55c15a5b15e0800000000000000
+      internalID: -1937855907402940739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_82
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 825
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e563d3143d406080800000000000000
+      internalID: -9196265553024293405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_83
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 834
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b1d87599d42bbf0800000000000000
+      internalID: -310100103340942505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_84
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 812
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a86c7c8fc7d6a500800000000000000
+      internalID: 407250102738774176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_85
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 835
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3401123042cbd5340800000000000000
+      internalID: 4854242836232605763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_86
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 838
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb21b297b26e8f30800000000000000
+      internalID: 4579706411661994989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_87
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 831
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9fa76237144225f0800000000000000
+      internalID: -782988518788452451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_88
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 823
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0136143999a6e40800000000000000
+      internalID: 5650497540225962231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_89
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 835
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e361dbe530adf10800000000000000
+      internalID: 2295150665532849775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_90
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 820
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607850b37fe32e970800000000000000
+      internalID: 8782651454893950726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_91
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 809
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03441dd4d199aa2d0800000000000000
+      internalID: -3266630228565212112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_92
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 834
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c570b8ec11335a360800000000000000
+      internalID: 7180201332484802396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_93
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 819
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fea925fe0c907c0800000000000000
+      internalID: -4104537451255894212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_94
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 823
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b46d48397ce58290800000000000000
+      internalID: -7888639166889761607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_95
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 835
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2db63295b37da130800000000000000
+      internalID: 3579644502508748077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_96
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 837
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80cf0cdd543d61e0800000000000000
+      internalID: -2203047064985681779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_97
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 814
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ed9501360e68200800000000000000
+      internalID: 182079551035792989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_98
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 826
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d6146161cd91dc0800000000000000
+      internalID: -3667658434095780555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_99
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 819
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c037e42159ba5d0800000000000000
+      internalID: -3050180416755266468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_100
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 823
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05c3460a3c6d75b0800000000000000
+      internalID: -5369016184286755573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_101
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 814
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 288e532712d655220800000000000000
+      internalID: 2474003560727439490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_102
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 836
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2139410f06e1af00800000000000000
+      internalID: 1126434333939806508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_103
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 808
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd593c6f170447c20800000000000000
+      internalID: 3203256093182760411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_104
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 833
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d7dbd676bd269e0800000000000000
+      internalID: -1629498877885448904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: half_circle_faded_105
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 794
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc66f3a3e20a8bd0800000000000000
+      internalID: -2627284255885595444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b2bd2910f4848ed45ae929fdda169e31
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      half_circle_faded_0: -2440201119078920983
+      half_circle_faded_1: 4917612013402764211
+      half_circle_faded_10: 7463405221640718077
+      half_circle_faded_100: -5369016184286755573
+      half_circle_faded_101: 2474003560727439490
+      half_circle_faded_102: 1126434333939806508
+      half_circle_faded_103: 3203256093182760411
+      half_circle_faded_104: -1629498877885448904
+      half_circle_faded_105: -2627284255885595444
+      half_circle_faded_11: -3637895543052946061
+      half_circle_faded_12: -2083932385633483892
+      half_circle_faded_13: 2084943836484980689
+      half_circle_faded_14: -2095757283867562835
+      half_circle_faded_15: 5010397535036081450
+      half_circle_faded_16: -8365913206373382337
+      half_circle_faded_17: -7196520464276374364
+      half_circle_faded_18: 5811218824034687969
+      half_circle_faded_19: -7769850681417219387
+      half_circle_faded_2: 283893005524225658
+      half_circle_faded_20: -1058336613339040986
+      half_circle_faded_21: 2071323236861149740
+      half_circle_faded_22: 3807039885140887871
+      half_circle_faded_23: 5051884635236474183
+      half_circle_faded_24: -9069799416527316865
+      half_circle_faded_25: 6515457286255021596
+      half_circle_faded_26: 4785665202493094221
+      half_circle_faded_27: -1576273570195479280
+      half_circle_faded_28: 8228771176566084279
+      half_circle_faded_29: 6620039301182006787
+      half_circle_faded_3: 2184246565124373515
+      half_circle_faded_30: 123479217921276356
+      half_circle_faded_31: -7101256517024743829
+      half_circle_faded_32: 7429570362508006673
+      half_circle_faded_33: -6184451158705501373
+      half_circle_faded_34: -8783534208857507255
+      half_circle_faded_35: -7166426347547974275
+      half_circle_faded_36: 1247680862113244816
+      half_circle_faded_37: 938614152705711112
+      half_circle_faded_38: 910766793722098974
+      half_circle_faded_39: -3427402670292333287
+      half_circle_faded_4: -914411930186897778
+      half_circle_faded_40: 2726532208496085758
+      half_circle_faded_41: 8934316578017473024
+      half_circle_faded_42: 6958527710148930445
+      half_circle_faded_43: -4058871844634484959
+      half_circle_faded_44: 2332963669646968456
+      half_circle_faded_45: -807029075907092912
+      half_circle_faded_46: 1873183466083821844
+      half_circle_faded_47: 584782157545727948
+      half_circle_faded_48: 1296288988141050409
+      half_circle_faded_49: 2993942601303088533
+      half_circle_faded_5: -6375875860895223666
+      half_circle_faded_50: -4673620291603748814
+      half_circle_faded_51: 4985433355278797198
+      half_circle_faded_52: -1571803652553784724
+      half_circle_faded_53: -2050759959765900990
+      half_circle_faded_54: -8807561070897319369
+      half_circle_faded_55: -4713014351324710244
+      half_circle_faded_56: 6446886593563086283
+      half_circle_faded_57: -4249498419866883973
+      half_circle_faded_58: -4868208973376639148
+      half_circle_faded_59: -8255251004379812939
+      half_circle_faded_6: -1240166946362955252
+      half_circle_faded_60: 4612164519998684998
+      half_circle_faded_61: -8864227192797224058
+      half_circle_faded_62: 5886131947461534865
+      half_circle_faded_63: -7307516018339581084
+      half_circle_faded_64: 7642402658698640666
+      half_circle_faded_65: -6831116263749742670
+      half_circle_faded_66: 6573530554829825215
+      half_circle_faded_67: 4695280379818075347
+      half_circle_faded_68: 8197517177733844824
+      half_circle_faded_69: 2259474059604506426
+      half_circle_faded_7: -3520848981286129819
+      half_circle_faded_70: 2108441205489966610
+      half_circle_faded_71: -4269871306345019828
+      half_circle_faded_72: 2340780032202335475
+      half_circle_faded_73: -4441546674472337151
+      half_circle_faded_74: -12384323756196502
+      half_circle_faded_75: 9170380226474862599
+      half_circle_faded_76: 2075748591485204945
+      half_circle_faded_77: -6239062865986759020
+      half_circle_faded_78: 4808854238969609974
+      half_circle_faded_79: 6731592614631226286
+      half_circle_faded_8: 8654701439839304816
+      half_circle_faded_80: -5170969701038208047
+      half_circle_faded_81: -1937855907402940739
+      half_circle_faded_82: -9196265553024293405
+      half_circle_faded_83: -310100103340942505
+      half_circle_faded_84: 407250102738774176
+      half_circle_faded_85: 4854242836232605763
+      half_circle_faded_86: 4579706411661994989
+      half_circle_faded_87: -782988518788452451
+      half_circle_faded_88: 5650497540225962231
+      half_circle_faded_89: 2295150665532849775
+      half_circle_faded_9: 1126201621908624319
+      half_circle_faded_90: 8782651454893950726
+      half_circle_faded_91: -3266630228565212112
+      half_circle_faded_92: 7180201332484802396
+      half_circle_faded_93: -4104537451255894212
+      half_circle_faded_94: -7888639166889761607
+      half_circle_faded_95: 3579644502508748077
+      half_circle_faded_96: -2203047064985681779
+      half_circle_faded_97: 182079551035792989
+      half_circle_faded_98: -3667658434095780555
+      half_circle_faded_99: -3050180416755266468
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
