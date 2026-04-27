@@ -11,11 +11,13 @@ public class AIController : MonoBehaviour
     private Animator animator;
     private ActionSelector selector;
     private List<CharacterAction> actions;
+    private List<CharacterCondition> conditions;
     private ActionContext context;
     private HealthPoint health;
 
     //Actions
     private Movement movement;
+    private Attack attack;
     private Die die;
     //Conditions
     private CanMove canMove;
@@ -31,18 +33,24 @@ public class AIController : MonoBehaviour
         context = new ActionContext();
         behaviour = new CharacterBehaviour();
 
-        movement = new Movement(context, rb, transform, behaviour, characterData.MovementSpeed, 0f, 15f);
+        movement = new Movement(context, rb, characterData, transform, behaviour);
+        
         die = new Die(context, rb, health);
 
+        canMove = new CanMove(transform, target.transform, 8f, 4f);
+        canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius);
+
         actions = new List<CharacterAction>() {movement, die};
+        conditions = new List<CharacterCondition>() {canMove, canAttack};
+
     }
 
     void Update()
-    {
-        canMove = new CanMove(transform, target.transform, 8f, 4f);
-        canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius);
+    {   
+        RunConditions();
         
-        if (canMove != null) movement.SetInput(canMove.ActionInput(), canMove.direction.x);
+        movement.SetInput(canMove.ActionInput, canMove.direction.x);
+        
 
         selector.Execute(actions);
         Animation();
@@ -52,13 +60,20 @@ public class AIController : MonoBehaviour
     {
         selector.FixedExecute();
     }
-    void Animation()
+    private void RunConditions()
+    {
+        foreach(CharacterCondition condition in conditions)
+        {
+            condition.CheckCondition();
+        }
+    }
+    private void Animation()
     {
         animator.SetFloat("movement", Mathf.Abs(rb.linearVelocity.x));
     }
-    void DebugConsole()
+    private void DebugConsole()
     {
-        Debug.Log(canAttack.ActionInput());
+        Debug.Log("attack input : " + canAttack.ActionInput);
     }
 
 }

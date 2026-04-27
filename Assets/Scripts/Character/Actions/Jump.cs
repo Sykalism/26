@@ -14,13 +14,13 @@ public class Jump : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterBehaviour behaviour,
-        float jumpForce
+        CharacterData data,
+        CharacterBehaviour behaviour
     ) : base(context, 3)
     {
         this.rb = rb;
+        jumpForce = data.JumpForce;
         this.behaviour = behaviour;
-        this.jumpForce = jumpForce;
     }
     public override void SetInput(bool inputA = false, float valueA = 0, bool inputB = false, float valueB = 0)
     {

@@ -23,19 +23,17 @@ public class Movement : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        Transform transform, 
-        CharacterBehaviour behaviour,
-        float moveSpeed,
-        float runSpeed,
-        float acceleration
+        CharacterData data,
+        Transform self,
+        CharacterBehaviour behaviour
     ) : base(context, 1)
     {
         this.rb = rb;
-        this.target = transform;
+        target = self;
         this.behaviour = behaviour;
-        this.moveSpeed = moveSpeed;
-        this.runSpeed = runSpeed;
-        this.acceleration = acceleration;
+        moveSpeed = data.MovementSpeed;
+        runSpeed = data.RunSpeed;
+        acceleration = data.Acceleration;
         startScale = target.localScale;
     }
     public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0f)
@@ -43,7 +41,6 @@ public class Movement : CharacterAction
         isMove = inputA;
         direction = valueA;
         isRunning = inputB;
-        runSpeed = valueB;
     }
     public override bool Condition()
     { 

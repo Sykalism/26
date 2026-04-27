@@ -7,14 +7,13 @@ public class Attack : CharacterAction
     public bool isComboWindow {get; private set;}
     private Rigidbody2D rb;
     private Transform hitPoint;
-    private Weapon weapon;
     private float startGravity;
     private float hitRadius;
     private float damage;
     private int attackVariations;
     private bool attackInput;
     private bool hasAttacked = false;
-    private GameTimer comboTime;
+    private GameTimer comboTimer;
     public override bool IsExecuting => isAttacking;
 
     
@@ -22,22 +21,20 @@ public class Attack : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        Weapon weapon,
-        int attackVariations,
-        float comboWindowTime
+        CharacterData data,
+        Transform hitPoint
     ) : base(context, 4)
     {
         this.rb = rb;
         
-        this.weapon = weapon;
-        this.attackVariations = attackVariations;
+        this.hitPoint = hitPoint;
+        hitRadius = data.HitRadius;
+        damage = data.Damage;
+        attackVariations = data.AttackVariant;
 
-        hitPoint = weapon.hitPoint;
-        hitRadius = weapon.hitRadius;
-        damage = weapon.damage;
         startGravity = rb.gravityScale;
 
-        comboTime = new GameTimer(comboWindowTime);
+        comboTimer = new GameTimer(data.comboWindowTime);
 
     }
     public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0)
@@ -50,7 +47,7 @@ public class Attack : CharacterAction
         hasAttacked = false;
         isComboWindow = true;
         actionContext.Unlock();
-        comboTime.Start();
+        comboTimer.Start();
         rb.gravityScale = startGravity;
     }
     public void TriggerHitEvent()
@@ -62,15 +59,15 @@ public class Attack : CharacterAction
         if (actionContext.isLocked) return false;
         if (!isAttacking)
         {
-            comboTime.Tick(Time.deltaTime);
-            if (!comboTime.IsRunning)
+            comboTimer.Tick(Time.deltaTime);
+            if (!comboTimer.IsRunning)
             {
                 isComboWindow = false;
                 currentAttack = 0;
-                comboTime.Stop();
+                comboTimer.Stop();
             }
         }
-        return attackInput && weapon.isDrawing;
+        return attackInput;
     }
     public override void OnEnter()
     {

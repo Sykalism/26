@@ -4,24 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Inspector
-    [Header("Movement")]
-    public float moveSpeed = 5f;
-    public float runSpeed = 10f;
-    public float acceleration = 25f;
-    [Header("Jump")]
-    public float jumpForce = 5f;
-    public float heightForLanding = 5f;
-    public float landingDelay = 0.5f;
-    [Header("Combat")]
-    public Weapon weapon;
-    public int attackVariations = 1;
-    public float comboWindowTime = 3f;
-    [Header("Dash")]
-    public float dashForce = 20f;
-    public float dashDuration = 0.5f;
-    public GameObject particleDash;
-    public Transform particleDashSpawner;
+    [SerializeField] CharacterData characterData;
+    [SerializeField] Transform hitPoint;
+    [SerializeField] GameObject particleDash;
+    [SerializeField] Transform particleDashSpawner;
     [Header("Checker")]
     public Transform checkPoint;
 
@@ -62,10 +48,10 @@ public class PlayerController : MonoBehaviour
         selector = new ActionSelector();
         behaviour = new CharacterBehaviour();
 
-        movement = new Movement(actContext, rb, transform, behaviour, moveSpeed, runSpeed,acceleration);
-        dash = new Dash(actContext, rb, behaviour, dashDuration, dashForce);
-        jump = new Jump(actContext, rb, behaviour, jumpForce);
-        attack = new Attack(actContext, rb, weapon, attackVariations, comboWindowTime);
+        movement = new Movement(actContext, rb, characterData, transform, behaviour);
+        dash = new Dash(actContext, rb, characterData, behaviour);
+        jump = new Jump(actContext, rb, characterData, behaviour);
+        attack = new Attack(actContext, rb, characterData, hitPoint);
         die = new Die(actContext, rb, health);
 
         
@@ -93,12 +79,12 @@ public class PlayerController : MonoBehaviour
             behaviour.ObstacleCheck(checkPoint.position, inputDirection, 0.5f);
         }
 
-        movement.SetInput(moveInput, inputDirection.x, runInput, runSpeed);
+        movement.SetInput(moveInput, inputDirection.x, runInput);
         dash.SetInput(dashInput, inputDirection.x);
         jump.SetInput(jumpInput);
         attack.SetInput(attackInput);
 
-        behaviour.Landing(transform.position, heightForLanding, landingDelay);
+        behaviour.Landing(transform.position, characterData.HeightForLanding, characterData.LandingDelay);
 
         if (Input.GetKeyDown(KeyCode.K))
         {

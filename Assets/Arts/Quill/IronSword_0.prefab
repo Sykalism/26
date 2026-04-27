@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6821806991771925084}
   - component: {fileID: 7606383665946160380}
-  - component: {fileID: 8974792200737786020}
+  - component: {fileID: -2823370690842274006}
   m_Layer: 0
   m_Name: IronSword_0
   m_TagString: Untagged
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8974792200737786020
+--- !u!114 &-2823370690842274006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,15 +99,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 870953767268008082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3189c04ef8fb3c24d9fbbdf01345d2cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 90ade5b79a9c9e342851ac1dce8dae68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponMaterial: {fileID: 2100000, guid: 6f41c010ad24e484b941d44a447ac755, type: 2}
+  material: {fileID: 2100000, guid: 6f41c010ad24e484b941d44a447ac755, type: 2}
   fadeSpeed: 1
-  isDrawing: 0
-  hitPoint: {fileID: 5212121476596849085}
-  damage: 20
-  hitRadius: 4
+  isActive: 0
 --- !u!1 &7355688377093644219
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class CanMove : CharacterCondition
         this.range = range;
         this.deadRange = deadRange;
     }
-    public override bool ActionInput()
+    public override void CheckCondition()
     {
         float distance = Vector3.Distance(self.position, target.position);
         Vector2 dir = target.position - self.position;
@@ -22,8 +22,9 @@ public class CanMove : CharacterCondition
 
         if (distance <= range && distance > deadRange)
         {
-            return true;
+            ActionInput = true;
         }
-        else return false;
+        else ActionInput = false;
+        
     }
 }

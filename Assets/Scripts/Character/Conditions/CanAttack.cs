@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class CanAttack : CharacterCondition
 {
@@ -8,8 +9,8 @@ public class CanAttack : CharacterCondition
     private Transform self;
     private Transform target;
     private float radius;
-    private bool inputCondition;
     private bool input;
+    private bool inputHasTriggred;
     private bool onRange;
     
     public CanAttack(MonoBehaviour monoBehaviour, Transform self, Transform target, float radius)
@@ -19,22 +20,25 @@ public class CanAttack : CharacterCondition
         this.target = target;
         this.radius = radius;
     }
-    public override bool ActionInput()
+    public override void CheckCondition()
     {
         float range = Vector2.Distance(self.position, target.position);
         onRange = range <= radius;
 
         if (onRange)
         {
-            inputCondition = true;
+            if (inputHasTriggred) return;
+            else monoBehaviour.StartCoroutine(NextFrame());
         }
-        return false;
+        else inputHasTriggred = false;     
     }
     private IEnumerator NextFrame()
     {
-        input = true;
+        ActionInput = true;
         yield return null;
-        input = false;
-        
+        ActionInput = false;
+
+        inputHasTriggred = onRange;
     }
+
 }

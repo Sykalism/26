@@ -2,5 +2,6 @@ using UnityEngine;
 
 public abstract class CharacterCondition
 {
-    public abstract bool ActionInput();
+    public bool ActionInput {get; protected set; }
+    public abstract void CheckCondition();
 }

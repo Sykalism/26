@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Character\Conditions\CanMove.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Movement.cs" />
     <Compile Include="Assets\Scripts\Tools\AutoDestroy.cs" />
+    <Compile Include="Assets\Scripts\Material Controller\Dissolve.cs" />
     <Compile Include="Assets\Scripts\Debug\DebugAnimationEvent.cs" />
     <Compile Include="Assets\Scripts\Character\ActionSelector.cs" />
     <Compile Include="Assets\Scripts\Character\HealthPoint.cs" />

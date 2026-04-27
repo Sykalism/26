@@ -19,15 +19,14 @@ public class Dash : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterBehaviour behaviour,
-        float duration,
-        float velocity
+        CharacterData data,
+        CharacterBehaviour behaviour
     ) : base(context, 2)
     {
         this.rb = rb;
         this.behaviour = behaviour;
-        dashVelocity = velocity;
-        dashTimer = new GameTimer(duration);
+        dashVelocity = data.DashForce;
+        dashTimer = new GameTimer(data.DashDuration);
         cooldown = new GameTimer(cooldownTime);
     }
     public override void SetInput(bool inputA = false, float valueA = 0, bool inputB = false, float valueB = 0)
