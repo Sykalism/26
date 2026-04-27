@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class AIController : MonoBehaviour
 {
     [SerializeField] CharacterData characterData;
     [SerializeField] CharacterBehaviour behaviour;
     [SerializeField] GameObject target;
+    [SerializeField] Transform hitPoint;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -34,13 +36,13 @@ public class AIController : MonoBehaviour
         behaviour = new CharacterBehaviour();
 
         movement = new Movement(context, rb, characterData, transform, behaviour);
-        
+        attack = new Attack(context, rb, characterData, hitPoint, LayerMask.GetMask("Player"));
         die = new Die(context, rb, health);
 
-        canMove = new CanMove(transform, target.transform, 8f, 4f);
+        canMove = new CanMove(transform, target.transform, 8f, 1f);
         canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius);
 
-        actions = new List<CharacterAction>() {movement, die};
+        actions = new List<CharacterAction>() {movement, attack, die};
         conditions = new List<CharacterCondition>() {canMove, canAttack};
 
     }
@@ -50,6 +52,7 @@ public class AIController : MonoBehaviour
         RunConditions();
         
         movement.SetInput(canMove.ActionInput, canMove.direction.x);
+        attack.SetInput(canAttack.ActionInput);
         
 
         selector.Execute(actions);
@@ -67,9 +70,18 @@ public class AIController : MonoBehaviour
             condition.CheckCondition();
         }
     }
+    public void TriggerAttackAnimation()
+    {
+        attack.TriggerHitEvent();
+    }
+    public void StopAttackAnimation()
+    {
+        attack.StopAnimationEvent();
+    }
     private void Animation()
     {
         animator.SetFloat("movement", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetBool("isAttacking", attack.isAttacking);
     }
     private void DebugConsole()
     {

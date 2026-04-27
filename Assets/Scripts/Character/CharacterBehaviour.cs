@@ -12,7 +12,7 @@ public class CharacterBehaviour
 
     public void GroundCheck(Vector2 origin)
     {
-        isGrounded = Physics2D.Raycast(origin, Vector2.down, 0.1f);
+        isGrounded = Physics2D.Raycast(origin, Vector2.down, 0.1f, LayerMask.GetMask("Environment"));
     }
     public void ObstacleCheck(Vector2 origin, Vector2 direction, float distance)
     {

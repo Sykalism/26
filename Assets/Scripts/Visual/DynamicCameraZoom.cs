@@ -8,16 +8,18 @@ public class DynamicCameraZoom : MonoBehaviour
 
     private float idleSize;
     private Rigidbody2D playerRb;
+    private float maxSpeed;
 
     void Start()
     {
         idleSize = Camera.main.orthographicSize;
         playerRb = player.GetComponent<Rigidbody2D>();
+        maxSpeed = player.characterData.RunSpeed;
     }
     void Update()
     {
         float speed = Mathf.Abs(playerRb.linearVelocity.x);
-        float t = Mathf.InverseLerp(0f, player.runSpeed, speed);
+        float t = Mathf.InverseLerp(0f, maxSpeed, speed);
 
         float targetSize = Mathf.Lerp(idleSize, runSize, t);
         Camera.main.orthographicSize = Mathf.Lerp(

@@ -8,8 +8,6 @@ public class Movement : CharacterAction
     private Rigidbody2D rb;
     private float direction;
     private float speed;
-    private float targetSpeed;
-    private float acceleration;
     private float moveSpeed = 0;
     private float runSpeed = 0f;
     public bool isMove {get; private set;}
@@ -33,7 +31,6 @@ public class Movement : CharacterAction
         this.behaviour = behaviour;
         moveSpeed = data.MovementSpeed;
         runSpeed = data.RunSpeed;
-        acceleration = data.Acceleration;
         startScale = target.localScale;
     }
     public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0f)
@@ -49,7 +46,7 @@ public class Movement : CharacterAction
     }
     public override void Execute()
     {
-        targetSpeed = isRunning? runSpeed : moveSpeed;
+        speed = isRunning? runSpeed : moveSpeed;
         
         Flip();
     }
@@ -61,7 +58,6 @@ public class Movement : CharacterAction
         }
         else 
         {
-            speed = Mathf.MoveTowards(speed, targetSpeed, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         }
     }

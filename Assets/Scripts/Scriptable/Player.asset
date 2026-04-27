@@ -17,6 +17,11 @@ MonoBehaviour:
   Damage: 20
   MovementSpeed: 5
   RunSpeed: 8
-  HitRadius: 0
-  comboWindowTime: 0
-  AttackVariant: 0
+  JumpForce: 55
+  HeightForLanding: 1
+  LandingDelay: 0.2
+  HitRadius: 4
+  comboWindowTime: 3
+  DashForce: 20
+  DashDuration: 0.3
+  AttackVariant: 4

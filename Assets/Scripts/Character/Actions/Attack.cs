@@ -7,6 +7,7 @@ public class Attack : CharacterAction
     public bool isComboWindow {get; private set;}
     private Rigidbody2D rb;
     private Transform hitPoint;
+    private LayerMask targetMask;
     private float startGravity;
     private float hitRadius;
     private float damage;
@@ -22,12 +23,13 @@ public class Attack : CharacterAction
         ActionContext context, 
         Rigidbody2D rb, 
         CharacterData data,
-        Transform hitPoint
+        Transform hitPoint,
+        LayerMask targetMask
     ) : base(context, 4)
     {
         this.rb = rb;
-        
         this.hitPoint = hitPoint;
+        this.targetMask = targetMask;
         hitRadius = data.HitRadius;
         damage = data.Damage;
         attackVariations = data.AttackVariant;
@@ -109,7 +111,7 @@ public class Attack : CharacterAction
         (
             hitPoint.position, 
             hitRadius, 
-            LayerMask.GetMask("Enemy")
+            targetMask
         );
         if (hit.Length > 0)
         {

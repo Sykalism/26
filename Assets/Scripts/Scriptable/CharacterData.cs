@@ -10,7 +10,6 @@ public class CharacterData : ScriptableObject
     Damage, 
     MovementSpeed, 
     RunSpeed, 
-    Acceleration,
     JumpForce, 
     HeightForLanding, 
     LandingDelay, 
