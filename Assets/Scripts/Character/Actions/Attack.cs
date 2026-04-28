@@ -6,11 +6,8 @@ public class Attack : CharacterAction
     public bool isAttacking {get; private set;}
     public bool isComboWindow {get; private set;}
     private Rigidbody2D rb;
-    private Transform hitPoint;
-    private LayerMask targetMask;
+    private Weapon weapon;
     private float startGravity;
-    private float hitRadius;
-    private float damage;
     private int attackVariations;
     private bool attackInput;
     private bool hasAttacked = false;
@@ -23,17 +20,14 @@ public class Attack : CharacterAction
         ActionContext context, 
         Rigidbody2D rb, 
         CharacterData data,
-        Transform hitPoint,
-        LayerMask targetMask
+        Weapon weapon
     ) : base(context, 4)
     {
         this.rb = rb;
-        this.hitPoint = hitPoint;
-        this.targetMask = targetMask;
-        hitRadius = data.HitRadius;
-        damage = data.Damage;
-        attackVariations = data.AttackVariant;
+        this.weapon = weapon;
 
+        attackVariations = data.AttackVariant;
+        this.weapon.damage = data.Damage;
         startGravity = rb.gravityScale;
 
         comboTimer = new GameTimer(data.comboWindowTime);
@@ -45,16 +39,13 @@ public class Attack : CharacterAction
     }
     public void StopAnimationEvent()
     {
+        weapon.isAttacking = false;
         isAttacking = false;
         hasAttacked = false;
         isComboWindow = true;
         actionContext.Unlock();
         comboTimer.Start();
         rb.gravityScale = startGravity;
-    }
-    public void TriggerHitEvent()
-    {
-        Hit();
     }
     public override bool Condition()
     {
@@ -74,6 +65,7 @@ public class Attack : CharacterAction
     public override void OnEnter()
     {
         actionContext.Lock();
+        weapon.isAttacking = true;
         isAttacking = true;
         StartAction = true;
     }
@@ -103,26 +95,6 @@ public class Attack : CharacterAction
         if (currentAttack > attackVariations)
         {
             currentAttack = 2;
-        }
-    }
-    private void Hit()
-    {
-        Collider2D[] hit = Physics2D.OverlapCircleAll
-        (
-            hitPoint.position, 
-            hitRadius, 
-            targetMask
-        );
-        if (hit.Length > 0)
-        {
-            foreach(Collider2D target in hit)
-            {
-                HealthPoint enemyHP = target.GetComponent<HealthPoint>();
-                if (enemyHP != null)
-                {
-                    enemyHP.TakeDamage(damage);
-                }
-            }
         }
     }
 }

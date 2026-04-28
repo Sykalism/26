@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterData characterData;
-    [SerializeField] Transform hitPoint;
+    [SerializeField] Weapon weapon;
     [SerializeField] GameObject particleDash;
     [SerializeField] Transform particleDashSpawner;
     [Header("Checker")]
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         movement = new Movement(actContext, rb, characterData, transform, behaviour);
         dash = new Dash(actContext, rb, characterData, behaviour);
         jump = new Jump(actContext, rb, characterData, behaviour);
-        attack = new Attack(actContext, rb, characterData, hitPoint, LayerMask.GetMask("Enemy"));
+        attack = new Attack(actContext, rb, characterData, weapon);
         die = new Die(actContext, rb, health);
 
         
@@ -136,10 +136,6 @@ public class PlayerController : MonoBehaviour
     {
         attack.StopAnimationEvent();
     }
-    public void TriggerAttackAnimation()
-    {
-        attack.TriggerHitEvent();
-    }
     private void SpawnParticleDash()
     {
         Instantiate
@@ -151,6 +147,7 @@ public class PlayerController : MonoBehaviour
     }
     private void RuntimeDebug()
     {
+        Debug.Log(weapon.isAttacking);
     }
 
 }

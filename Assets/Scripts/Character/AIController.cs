@@ -7,7 +7,7 @@ public class AIController : MonoBehaviour
     [SerializeField] CharacterData characterData;
     [SerializeField] CharacterBehaviour behaviour;
     [SerializeField] GameObject target;
-    [SerializeField] Transform hitPoint;
+    [SerializeField] Weapon weapon;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -36,7 +36,7 @@ public class AIController : MonoBehaviour
         behaviour = new CharacterBehaviour();
 
         movement = new Movement(context, rb, characterData, transform, behaviour);
-        attack = new Attack(context, rb, characterData, hitPoint, LayerMask.GetMask("Player"));
+        attack = new Attack(context, rb, characterData, weapon);
         die = new Die(context, rb, health);
 
         canMove = new CanMove(transform, target.transform, 8f, 1f);
@@ -70,10 +70,6 @@ public class AIController : MonoBehaviour
             condition.CheckCondition();
         }
     }
-    public void TriggerAttackAnimation()
-    {
-        attack.TriggerHitEvent();
-    }
     public void StopAttackAnimation()
     {
         attack.StopAnimationEvent();
@@ -85,7 +81,6 @@ public class AIController : MonoBehaviour
     }
     private void DebugConsole()
     {
-        Debug.Log("attack input : " + canAttack.ActionInput);
     }
 
 }
