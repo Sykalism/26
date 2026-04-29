@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     //Variables
 
     //Actions
+    private Knockback knockback;
     private Movement movement;
     private Dash dash;
     private Jump jump;
@@ -43,25 +44,31 @@ public class PlayerController : MonoBehaviour
         health = GetComponent<HealthPoint>();
         animator = GetComponent<Animator>();
 
-        actions = new List<CharacterAction>();
+        
         actContext = new ActionContext();
         selector = new ActionSelector();
         behaviour = new CharacterBehaviour();
 
+        knockback = new Knockback(actContext, rb, transform, health, 20f, 0.2f);
         movement = new Movement(actContext, rb, characterData, transform, behaviour);
         dash = new Dash(actContext, rb, characterData, behaviour);
         jump = new Jump(actContext, rb, characterData, behaviour);
         attack = new Attack(actContext, rb, characterData, weapon);
         die = new Die(actContext, rb, health);
 
+    }
+    void Start()
+    {
+        actions = new List<CharacterAction>() 
+        {
+            knockback, 
+            movement, 
+            dash, 
+            jump, 
+            attack,
+            die
+        };
         
-        actions.Add(movement);
-        actions.Add(dash);
-        actions.Add(jump);
-        actions.Add(attack);
-        actions.Add(die);
-
-
     }
 
     void Update()
@@ -151,7 +158,7 @@ public class PlayerController : MonoBehaviour
     }
     private void RuntimeDebug()
     {
-        
+        Debug.Log(health.IsTakingDamage);
     }
 
 }
