@@ -132,6 +132,10 @@ public class PlayerController : MonoBehaviour
     }
 
     //Events
+    public void TriggerAttackEvent()
+    {
+        weapon.TriggerOn();
+    }
     public void StopAttackAnimation()
     {
         attack.StopAnimationEvent();
@@ -147,7 +151,7 @@ public class PlayerController : MonoBehaviour
     }
     private void RuntimeDebug()
     {
-        Debug.Log(weapon.isAttacking);
+        
     }
 
 }

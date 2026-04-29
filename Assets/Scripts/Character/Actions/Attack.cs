@@ -39,10 +39,10 @@ public class Attack : CharacterAction
     }
     public void StopAnimationEvent()
     {
-        weapon.isAttacking = false;
         isAttacking = false;
         hasAttacked = false;
         isComboWindow = true;
+        weapon.TriggerOff();
         actionContext.Unlock();
         comboTimer.Start();
         rb.gravityScale = startGravity;
@@ -65,7 +65,6 @@ public class Attack : CharacterAction
     public override void OnEnter()
     {
         actionContext.Lock();
-        weapon.isAttacking = true;
         isAttacking = true;
         StartAction = true;
     }

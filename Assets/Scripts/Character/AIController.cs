@@ -70,10 +70,16 @@ public class AIController : MonoBehaviour
             condition.CheckCondition();
         }
     }
+    //Events
+    public void TriggerAttackEvent()
+    {
+        weapon.TriggerOn();
+    }
     public void StopAttackAnimation()
     {
         attack.StopAnimationEvent();
     }
+    
     private void Animation()
     {
         animator.SetFloat("movement", Mathf.Abs(rb.linearVelocity.x));
