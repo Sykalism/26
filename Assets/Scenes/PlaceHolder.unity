@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &974648557
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1710369717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391469875693494116, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1560178498217264903, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalPosition.x
@@ -987,6 +987,10 @@ PrefabInstance:
     - target: {fileID: 2411473378911784610, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 38.725
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240555386660261838, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7230123
       objectReference: {fileID: 0}
     - target: {fileID: 3537966669653138120, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1087,6 +1091,14 @@ PrefabInstance:
     - target: {fileID: 7480445751076205105, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000046258014
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350325730102869772, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70542234
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350325730102869772, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70878726
       objectReference: {fileID: 0}
     - target: {fileID: 8503626757346400802, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_SortingOrder

@@ -93,7 +93,7 @@ public class Attack : CharacterAction
         currentAttack += 1;
         if (currentAttack > attackVariations)
         {
-            currentAttack = 2;
+            currentAttack = 1;
         }
     }
 }

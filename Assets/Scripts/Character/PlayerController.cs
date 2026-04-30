@@ -158,7 +158,6 @@ public class PlayerController : MonoBehaviour
     }
     private void RuntimeDebug()
     {
-        Debug.Log(health.IsTakingDamage);
     }
 
 }
