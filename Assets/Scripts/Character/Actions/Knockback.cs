@@ -7,7 +7,6 @@ using UnityEngine.UIElements.Experimental;
 public class Knockback : CharacterAction
 {
     private Rigidbody2D rb;
-    private Transform self;
     private HealthPoint health;
     private float strength;
     private GameTimer KnockbackTimer;
@@ -17,16 +16,14 @@ public class Knockback : CharacterAction
     public Knockback
     (
         ActionContext context,
-        Rigidbody2D rb, 
-        Transform self, 
+        Rigidbody2D rb,
         HealthPoint health, 
         float strength,
         float duration
         )
-    : base(context, 0)
+    : base(context, 5)
     {
         this.rb = rb;
-        this.self = self;
         this.health = health;
         this.strength = strength;
 
@@ -66,8 +63,10 @@ public class Knockback : CharacterAction
 
             rb.linearVelocity = Vector2.zero;
 
-            float direction = Mathf.Sign(self.localScale.x);
-            Vector2 force = new Vector2(strength * direction / 2, strength);
+            Vector2 force = new Vector2(
+                strength * health.affectedDirection.x * -1 / 2,
+                strength
+            );
 
             rb.AddForce(force, ForceMode2D.Impulse);
         }

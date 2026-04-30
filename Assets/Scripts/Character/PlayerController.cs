@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         selector = new ActionSelector();
         behaviour = new CharacterBehaviour();
 
-        knockback = new Knockback(actContext, rb, transform, health, 20f, 0.2f);
+        knockback = new Knockback(actContext, rb, health, 30f, 0.2f);
         movement = new Movement(actContext, rb, characterData, transform, behaviour);
         dash = new Dash(actContext, rb, characterData, behaviour);
         jump = new Jump(actContext, rb, characterData, behaviour);

@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
             if (targetHP != null)
             {
                 targetHP.TakeDamage(damage);
+                Debug.Log("hit");
                 TriggerOff();
             }
         }
