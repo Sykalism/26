@@ -83,6 +83,7 @@ public class AIController : MonoBehaviour
     private void Animation()
     {
         animator.SetFloat("movement", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetInteger("attackVariation", attack.currentAttack);
         animator.SetBool("isAttacking", attack.isAttacking);
     }
     private void DebugConsole()

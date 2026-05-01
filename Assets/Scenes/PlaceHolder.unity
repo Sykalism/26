@@ -1020,6 +1020,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -58.317
       objectReference: {fileID: 0}
+    - target: {fileID: 4270226799220342109, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270226799220342109, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270226799220342109, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.43192858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270226799220342109, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.90190786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270226799220342109, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 128.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340065056117952836, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4358897307202482694, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1062,7 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406181076102576310, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -80.867
+      value: -91.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411351800628588775, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6007140036876093846, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1083,6 +1111,38 @@ PrefabInstance:
     - target: {fileID: 6007140036876093846, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -727.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99939626
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.034745388
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825009156795395697, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.982
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155593955535712419, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7480445751076205105, guid: ea15bc7c74af9824fa7f3cec717b4637, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1149,6 +1209,6 @@ SceneRoots:
   - {fileID: 130836879}
   - {fileID: 193445560}
   - {fileID: 311276813}
-  - {fileID: 9017257477120452351}
   - {fileID: 1710369719}
   - {fileID: 974648558}
+  - {fileID: 9017257477120452351}
