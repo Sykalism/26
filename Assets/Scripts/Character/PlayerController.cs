@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         inputDirection = new Vector2(Input.GetAxis("Horizontal"), 0f);
         moveInput = inputDirection.x != 0f? true : false;
         runInput = Input.GetKey(KeyCode.LeftShift);
-        jumpInput = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
+        jumpInput = Input.GetKeyDown(KeyCode.Z);
         attackInput = Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0);
         dashInput = Input.GetKeyDown(KeyCode.C);
         
@@ -96,6 +96,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             health.TakeDamage(20f);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            health.TakeHeal(20);
         }
 
         if (attack.IsExecuting)

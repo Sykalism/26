@@ -39,12 +39,14 @@ public class AIController : MonoBehaviour
         attack = new Attack(context, rb, characterData, weapon);
         die = new Die(context, rb, health);
 
-        canMove = new CanMove(transform, target.transform, 8f, 1f);
-        canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius);
+    }
+    void Start()
+    {
+        canMove = new CanMove(transform, target.transform, 8f, 0.2f);
+        canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius, attack.isAttacking);
 
         actions = new List<CharacterAction>() {movement, attack, die};
         conditions = new List<CharacterCondition>() {canMove, canAttack};
-
     }
 
     void Update()

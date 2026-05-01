@@ -9,16 +9,17 @@ public class CanAttack : CharacterCondition
     private Transform self;
     private Transform target;
     private float radius;
-    private bool input;
     private bool inputHasTriggred;
     private bool onRange;
+    private bool trigger;
     
-    public CanAttack(MonoBehaviour monoBehaviour, Transform self, Transform target, float radius)
+    public CanAttack(MonoBehaviour monoBehaviour, Transform self, Transform target, float radius, bool trigger)
     {
         this.monoBehaviour = monoBehaviour;
         this.self = self;
         this.target = target;
         this.radius = radius;
+        this.trigger = trigger;
     }
     public override void CheckCondition()
     {
@@ -28,7 +29,7 @@ public class CanAttack : CharacterCondition
         if (onRange)
         {
             if (inputHasTriggred) return;
-            else monoBehaviour.StartCoroutine(NextFrame());
+            monoBehaviour.StartCoroutine(NextFrame());
         }
         else inputHasTriggred = false;     
     }
@@ -38,7 +39,7 @@ public class CanAttack : CharacterCondition
         yield return null;
         ActionInput = false;
 
-        inputHasTriggred = onRange;
+        inputHasTriggred = trigger;
     }
 
 }
