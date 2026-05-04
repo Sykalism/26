@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\Tools\SlashSpawner.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterAction.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Material Controller\RippleTrigger.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Compile Include="Assets\Scripts\Character\Conditions\CanMove.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Movement.cs" />
