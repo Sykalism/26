@@ -13,10 +13,17 @@ public class RippleTrigger : MonoBehaviour
     {
         temp = new RenderTexture(rippleRT.width, rippleRT.height, 0, rippleRT.format);
 
-        Graphics.Blit(Texture2D.blackTexture, rippleRT);
+        temp.Create();
+        rippleRT.Create();
+        
+        Graphics.Blit(Texture2D.whiteTexture, rippleRT);
+        Debug.Log("init RT");
     }
     void Update()
     {
+        decayMat.SetTexture("_MainTex", rippleRT);
+        
+        Debug.Log(decayMat.GetFloat("_Decay_Value"));
         Graphics.Blit(rippleRT, temp, decayMat);
         Graphics.Blit(temp, rippleRT);
     }
