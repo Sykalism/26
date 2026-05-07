@@ -78,6 +78,10 @@
     <Compile Include="Assets\Scripts\Visual\Perspective.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shader Graph\RippleDraw.shader" />
+    <None Include="Assets\Shader Graph\RippleDecay.shader" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.1.6f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
       <Private>False</Private>
