@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class RippleTrigger : MonoBehaviour
 {
-    [SerializeField] Transform trigger;
-    [SerializeField] Material waterMat;
     public RenderTexture rippleRT;
     public Material decayMat;
     public Material drawMat;
+    public Transform waterTransform;
+    public Transform effector;
+
     public float decay = 0.98f;
 
     private RenderTexture temp;
+    private Vector2 waterSize;
 
     void Start()
     {
@@ -23,10 +25,29 @@ public class RippleTrigger : MonoBehaviour
        temp.Create();
        rippleRT.Create();
 
+       waterSize = waterTransform.localScale;
+
        Graphics.Blit(Texture2D.whiteTexture, rippleRT);
     }
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 world = effector.position;
+
+            world.z = 0f;
+
+            Vector2 uv = WorldToUV(world);
+
+            Debug.Log(uv);
+
+            drawMat.SetVector("_Center", new Vector4(uv.x, uv.y, 0, 0));
+            drawMat.SetVector("_Center", new Vector4(uv.x, uv.y, 0, 0));
+
+            Graphics.Blit(rippleRT, temp, drawMat);
+            Graphics.Blit(temp, rippleRT);
+        }
         decayMat.SetFloat("_Decay", decay);
 
         Graphics.Blit(rippleRT, temp, decayMat);
@@ -45,14 +66,6 @@ public class RippleTrigger : MonoBehaviour
             temp.Release();
         }
     }
-
-
-    public void SpawnRipple()
-    {
-        if (waterMat == null) return;
-        waterMat.SetVector("_ObjectPos", trigger.position);
-        waterMat.SetFloat("_Spawn_Time", Time.time);
-    }
     public void TestDraw()
     {
         
@@ -61,5 +74,14 @@ public class RippleTrigger : MonoBehaviour
 
     Graphics.Blit(rippleRT, temp, drawMat);
     Graphics.Blit(temp, rippleRT);
+    }
+    public Vector2 WorldToUV(Vector3 worldPos)
+    {
+        Vector3 localPos = waterTransform.InverseTransformPoint(worldPos);
+
+        float u = (localPos.x / waterSize.x) + 0.5f;
+        float v = (localPos.y / waterSize.y) + 0.5f;
+
+        return new Vector2(u, v);
     }
 }
