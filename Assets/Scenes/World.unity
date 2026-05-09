@@ -8475,9 +8475,11 @@ MonoBehaviour:
   rippleRT: {fileID: 8400000, guid: 401f56943211d69409e4b90eba1e0d9c, type: 2}
   decayMat: {fileID: 2100000, guid: 93c62edcbc8467b41955c1e5afcd30ac, type: 2}
   drawMat: {fileID: 2100000, guid: e28d660b7fb27cc4a8e903e2a8eb0fe9, type: 2}
+  waterMat: {fileID: 2100000, guid: 17f93dac0a27a2446938344e473be54b, type: 2}
   waterTransform: {fileID: 2015265784}
   effector: {fileID: 1444381839}
   decay: 0.98
+  waterSize: {x: 0, y: 0}
 --- !u!1 &2035647948
 GameObject:
   m_ObjectHideFlags: 0

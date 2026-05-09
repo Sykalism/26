@@ -81,14 +81,14 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Fade_In: 0.1
-    - _Frequency: 35.91
+    - _Frequency: 80
     - _Lifetime: 1
     - _QueueOffset: 0
     - _Radius: 0.4
     - _Reflection_Strenght: 0
     - _SampleGI: 0
     - _Spawn_Time: 84.69997
-    - _Speed: 5
+    - _Speed: 2
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -100,5 +100,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ObjectPos: {r: -7.664475, g: -2.7962985, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _RippleCenter: {r: 0.44201973, g: 0.88249815, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

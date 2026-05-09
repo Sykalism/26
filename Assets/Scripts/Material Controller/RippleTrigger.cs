@@ -5,13 +5,14 @@ public class RippleTrigger : MonoBehaviour
     public RenderTexture rippleRT;
     public Material decayMat;
     public Material drawMat;
+    public Material waterMat;
     public Transform waterTransform;
     public Transform effector;
 
     public float decay = 0.98f;
 
     private RenderTexture temp;
-    private Vector2 waterSize;
+    public Vector2 waterSize;
 
     void Start()
     {
@@ -25,9 +26,8 @@ public class RippleTrigger : MonoBehaviour
        temp.Create();
        rippleRT.Create();
 
-       waterSize = waterTransform.localScale;
 
-       Graphics.Blit(Texture2D.whiteTexture, rippleRT);
+       Graphics.Blit(Texture2D.blackTexture, rippleRT);
     }
     void Update()
     {
@@ -43,7 +43,9 @@ public class RippleTrigger : MonoBehaviour
             Debug.Log(uv);
 
             drawMat.SetVector("_Center", new Vector4(uv.x, uv.y, 0, 0));
-            drawMat.SetVector("_Center", new Vector4(uv.x, uv.y, 0, 0));
+            drawMat.SetFloat("_Radius", 0.03f);
+            
+            waterMat?.SetVector("_RippleCenter", uv);
 
             Graphics.Blit(rippleRT, temp, drawMat);
             Graphics.Blit(temp, rippleRT);
@@ -79,8 +81,9 @@ public class RippleTrigger : MonoBehaviour
     {
         Vector3 localPos = waterTransform.InverseTransformPoint(worldPos);
 
-        float u = (localPos.x / waterSize.x) + 0.5f;
-        float v = (localPos.y / waterSize.y) + 0.5f;
+        Debug.Log (localPos);
+        float u = localPos.x + 0.5f;
+        float v = localPos.y + 0.5f;
 
         return new Vector2(u, v);
     }
