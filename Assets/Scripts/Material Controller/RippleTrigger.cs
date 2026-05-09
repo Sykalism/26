@@ -34,7 +34,7 @@ public class RippleTrigger : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 world = effector.position;
+            Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             world.z = 0f;
 
