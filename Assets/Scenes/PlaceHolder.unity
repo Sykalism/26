@@ -424,7 +424,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -942,9 +942,9 @@ MonoBehaviour:
   rippleRT: {fileID: 8400000, guid: 401f56943211d69409e4b90eba1e0d9c, type: 2}
   decayMat: {fileID: 2100000, guid: 93c62edcbc8467b41955c1e5afcd30ac, type: 2}
   drawMat: {fileID: 2100000, guid: e28d660b7fb27cc4a8e903e2a8eb0fe9, type: 2}
-  waterMat: {fileID: 0}
   waterTransform: {fileID: 200117420}
   effector: {fileID: 0}
+  rippleStrenght: 0.05
   decay: 0.98
   waterSize: {x: 9, y: 5}
 --- !u!4 &1299974205

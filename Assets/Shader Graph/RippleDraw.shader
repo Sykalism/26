@@ -4,7 +4,12 @@ Shader "Custom/RippleDraw"
     {
         _MainTex ("Texture", 2D) = "black" {}
         _Center ("Center", Vector) = (0.5, 0.5, 0, 0)
-        _Radius ("Radius", Float) = 0.1
+        _RippleTime ("RippleTime", Float) = 0
+        _RippleScale ("RippleScale", Float) = 20
+        _RippleSpeed ("RippleSpeed", Float) = 6
+        _RippleThickness ("RippleThickness", Float) = 0
+        _RippleSoftness ("RippleSoftness", Float) = 0.3
+        _RippleStrenght ("RippleStrenght", Float) = 0.5
     }
 
     SubShader
@@ -27,7 +32,12 @@ Shader "Custom/RippleDraw"
             SAMPLER(sampler_MainTex);
 
             float4 _Center;
-            float _Radius;
+            float _RippleTime;
+            float _RippleScale;
+            float _RippleSpeed;
+            float _RippleThickness;
+            float _RippleSoftness;
+            float _RippleStrenght;
 
             struct Attributes
             {
@@ -58,10 +68,22 @@ Shader "Custom/RippleDraw"
                 half4 oldColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv);
 
                 float dist = distance(uv, _Center.xy);
+                dist *= _RippleScale;
 
-                float circle = step(dist, _Radius);
+                float fade = exp(-_RippleTime * 3);
 
-                return oldColor + circle;
+                float wavePos = dist - (_RippleTime * 6);
+
+                float ripple = 1 - smoothstep
+                (
+                    _RippleThickness,
+                    _RippleThickness + _RippleSoftness,
+                    abs(wavePos)
+                );
+
+                ripple *= fade;
+
+                return saturate(oldColor + ripple * _RippleStrenght);
             }
 
             ENDHLSL

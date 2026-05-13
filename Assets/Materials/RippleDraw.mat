@@ -43,9 +43,15 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _Radius: 0.03
+    - _RippleScale: 60
+    - _RippleSoftness: 0.4
+    - _RippleSpeed: 1.47
+    - _RippleStrenght: 0.05
+    - _RippleThickness: 0
+    - _RippleTime: 1.5040592
     - _ZWrite: 0
     m_Colors:
-    - _Center: {r: 0.44201973, g: 0.88249815, b: 0, a: 0}
+    - _Center: {r: 0.3616832, g: 0.9641447, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

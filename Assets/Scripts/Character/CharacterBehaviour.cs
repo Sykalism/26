@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class CharacterBehaviour
 {
+    public float footstepStrenght;
     public float heightToGround {get; private set;}
     public bool isLanding {get; private set;}
     public bool isGrounded {get; private set;}
     public bool isTouchingObstacle {get; private set;}
     private bool beLanding;
     private float timer;
-
     public void GroundCheck(Vector2 origin)
     {
         isGrounded = Physics2D.Raycast(origin, Vector2.down, 0.1f, LayerMask.GetMask("Environment"));
@@ -46,6 +46,23 @@ public class CharacterBehaviour
                 timer = 0f;
                 isLanding = false;
             }
+        }
+    }
+    public void RippleInteract(Transform foot)
+    {
+        RippleManager ripple;
+
+        Collider2D hit = Physics2D.OverlapCircle
+        (
+            foot.position, 
+            0.4f, 
+            LayerMask.GetMask("Water")
+        );
+        if (hit)
+        {
+            ripple = hit.GetComponent<RippleManager>();
+            ripple.AddRipple(foot.position);
+            ripple.rippleStrenght = 0.05f;
         }
     }
 }

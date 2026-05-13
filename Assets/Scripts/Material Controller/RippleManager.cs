@@ -1,18 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class RippleTrigger : MonoBehaviour
+public class RippleManager : MonoBehaviour
 {
     public RenderTexture rippleRT;
     public Material decayMat;
     public Material drawMat;
-    public Material waterMat;
     public Transform waterTransform;
     public Transform effector;
+    public float rippleStrenght = 0.05f;
 
     public float decay = 0.98f;
 
     private RenderTexture temp;
     public Vector2 waterSize;
+    private List<RippleData> ripples = new List<RippleData>();
 
     void Start()
     {
@@ -27,7 +29,7 @@ public class RippleTrigger : MonoBehaviour
        rippleRT.Create();
 
 
-       Graphics.Blit(Texture2D.blackTexture, rippleRT);
+       Graphics.Blit(Texture2D.grayTexture, rippleRT);
     }
     void Update()
     {
@@ -38,18 +40,29 @@ public class RippleTrigger : MonoBehaviour
 
             world.z = 0f;
 
-            Vector2 uv = WorldToUV(world);
+            AddRipple(world);
+        }
 
-            Debug.Log(uv);
+        for(int i = ripples.Count - 1; i >= 0; i--)
+        {
+            RippleData ripple = ripples[i];
 
-            drawMat.SetVector("_Center", new Vector4(uv.x, uv.y, 0, 0));
-            drawMat.SetFloat("_Radius", 0.03f);
-            
-            waterMat?.SetVector("_RippleCenter", uv);
+            ripple.time += Time.deltaTime;
+
+            drawMat.SetVector("_Center", new Vector4(ripple.uv.x, ripple.uv.y, 0, 0));
+            drawMat.SetFloat("_RippleTime", ripple.time);
+            drawMat.SetFloat("_RippleStrenght", rippleStrenght);
 
             Graphics.Blit(rippleRT, temp, drawMat);
             Graphics.Blit(temp, rippleRT);
+
+            if (ripple.time > 1.5f)
+            {
+                ripples.RemoveAt(i);
+            }
+            Debug.Log(i);
         }
+        
         decayMat.SetFloat("_Decay", decay);
 
         Graphics.Blit(rippleRT, temp, decayMat);
@@ -81,10 +94,26 @@ public class RippleTrigger : MonoBehaviour
     {
         Vector3 localPos = waterTransform.InverseTransformPoint(worldPos);
 
-        Debug.Log (localPos);
         float u = localPos.x + 0.5f;
         float v = localPos.y + 0.5f;
 
         return new Vector2(u, v);
     }
+    public void AddRipple(Vector3 worldPos)
+    {
+        Vector3 uv = WorldToUV(worldPos);
+
+        RippleData ripple = new RippleData();
+
+        ripple.uv = uv;
+        ripple.time = 0f;
+
+        ripples.Add(ripple);
+    }
+}
+[System.Serializable]
+public class RippleData
+{
+    public Vector2 uv;
+    public float time;
 }

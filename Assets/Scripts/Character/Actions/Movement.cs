@@ -10,7 +10,7 @@ public class Movement : CharacterAction
     private float speed;
     private float moveSpeed = 0;
     private float runSpeed = 0f;
-    public bool isMove {get; private set;}
+    private bool moveInput;
     public bool isRunning {get; private set;}
     private Transform target;
     private Vector3 startScale;
@@ -35,14 +35,14 @@ public class Movement : CharacterAction
     }
     public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0f)
     {
-        isMove = inputA;
+        moveInput = inputA;
         direction = valueA;
         isRunning = inputB;
     }
     public override bool Condition()
     { 
         if (actionContext.isLocked) return false;
-        return isMove && !behaviour.isLanding && !behaviour.isTouchingObstacle;
+        return moveInput && !behaviour.isLanding && !behaviour.isTouchingObstacle;
     }
     public override void Execute()
     {

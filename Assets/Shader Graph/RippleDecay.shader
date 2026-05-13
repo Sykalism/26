@@ -3,7 +3,7 @@ Shader "Custom/RippleDecay"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Decay ("Decay", Range(0,1)) = 0.98
+        _Decay ("Decay", Range(0,1)) = 0.95
     }
 
     SubShader

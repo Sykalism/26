@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform particleDashSpawner;
     [Header("Checker")]
     public Transform checkPoint;
+    
 
     //Input
     private Vector2 inputDirection;
@@ -91,7 +92,14 @@ public class PlayerController : MonoBehaviour
         jump.SetInput(jumpInput);
         attack.SetInput(attackInput);
 
-        behaviour.Landing(transform.position, characterData.HeightForLanding, characterData.LandingDelay);
+        behaviour.Landing
+        (
+            transform.position, 
+            characterData.HeightForLanding, 
+            characterData.LandingDelay
+        );
+
+
 
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -102,11 +110,7 @@ public class PlayerController : MonoBehaviour
             health.TakeHeal(20);
         }
 
-        if (attack.IsExecuting)
-        {
-            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-        }
-        else animator.updateMode = AnimatorUpdateMode.Fixed;
+
 
         selector.Execute(actions);
         Animation();
@@ -150,6 +154,11 @@ public class PlayerController : MonoBehaviour
     public void StopAttackAnimation()
     {
         attack.StopAnimationEvent();
+    }
+    public void FootstepEvent()
+    {
+        if (checkPoint == null) return;
+        behaviour.RippleInteract(checkPoint);
     }
     private void SpawnParticleDash()
     {
