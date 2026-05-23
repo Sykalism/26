@@ -37,7 +37,7 @@ public class Attack : CharacterAction
     {
         attackInput = inputA;
     }
-    public void StopAnimationEvent()
+    public void StopAttackEvent()
     {
         isAttacking = false;
         hasAttacked = false;

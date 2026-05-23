@@ -1,92 +1,65 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField] CharacterData characterData;
-    [SerializeField] CharacterBehaviour behaviour;
-    [SerializeField] GameObject target;
-    [SerializeField] Weapon weapon;
-
-    private Rigidbody2D rb;
+    [SerializeField] Transform target;
     private Animator animator;
-    private ActionSelector selector;
-    private List<CharacterAction> actions;
     private List<CharacterCondition> conditions;
-    private ActionContext context;
-    private HealthPoint health;
+    private CharacterBehaviour CBehaviour;
 
-    //Actions
-    private Movement movement;
-    private Attack attack;
-    private Die die;
     //Conditions
     private CanMove canMove;
     private CanAttack canAttack;
-    
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        health = GetComponent<HealthPoint>();
-        selector = new ActionSelector();
-        context = new ActionContext();
-        behaviour = new CharacterBehaviour();
+        CBehaviour = GetComponent<CharacterBehaviour>();
 
-        movement = new Movement(context, rb, characterData, transform, behaviour);
-        attack = new Attack(context, rb, characterData, weapon);
-        die = new Die(context, rb, health);
-
+        canMove = new CanMove(transform, target, 5f, 0.3f);
+        canAttack = new CanAttack
+        (
+            this, 
+            transform, 
+            target,
+            CBehaviour.characterData.HitRadius,
+            CBehaviour.attack.isAttacking 
+        );
     }
     void Start()
     {
-        canMove = new CanMove(transform, target.transform, 8f, 0.2f);
-        canAttack = new CanAttack(this, transform, target.transform, characterData.HitRadius, attack.isAttacking);
-
-        actions = new List<CharacterAction>() {movement, attack, die};
         conditions = new List<CharacterCondition>() {canMove, canAttack};
     }
-
     void Update()
-    {   
-        RunConditions();
-        
-        movement.SetInput(canMove.ActionInput, canMove.direction.x);
-        attack.SetInput(canAttack.ActionInput);
-        
-
-        selector.Execute(actions);
-        Animation();
-        DebugConsole();
-    }
-    void FixedUpdate()
     {
-        selector.FixedExecute();
+        CBehaviour.actionInput.InitiateInput
+        (
+            canMove.direction.x,
+            canMove.ActionInput,
+            false,
+            false,
+            false,
+            canAttack.ActionInput
+        );
+
+        Animation();
+        ExecuteConditions();
     }
-    private void RunConditions()
+    private void ExecuteConditions()
     {
         foreach(CharacterCondition condition in conditions)
         {
             condition.CheckCondition();
         }
     }
-    //Events
-    public void TriggerAttackEvent()
-    {
-        weapon.TriggerOn();
-    }
-    public void StopAttackAnimation()
-    {
-        attack.StopAnimationEvent();
-    }
-    
+
+
     private void Animation()
     {
-        animator.SetFloat("movement", Mathf.Abs(rb.linearVelocity.x));
-        animator.SetInteger("attackVariation", attack.currentAttack);
-        animator.SetBool("isAttacking", attack.isAttacking);
+        animator.SetFloat("movement", Mathf.Abs(CBehaviour.rb.linearVelocity.x));
+        animator.SetInteger("attackVariation", CBehaviour.attack.currentAttack);
+        animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
     }
     private void DebugConsole()
     {

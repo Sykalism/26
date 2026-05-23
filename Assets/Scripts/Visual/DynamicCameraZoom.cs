@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DynamicCameraZoom : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
+    [SerializeField] CharacterBehaviour player;
     [SerializeField] float runSize;
     [SerializeField] float zoomSpeed = 5f;
 
