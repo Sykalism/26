@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RippleDraw
-  m_Shader: {fileID: 4800000, guid: 045d938f574e52d4894469a32dcaa383, type: 3}
+  m_Name: stick_torch
+  m_Shader: {fileID: 4800000, guid: 13c02b14c4d048fa9653293d54f6e0e1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,17 +41,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - PixelSnap: 0
     - _EnableExternalAlpha: 0
-    - _Radius: 0.03
-    - _RippleScale: 60
-    - _RippleSoftness: 0.4
-    - _RippleSpeed: 1.47
-    - _RippleStrenght: 0.02
-    - _RippleThickness: 0
-    - _RippleTime: 0.5497324
     - _ZWrite: 0
     m_Colors:
-    - _Center: {r: 0.39724392, g: 0.96337724, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

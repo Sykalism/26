@@ -16,7 +16,8 @@ public class CharacterData : ScriptableObject
     HitRadius, 
     comboWindowTime,
     DashForce,
-    DashDuration;
+    DashDuration,
+    knockbackForce;
     
     public int AttackVariant;
 }

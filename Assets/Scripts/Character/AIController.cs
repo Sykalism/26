@@ -17,6 +17,10 @@ public class AIController : MonoBehaviour
         animator = GetComponent<Animator>();
         CBehaviour = GetComponent<CharacterBehaviour>();
 
+
+    }
+    void Start()
+    {
         canMove = new CanMove(transform, target, 5f, 0.3f);
         canAttack = new CanAttack
         (
@@ -26,9 +30,7 @@ public class AIController : MonoBehaviour
             CBehaviour.characterData.HitRadius,
             CBehaviour.attack.isAttacking 
         );
-    }
-    void Start()
-    {
+        
         conditions = new List<CharacterCondition>() {canMove, canAttack};
     }
     void Update()

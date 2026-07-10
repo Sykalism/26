@@ -46,7 +46,7 @@ public class CharacterBehaviour : MonoBehaviour
         actionInput = new ActionInput();
         selector = new ActionSelector();
 
-        knockback = new Knockback(actContext, rb, healthPoint, 30f, 0.2f);
+        knockback = new Knockback(actContext, rb, healthPoint, characterData.knockbackForce, 0.2f);
         movement = new Movement(actContext, rb, characterData, transform, this);
         dash = new Dash(actContext, rb, characterData, this);
         jump = new Jump(actContext, rb, characterData, this);
@@ -134,21 +134,22 @@ public class CharacterBehaviour : MonoBehaviour
             }
         }
     }
-    public void RippleInteract(Transform foot)
+    public void RippleInteract()
     {
+        if (checkpoint == null) return;
         RippleManager ripple;
 
         Collider2D hit = Physics2D.OverlapCircle
         (
-            foot.position, 
+            checkpoint.position, 
             0.4f, 
             LayerMask.GetMask("Water")
         );
         if (hit)
         {
             ripple = hit.GetComponent<RippleManager>();
-            ripple.AddRipple(foot.position);
-            ripple.rippleStrenght = 0.05f;
+            ripple.AddRipple(checkpoint.position);
+            ripple.rippleStrenght = 0.02f;
         }
     }
     //Events

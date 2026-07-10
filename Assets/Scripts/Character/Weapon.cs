@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -7,7 +6,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] LayerMask targetHit;
 
     private bool trigger;
-    private bool hit;
 
     void OnTriggerStay2D(Collider2D collision)
     {

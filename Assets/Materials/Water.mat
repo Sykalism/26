@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Render_Texture:
-        m_Texture: {fileID: 8400000, guid: b78385a70177046489f88a30ba83ef10, type: 2}
+        m_Texture: {fileID: 8400000, guid: 3fe553fa919690145a0c6e0f135a7c41, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ripple_Texture:

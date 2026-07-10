@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\Character\Actions\Attack.cs" />
     <Compile Include="Assets\Scripts\Visual\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Die.cs" />
+    <Compile Include="Assets\Scripts\Debug\debug.cs" />
     <Compile Include="Assets\Scripts\Character\AIController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterCondition.cs" />
     <Compile Include="Assets\Scripts\Scriptable\CharacterData.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Compile Include="Assets\Scripts\Character\Conditions\CanMove.cs" />
     <Compile Include="Assets\Scripts\Material Controller\RippleManager.cs" />
+    <Compile Include="Assets\Scripts\Debug\GamepadInput.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Movement.cs" />
     <Compile Include="Assets\Scripts\Tools\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\Material Controller\Dissolve.cs" />

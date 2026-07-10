@@ -15,7 +15,7 @@ TagManager:
   - Enemy
   - Background
   - Weapon
-  - 
+  - Reflection Background
   - 
   - 
   - 
@@ -47,8 +47,14 @@ TagManager:
   - name: Background
     uniqueID: 4151310985
     locked: 0
+  - name: Reflection Background
+    uniqueID: 1031715739
+    locked: 0
   - name: Environment
     uniqueID: 3398865613
+    locked: 0
+  - name: Foes
+    uniqueID: 190298413
     locked: 0
   - name: Player
     uniqueID: 1574036285
@@ -61,6 +67,9 @@ TagManager:
     locked: 0
   - name: Close Objects
     uniqueID: 3268916289
+    locked: 0
+  - name: Slash Effect
+    uniqueID: 3288238701
     locked: 0
   m_RenderingLayers:
   - Default
