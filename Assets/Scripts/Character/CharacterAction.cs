@@ -1,5 +1,3 @@
-using TMPro;
-
 public abstract class CharacterAction
 {
     protected ActionContext actionContext;
