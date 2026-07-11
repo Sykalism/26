@@ -20,6 +20,9 @@ public class HealthPoint : MonoBehaviour
             }
         }
     }
+    public LayerMask damageOrigin;
+
+
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -30,8 +33,9 @@ public class HealthPoint : MonoBehaviour
         yield return null;
         IsTakingDamage = false;
     }
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, LayerMask damageOrigin)
     {
+        this.damageOrigin = damageOrigin;
         CurrentHealth -= amount;
         StartCoroutine(NextFrame());
     }
@@ -39,9 +43,13 @@ public class HealthPoint : MonoBehaviour
     {
         CurrentHealth += amount;
     }
+    private bool IsColliding(Collider2D collider)
+    {
+        return ((1 << collider.gameObject.layer) & damageOrigin) != 0;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
+        if (IsColliding(collision))
         {
             Vector2 dir = (collision.transform.position - transform.position).normalized;
 

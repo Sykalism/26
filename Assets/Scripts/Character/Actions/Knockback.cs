@@ -17,7 +17,7 @@ public class Knockback : CharacterAction
         float strength,
         float duration
         )
-    : base(context, 5)
+    : base(context, 6)
     {
         this.rb = rb;
         this.health = health;

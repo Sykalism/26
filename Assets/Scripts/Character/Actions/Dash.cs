@@ -21,7 +21,7 @@ public class Dash : CharacterAction
         Rigidbody2D rb, 
         CharacterData data,
         CharacterBehaviour behaviour
-    ) : base(context, 2)
+    ) : base(context, 4)
     {
         this.rb = rb;
         this.behaviour = behaviour;
@@ -77,13 +77,11 @@ public class Dash : CharacterAction
         {
             StartAction = false;
             rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic;
         }
         if (!stopDashing) rb.linearVelocity = new Vector2(direction * dashVelocity, 0f);
         else
         {
             rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Dynamic;
             isDashing = false;
         }
     }

@@ -60,7 +60,6 @@ public class RippleManager : MonoBehaviour
             {
                 ripples.RemoveAt(i);
             }
-            Debug.Log(i);
         }
         
         decayMat.SetFloat("_Decay", decay);

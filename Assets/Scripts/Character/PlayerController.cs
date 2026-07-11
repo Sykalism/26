@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject particleDash;
-    [SerializeField] Transform particleDashSpawner;
+    [SerializeField] Transform checkpoint;
     
 
     //stats
@@ -25,14 +25,8 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-
         CBehaviour = GetComponent<CharacterBehaviour>();
     }
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         CBehaviour.actionInput.InitiateInput
@@ -44,7 +38,6 @@ public class PlayerController : MonoBehaviour
             dashInput,
             attackInput
         );
-
         Animation();
         RuntimeDebug();
     }
@@ -64,7 +57,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", CBehaviour.movement.isRunning);
             animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
             animator.SetBool("isComboWindow", CBehaviour.attack.isComboWindow);
-            if (CBehaviour.jump.Condition())
+            if (CBehaviour.jump.IsExecuting)
             {
                 animator.SetTrigger("jump");
             }
@@ -77,8 +70,8 @@ public class PlayerController : MonoBehaviour
         Instantiate
         (
             particleDash, 
-            particleDashSpawner.position, 
-            particleDashSpawner.rotation
+            checkpoint.position, 
+            checkpoint.rotation
         );
     }
     private void RuntimeDebug()

@@ -16,7 +16,7 @@ public class Jump : CharacterAction
         Rigidbody2D rb, 
         CharacterData data,
         CharacterBehaviour behaviour
-    ) : base(context, 3)
+    ) : base(context, 2)
     {
         this.rb = rb;
         jumpForce = data.JumpForce;

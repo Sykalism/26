@@ -21,7 +21,7 @@ public class Attack : CharacterAction
         Rigidbody2D rb, 
         CharacterData data,
         Weapon weapon
-    ) : base(context, 4)
+    ) : base(context, 5)
     {
         this.rb = rb;
         this.weapon = weapon;

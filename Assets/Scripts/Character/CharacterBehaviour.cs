@@ -23,10 +23,11 @@ public class CharacterBehaviour : MonoBehaviour
 
     //Components
     public Rigidbody2D rb {get; private set;}
-    private HealthPoint healthPoint;
+    public HealthPoint healthPoint;
+    private List<CharacterAction> actions;
     private ActionContext actContext;
     private ActionSelector selector;
-    private List<CharacterAction> actions;
+    
 
     //Checkers
     public float footstepStrenght {get; set;}

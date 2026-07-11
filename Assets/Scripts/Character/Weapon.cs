@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
             HealthPoint targetHP = collision.gameObject.GetComponent<HealthPoint>();
             if (targetHP != null)
             {
-                targetHP.TakeDamage(damage);
+                targetHP.TakeDamage(damage, LayerMask.GetMask("Weapon"));
                 Debug.Log("hit");
                 TriggerOff();
             }
