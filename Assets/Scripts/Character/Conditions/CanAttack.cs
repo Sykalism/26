@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 public class CanAttack : CharacterCondition
 {

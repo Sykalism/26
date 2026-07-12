@@ -5,8 +5,6 @@ public class GameManager : MonoBehaviour
 
     public bool isPaused {get; private set;}
 
-    [SerializeField] GameObject optionPanel;
-
 
     void Awake()
     {
@@ -21,24 +19,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        optionPanel.SetActive(false);
-    }
-    void Update()
-    {
-        ToggleOption();
-    }
     public void PauseGame()
     {
         isPaused = true;
-        optionPanel.SetActive(true);
         Time.timeScale = 0f;
     }
     public void ResumeGame()
     {
         isPaused = false;
-        optionPanel.SetActive(false);
         Time.timeScale = 1;
     }
     public void ExitGame()
@@ -49,17 +37,5 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         # endif
         
-    }
-
-    private void ToggleOption()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else PauseGame();
-        }
     }
 }

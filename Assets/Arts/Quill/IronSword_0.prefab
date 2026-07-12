@@ -102,8 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3189c04ef8fb3c24d9fbbdf01345d2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  isAttacking: 0
+  characterData: {fileID: 11400000, guid: e40236b14985e574fb221b4820433cd1, type: 2}
   targetHit:
     serializedVersion: 2
     m_Bits: 128

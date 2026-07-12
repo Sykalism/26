@@ -27,7 +27,6 @@ public class Attack : CharacterAction
         this.weapon = weapon;
 
         attackVariations = data.AttackVariant;
-        this.weapon.damage = data.Damage;
         startGravity = rb.gravityScale;
 
         comboTimer = new GameTimer(data.comboWindowTime);

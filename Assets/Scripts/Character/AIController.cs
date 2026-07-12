@@ -16,8 +16,6 @@ public class AIController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         CBehaviour = GetComponent<CharacterBehaviour>();
-
-
     }
     void Start()
     {

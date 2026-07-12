@@ -24,4 +24,5 @@ MonoBehaviour:
   comboWindowTime: 3
   DashForce: 0
   DashDuration: 0
+  knockbackForce: 0
   AttackVariant: 2

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float damage;
+    [SerializeField] CharacterData characterData;
     [SerializeField] LayerMask targetHit;
 
     private bool trigger;
+
 
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -14,7 +15,7 @@ public class Weapon : MonoBehaviour
             HealthPoint targetHP = collision.gameObject.GetComponent<HealthPoint>();
             if (targetHP != null)
             {
-                targetHP.TakeDamage(damage, LayerMask.GetMask("Weapon"));
+                targetHP.TakeDamage(characterData.Damage, LayerMask.GetMask("Weapon"));
                 Debug.Log("hit");
                 TriggerOff();
             }

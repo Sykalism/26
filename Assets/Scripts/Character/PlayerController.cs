@@ -39,7 +39,9 @@ public class PlayerController : MonoBehaviour
             attackInput
         );
         Animation();
-        RuntimeDebug();
+
+        Debug.Log(CBehaviour.healthPoint.CurrentHealth);
+
     }
     private void Animation()
     {
@@ -74,8 +76,4 @@ public class PlayerController : MonoBehaviour
             checkpoint.rotation
         );
     }
-    private void RuntimeDebug()
-    {
-    }
-
 }

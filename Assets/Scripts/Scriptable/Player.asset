@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   CharacterName: Aquila
-  MaxHealth: 100
+  MaxHealth: 277.8
   Damage: 20
   MovementSpeed: 5
   RunSpeed: 8
@@ -25,4 +25,4 @@ MonoBehaviour:
   DashForce: 20
   DashDuration: 0.3
   knockbackForce: 30
-  AttackVariant: 4
+  AttackVariant: 3
