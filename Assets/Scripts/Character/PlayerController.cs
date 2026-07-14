@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISaveable
 {
     [SerializeField] GameObject particleDash;
     [SerializeField] Transform checkpoint;
@@ -40,8 +38,6 @@ public class PlayerController : MonoBehaviour
         );
         Animation();
 
-        Debug.Log(CBehaviour.healthPoint.CurrentHealth);
-
     }
     private void Animation()
     {
@@ -75,5 +71,27 @@ public class PlayerController : MonoBehaviour
             checkpoint.position, 
             checkpoint.rotation
         );
+    }
+
+
+    //get save and load data
+    public void Save(SaveData data)
+    {
+        data.player.position = new float[2];
+        data.player.position[0] = transform.position.x;
+        data.player.position[1] = transform.position.y;
+
+        data.player.currentHealth = CBehaviour.healthPoint.CurrentHealth;
+    }
+    public void Load(SaveData data)
+    {
+        transform.position = new Vector3
+        (
+            data.player.position[0],
+            data.player.position[1],
+            0f
+        );
+
+        CBehaviour.healthPoint.CurrentHealth = data.player.currentHealth;
     }
 }

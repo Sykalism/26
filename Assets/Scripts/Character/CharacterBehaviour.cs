@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterBehaviour : MonoBehaviour
 {
     [Header("Main Data")]
-    public CharacterData characterData;
+    public CharacterBaseData characterData;
     public Weapon weapon;
 
     [Header("Checkers")]

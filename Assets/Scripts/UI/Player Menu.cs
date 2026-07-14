@@ -4,7 +4,7 @@ using TMPro;
 public class PlayerMenu : MonoBehaviour
 {
     [SerializeField] GameObject playerMenu;
-    [SerializeField] CharacterData sourceData;
+    [SerializeField] CharacterBaseData sourceData;
 
     [Header("Status")]
     [SerializeField] GameObject statusPanel;

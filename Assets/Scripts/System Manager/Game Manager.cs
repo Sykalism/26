@@ -3,6 +3,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
 
+    [SerializeField] SaveManager saveManager;
     public bool isPaused {get; private set;}
 
 
@@ -28,6 +29,14 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1;
+    }
+    public void SaveGame(int slot)
+    {
+        saveManager.Save(slot);
+    }
+    public void LoadGame(int slot)
+    {
+        saveManager.Load(slot);
     }
     public void ExitGame()
     {

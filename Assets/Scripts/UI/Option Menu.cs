@@ -4,46 +4,69 @@ using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
 {
-    [SerializeField] GameObject optionPanel;
+    [Header("Panels")]
+    [SerializeField] UIPanel optionPanel;
+    [SerializeField] UIPanel saveDataSlotPanel;
+    [SerializeField] UIPanel loadDataSlotPanel;
+
+    [Header("Buttons")]
     [SerializeField] Button resumeButton;
+
+    private PanelStack panelStack;
+
+
 
 
     void Start()
     {
-        optionPanel.SetActive(false);
+        panelStack = new PanelStack();
+
+        optionPanel.Hide();
     }
     void Update()
     {
-        ToggleOptionPanel();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!GameManager.Instance.isPaused) PauseButton();
+            else
+            {
+                panelStack.Back();
+                if (panelStack.panels.Count == 0) ResumeButton();
+            }
+        }
     }
+
+
     public void PauseButton()
     {
         GameManager.Instance.PauseGame();
-        optionPanel.SetActive(true);
+        panelStack.Open(optionPanel);
 
         EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
     }
     public void ResumeButton()
     {
         GameManager.Instance.ResumeGame();
-        optionPanel.SetActive(false);
+        panelStack.Back();
+    }
+    public void OpenSaveDataSlot()
+    {
+        panelStack.Open(saveDataSlotPanel);
+    }
+    public void OpenLoadDataSlot()
+    {
+        panelStack.Open(loadDataSlotPanel);
+    }
+    public void SaveButton(int slot)
+    {
+        GameManager.Instance.SaveGame(slot);
+    }
+    public void LoadButton(int slot)
+    {
+        GameManager.Instance.LoadGame(slot);
     }
     public void ExitButton()
     {
         GameManager.Instance.ExitGame();
     }
-
-    private void ToggleOptionPanel()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameManager.Instance.isPaused)
-            {
-                ResumeButton();
-            }
-            else PauseButton();
-        }
-    }
-
-    
 }

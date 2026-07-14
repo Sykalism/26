@@ -21,7 +21,7 @@ public class Movement : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterData data,
+        CharacterBaseData data,
         Transform self,
         CharacterBehaviour behaviour
     ) : base(context, 1)

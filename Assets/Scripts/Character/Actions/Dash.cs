@@ -19,7 +19,7 @@ public class Dash : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterData data,
+        CharacterBaseData data,
         CharacterBehaviour behaviour
     ) : base(context, 4)
     {

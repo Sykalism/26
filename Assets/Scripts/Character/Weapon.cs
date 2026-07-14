@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] CharacterData characterData;
+    [SerializeField] CharacterBaseData characterData;
     [SerializeField] LayerMask targetHit;
 
     private bool trigger;

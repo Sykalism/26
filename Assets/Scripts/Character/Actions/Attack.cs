@@ -19,7 +19,7 @@ public class Attack : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterData data,
+        CharacterBaseData data,
         Weapon weapon
     ) : base(context, 5)
     {
