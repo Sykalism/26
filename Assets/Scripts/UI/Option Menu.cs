@@ -11,6 +11,8 @@ public class OptionMenu : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] Button resumeButton;
+    [SerializeField] Button SaveSlotButton;
+    [SerializeField] Button LoadSlotButton;
 
     private PanelStack panelStack;
 
@@ -27,11 +29,16 @@ public class OptionMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!GameManager.Instance.isPaused) PauseButton();
+            if (!GameManager.Instance.IsPaused) PauseButton();
             else
             {
                 panelStack.Back();
                 if (panelStack.panels.Count == 0) ResumeButton();
+            }
+
+            if (panelStack.panels.Count == 1)
+            {
+                EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
             }
         }
     }
@@ -42,7 +49,7 @@ public class OptionMenu : MonoBehaviour
         GameManager.Instance.PauseGame();
         panelStack.Open(optionPanel);
 
-        EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+        
     }
     public void ResumeButton()
     {
@@ -52,18 +59,20 @@ public class OptionMenu : MonoBehaviour
     public void OpenSaveDataSlot()
     {
         panelStack.Open(saveDataSlotPanel);
+        EventSystem.current.SetSelectedGameObject(SaveSlotButton.gameObject);
     }
     public void OpenLoadDataSlot()
     {
         panelStack.Open(loadDataSlotPanel);
+        EventSystem.current.SetSelectedGameObject(LoadSlotButton.gameObject);
     }
     public void SaveButton(int slot)
     {
-        GameManager.Instance.SaveGame(slot);
+        SaveManager.Instance.Save(slot);
     }
     public void LoadButton(int slot)
     {
-        GameManager.Instance.LoadGame(slot);
+        SaveManager.Instance.Load(slot);
     }
     public void ExitButton()
     {

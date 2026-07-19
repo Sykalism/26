@@ -1,14 +1,18 @@
+using System.Data.Common;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
 {
     [SerializeField] GameObject particleDash;
     [SerializeField] Transform checkpoint;
+
+    [Header("Sword Material")]
+    [SerializeField] Dissolve dissolve;
     
 
-    //stats
     private Animator animator;
     private CharacterBehaviour CBehaviour;
+    private bool canAttack;
 
     //Inputs
     private float inputDirection => Input.GetAxis("Horizontal"); 
@@ -17,6 +21,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private bool jumpInput => Input.GetKeyDown(KeyCode.Z);
     private bool dashInput => Input.GetKeyDown(KeyCode.C);
     private bool attackInput => Input.GetKeyDown(KeyCode.X);
+    private bool drawnInput => Input.GetKeyDown(KeyCode.F);
  
 
 
@@ -34,36 +39,48 @@ public class PlayerController : MonoBehaviour, ISaveable
             runInput,
             jumpInput,
             dashInput,
-            attackInput
+            AttackInput()
         );
         Animation();
+
+        if (drawnInput)
+        {
+            Animator swordAnimator = CBehaviour.weaponObject.GetComponent<Animator>();
+            if (!CBehaviour.weapon.isDrawn)
+            {
+                swordAnimator.SetTrigger("draw");
+            }
+            else swordAnimator.SetTrigger("sheathe");
+        }
 
     }
     private void Animation()
     {
-        if (CBehaviour.die.isDead)
+        animator.SetBool("isDead", CBehaviour.die.isDead);
+        animator.SetFloat("move", Mathf.Abs(inputDirection));
+        animator.SetFloat("verticalForce", CBehaviour.rb.linearVelocity.y);
+        animator.SetInteger("attacks", CBehaviour.attack.currentAttack);
+        animator.SetBool("isLanding", CBehaviour.isLanding);
+        animator.SetBool("isGrounded", CBehaviour.isGrounded);
+        animator.SetBool("isRunning", CBehaviour.movement.isRunning);
+        animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
+        animator.SetBool("isComboWindow", CBehaviour.attack.isComboWindow);
+        if (CBehaviour.jump.IsExecuting)
         {
-            animator.SetTrigger("isDead");
+            animator.SetTrigger("jump");
         }
-        else
-        {
-            animator.SetFloat("move", Mathf.Abs(inputDirection));
-            animator.SetFloat("verticalForce", CBehaviour.rb.linearVelocity.y);
-            animator.SetInteger("attacks", CBehaviour.attack.currentAttack);
-            animator.SetBool("isLanding", CBehaviour.isLanding);
-            animator.SetBool("isGrounded", CBehaviour.isGrounded);
-            animator.SetBool("isRunning", CBehaviour.movement.isRunning);
-            animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
-            animator.SetBool("isComboWindow", CBehaviour.attack.isComboWindow);
-            if (CBehaviour.jump.IsExecuting)
-            {
-                animator.SetTrigger("jump");
-            }
-            if (CBehaviour.dash.StartAction) animator.SetTrigger("dash");
-        }
-        
+        if (CBehaviour.dash.StartAction) animator.SetTrigger("dash");
     }
-    private void SpawnParticleDash()
+
+    private bool AttackInput()
+    {
+        if (!CBehaviour.weapon.isDrawn && !canAttack)
+        {
+            return false;
+        }
+        else return attackInput;
+    }
+    public void SpawnParticleDash()
     {
         Instantiate
         (
@@ -71,6 +88,18 @@ public class PlayerController : MonoBehaviour, ISaveable
             checkpoint.position, 
             checkpoint.rotation
         );
+    }
+    public void DieEvent()
+    {
+        GameManager.Instance.GameOver();
+    }
+    public void DrawSword()
+    {
+        canAttack = true;
+    }
+    public void SheatheSword()
+    {
+        canAttack = false;
     }
 
 
@@ -94,4 +123,8 @@ public class PlayerController : MonoBehaviour, ISaveable
 
         CBehaviour.healthPoint.CurrentHealth = data.player.currentHealth;
     }
+
+
+
+
 }

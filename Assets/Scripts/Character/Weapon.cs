@@ -4,9 +4,9 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] CharacterBaseData characterData;
     [SerializeField] LayerMask targetHit;
+    public bool isDrawn = true;
 
     private bool trigger;
-
 
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -28,6 +28,14 @@ public class Weapon : MonoBehaviour
     public void TriggerOff()
     {
         trigger = false;
+    }
+    public void ToggleDrawnOn()
+    {
+        isDrawn = true;
+    }
+    public void ToggleDrawnOff()
+    {
+        isDrawn = false;
     }
     private bool IsColliding(Collider2D collider)
     {

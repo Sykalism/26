@@ -5,6 +5,7 @@ public class Die : CharacterAction
     public bool isDead {get; private set;}
     private HealthPoint health;
     private Rigidbody2D rb;
+    public override bool IsExecuting => isDead;
     public Die
     (
         ActionContext context, Rigidbody2D rb, HealthPoint health
@@ -15,12 +16,17 @@ public class Die : CharacterAction
     }
     public override bool Condition()
     {
-        return health.CurrentHealth <= 0f;
+        isDead = health.CurrentHealth <= 0f ? true : false;
+        return isDead;
     }
     public override void Execute()
     {
-        actionContext.Lock();
-        isDead = true;
+        if (health.CurrentHealth > 0f)
+        {
+            isDead = false;
+            actionContext.Unlock();
+        }
+        else actionContext.Lock();
     }
     public override void FixedExecute()
     {

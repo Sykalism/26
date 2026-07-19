@@ -5,7 +5,8 @@ public class CharacterBehaviour : MonoBehaviour
 {
     [Header("Main Data")]
     public CharacterBaseData characterData;
-    public Weapon weapon;
+    public GameObject weaponObject;
+    
 
     [Header("Checkers")]
     [SerializeField] Transform checkpoint;
@@ -23,10 +24,12 @@ public class CharacterBehaviour : MonoBehaviour
 
     //Components
     public Rigidbody2D rb {get; private set;}
-    public HealthPoint healthPoint;
+    public Weapon weapon {get; set;}
+    public HealthPoint healthPoint {get; set;}
     private List<CharacterAction> actions;
     private ActionContext actContext;
     private ActionSelector selector;
+    
     
 
     //Checkers
@@ -42,6 +45,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         healthPoint = GetComponent<HealthPoint>();
+        weapon = weaponObject.GetComponent<Weapon>();
 
         actContext = new ActionContext();
         actionInput = new ActionInput();

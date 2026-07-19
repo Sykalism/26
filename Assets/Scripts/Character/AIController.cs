@@ -19,7 +19,7 @@ public class AIController : MonoBehaviour
     }
     void Start()
     {
-        canMove = new CanMove(transform, target, 5f, 0.3f);
+        canMove = new CanMove(transform, target, 10f, 0.5f);
         canAttack = new CanAttack
         (
             this, 

@@ -1,17 +1,36 @@
 using UnityEngine;
 using System.Linq;
 using System.IO;
+using System;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager Instance {get; private set;} 
+    private string folder;
     private ISaveable[] saveables;
     private string path;
 
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+
+        folder = Path.Combine(Application.persistentDataPath, "saves");
+
+        if (!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+
         saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
                     .OfType<ISaveable>()
                     .ToArray();
+
+
 
     }
 
@@ -44,15 +63,38 @@ public class SaveManager : MonoBehaviour
             saveable.Load(data);
         }
     }
+    public void LoadLastSave()
+    {
+        
+        int dataAmount = Directory.GetFiles(folder, "*.json").Length;
+
+        if (dataAmount == 0)
+        {
+            Debug.LogError("save files were not found!");
+            return;
+        }
+        DateTime newest = DateTime.MinValue;
+        int newestSlot = -1;
+
+        for (int i = 1; i <= dataAmount; i++)
+        {
+            string path = GetSavePath(i);
+            if (!File.Exists(path)) continue;
+
+            DateTime time = File.GetLastWriteTime(path);
+
+            if (time > newest)
+            {
+                newest = time;
+
+                newestSlot = i;
+                Load(newestSlot);
+            }
+        }
+        
+    }
     private string GetSavePath(int slot)
     {
-        string folder = Path.Combine(Application.persistentDataPath, "saves");
-
-        if (!Directory.Exists(folder))
-        {
-            Directory.CreateDirectory(folder);
-        }
-
         return Path.Combine(folder, $"save_{slot}.json");
     }
 

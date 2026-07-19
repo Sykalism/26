@@ -1,10 +1,12 @@
 using UnityEngine;
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager Instance {get; private set;}
 
     [SerializeField] SaveManager saveManager;
-    public bool isPaused {get; private set;}
+    [SerializeField] GameOverUI gameOverUI;
+    public bool IsPaused {get; private set;}
+    public bool IsGameOver {get; private set;}
 
 
     void Awake()
@@ -19,24 +21,48 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Start()
+    {
+        IsGameOver = false;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SaveManager.Instance.LoadLastSave();
+        }
+    }
+    // get save and load data
+    public void Save(SaveData data)
+    {
+        data.game.isGameOver = IsGameOver;
+    }
+    public void Load(SaveData data)
+    {
+        IsGameOver = data.game.isGameOver;
+    }
 
+
+    // public methods
     public void PauseGame()
     {
-        isPaused = true;
+        IsPaused = true;
         Time.timeScale = 0f;
     }
     public void ResumeGame()
     {
-        isPaused = false;
+        IsPaused = false;
         Time.timeScale = 1;
     }
-    public void SaveGame(int slot)
+    public void GameOver()
     {
-        saveManager.Save(slot);
+        IsGameOver = true;
+        PauseGame();
     }
-    public void LoadGame(int slot)
+    public void RestartFromLastCheckpoint()
     {
-        saveManager.Load(slot);
+        if (IsPaused) ResumeGame();
+        SaveManager.Instance.LoadLastSave();
     }
     public void ExitGame()
     {
