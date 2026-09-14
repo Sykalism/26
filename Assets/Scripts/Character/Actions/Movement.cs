@@ -42,7 +42,7 @@ public class Movement : CharacterAction
     public override bool Condition()
     { 
         if (actionContext.isLocked) return false;
-        return moveInput && !behaviour.isLanding && !behaviour.isTouchingObstacle;
+        return moveInput && !behaviour.isLanding;
     }
     public override void Execute()
     {
@@ -61,7 +61,6 @@ public class Movement : CharacterAction
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         }
     }
-
         private void Flip()
     {
 
@@ -80,6 +79,6 @@ public class Movement : CharacterAction
             );
 
             target.localScale = newScale;
-        }   
+        } 
     }
 }

@@ -9,8 +9,9 @@ public class CharacterBehaviour : MonoBehaviour
     
 
     [Header("Checkers")]
-    [SerializeField] Transform checkpoint;
-
+    [SerializeField] Transform groundChecker;
+    public Transform climbingPoint;
+ 
     //Input
     public ActionInput actionInput;
 
@@ -20,6 +21,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Dash dash {get; private set;}
     public Jump jump {get; private set;}
     public Attack attack {get; private set;}
+    public Climb climb {get; private set;}
     public Die die {get; private set;}
 
     //Components
@@ -29,6 +31,7 @@ public class CharacterBehaviour : MonoBehaviour
     private List<CharacterAction> actions;
     private ActionContext actContext;
     private ActionSelector selector;
+
     
     
 
@@ -56,6 +59,7 @@ public class CharacterBehaviour : MonoBehaviour
         dash = new Dash(actContext, rb, characterData, this);
         jump = new Jump(actContext, rb, characterData, this);
         attack = new Attack(actContext, rb, characterData, weapon);
+        climb = new Climb(actContext, rb, this);
         die = new Die(actContext, rb, healthPoint);
 
     }
@@ -68,16 +72,17 @@ public class CharacterBehaviour : MonoBehaviour
             dash,
             jump,
             attack,
+            climb,
             die
         };
     }
     void Update()
     {
         InitiateActionInput();
-        if (checkpoint != null)
+        if (groundChecker != null)
         {
-            GroundCheck(checkpoint.position);
-            ObstacleCheck(checkpoint.position, actionInput.direction, 0.5f);
+            GroundCheck(groundChecker.position);
+            ObstacleCheck(groundChecker.position);
         }
         Landing
         (
@@ -85,7 +90,6 @@ public class CharacterBehaviour : MonoBehaviour
             characterData.HeightForLanding, 
             characterData.LandingDelay
         );
-
         selector.Execute(actions);
     }
     void FixedUpdate()
@@ -105,10 +109,18 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isGrounded = Physics2D.Raycast(origin, Vector2.down, 0.1f, LayerMask.GetMask("Environment"));
     }
-    public void ObstacleCheck(Vector2 origin, float direction, float distance)
+    public void ObstacleCheck(Vector2 origin)
     {
-        Vector2 offset = new Vector2(0f, 0.1f);
-        isTouchingObstacle = Physics2D.Raycast(origin + offset, Vector2.right * Mathf.Sign(direction), distance, LayerMask.GetMask("Environment"));
+        float dir = transform.localScale.x > 0 ? 1 : -1;
+        Vector2 offset = new Vector2(0.2f * dir, 0.1f);
+        isTouchingObstacle = Physics2D.Raycast
+        (
+            origin + offset, 
+            Vector2.up, 
+            1.6f, 
+            LayerMask.GetMask("Environment")
+        );
+
     }
     public void Landing(Vector2 position, float height, float delay)
     {
@@ -141,19 +153,19 @@ public class CharacterBehaviour : MonoBehaviour
     }
     public void RippleInteract()
     {
-        if (checkpoint == null) return;
+        if (groundChecker == null) return;
         RippleManager ripple;
 
         Collider2D hit = Physics2D.OverlapCircle
         (
-            checkpoint.position, 
+            groundChecker.position, 
             0.4f, 
             LayerMask.GetMask("Water")
         );
         if (hit)
         {
             ripple = hit.GetComponent<RippleManager>();
-            ripple.AddRipple(checkpoint.position);
+            ripple.AddRipple(groundChecker.position);
             ripple.rippleStrenght = 0.02f;
         }
     }
@@ -166,6 +178,23 @@ public class CharacterBehaviour : MonoBehaviour
     public void StopAttackEvent()
     {
         attack.StopAttackEvent();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        if (climb != null) {
+            Gizmos.DrawLine(transform.position, climb.climbingTarget);
+            Gizmos.DrawLine(
+                climbingPoint.position, 
+                new Vector2(
+                    climbingPoint.position.x + 
+                    transform.localScale.normalized.x * 
+                    0.5f,
+                    climbingPoint.position.y 
+                )
+            );
+        }
     }
 }
 

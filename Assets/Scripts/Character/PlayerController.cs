@@ -53,6 +53,18 @@ public class PlayerController : MonoBehaviour, ISaveable
             else swordAnimator.SetTrigger("sheathe");
         }
 
+        if (CBehaviour.rb.linearVelocity.y > 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                EnvironmentManager.Instance.IncreaseDepth();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                EnvironmentManager.Instance.DecreaseDepth();
+            }
+        }
+
     }
     private void Animation()
     {
@@ -65,11 +77,11 @@ public class PlayerController : MonoBehaviour, ISaveable
         animator.SetBool("isRunning", CBehaviour.movement.isRunning);
         animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
         animator.SetBool("isComboWindow", CBehaviour.attack.isComboWindow);
-        if (CBehaviour.jump.IsExecuting)
-        {
-            animator.SetTrigger("jump");
-        }
-        if (CBehaviour.dash.StartAction) animator.SetTrigger("dash");
+
+        if (CBehaviour.climb.StartAction) animator.SetTrigger("climb");
+        if (CBehaviour.jump.IsExecuting) animator.SetTrigger("jump");
+        if (CBehaviour.dash.StartAction) animator.SetTrigger("dash");    
+
     }
 
     private bool AttackInput()
