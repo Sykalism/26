@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53d225b4e7471d84e919d471416d8f78
+guid: 2bd969ddd617b1c469818a2bb337d169
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5160882468792293898
-    second: puddle_0
+      213: -8833951567828446032
+    second: Aquila4 (1) (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puddle_0
+      name: Aquila4 (1) (2)_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 307
-        width: 1893
-        height: 213
+        x: 417
+        y: 300
+        width: 262
+        height: 1260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f52818fcbcd068b0800000000000000
-      internalID: -5160882468792293898
+      spriteID: 0b494947adf776580800000000000000
+      internalID: -8833951567828446032
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      puddle_0: -5160882468792293898
+      Aquila4 (1) (2)_0: -8833951567828446032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

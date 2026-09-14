@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    public Transform target;
+    public Transform headPoint;
     private Animator animator;
     private List<CharacterCondition> conditions;
     private CharacterBehaviour CBehaviour;
 
     //Conditions
-    private CanMove canMove;
-    private CanAttack canAttack;
+    private AI_MoveCondition moveCondition;
+    private AI_AttackCondition attackCondition;
 
     void Awake()
     {
@@ -19,8 +20,8 @@ public class AIController : MonoBehaviour
     }
     void Start()
     {
-        canMove = new CanMove(transform, target, 10f, 0.5f);
-        canAttack = new CanAttack
+        moveCondition = new AI_MoveCondition(this, 10f, 0.5f);
+        attackCondition = new AI_AttackCondition
         (
             this, 
             transform, 
@@ -29,18 +30,18 @@ public class AIController : MonoBehaviour
             CBehaviour.attack.isAttacking 
         );
         
-        conditions = new List<CharacterCondition>() {canMove, canAttack};
+        conditions = new List<CharacterCondition>() {moveCondition, attackCondition};
     }
     void Update()
     {
         CBehaviour.actionInput.InitiateInput
         (
-            canMove.direction.x,
-            canMove.ActionInput,
+            moveCondition.Direction.x,
+            moveCondition.ActionInput,
             false,
             false,
             false,
-            canAttack.ActionInput
+            attackCondition.ActionInput
         );
 
         Animation();

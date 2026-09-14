@@ -46,12 +46,12 @@ Material:
     - _RippleScale: 60
     - _RippleSoftness: 0.4
     - _RippleSpeed: 1.47
-    - _RippleStrenght: 0.02
+    - _RippleStrenght: 0.05
     - _RippleThickness: 0
-    - _RippleTime: 1.5040561
+    - _RippleTime: 1.5094355
     - _ZWrite: 0
     m_Colors:
-    - _Center: {r: 0.8106984, g: 1.4513719, b: 0, a: 0}
+    - _Center: {r: 0.3735646, g: 4.352967, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

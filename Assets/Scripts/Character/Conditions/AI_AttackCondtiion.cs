@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CanAttack : CharacterCondition
+public class AI_AttackCondition : CharacterCondition
 {
     private MonoBehaviour monoBehaviour;
     private Transform self;
@@ -11,7 +11,7 @@ public class CanAttack : CharacterCondition
     private bool onRange;
     private bool trigger;
     
-    public CanAttack(MonoBehaviour monoBehaviour, Transform self, Transform target, float radius, bool trigger)
+    public AI_AttackCondition(MonoBehaviour monoBehaviour, Transform self, Transform target, float radius, bool trigger)
     {
         this.monoBehaviour = monoBehaviour;
         this.self = self;
