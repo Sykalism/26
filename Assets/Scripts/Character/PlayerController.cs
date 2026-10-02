@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
 {
-    [SerializeField] GameObject particleDash;
-    [SerializeField] Transform checkpoint;
 
     [Header("Sword Material")]
     [SerializeField] Dissolve dissolve;
     
 
-    private Animator animator;
     private CharacterBehaviour CBehaviour;
     private bool canAttack;
 
@@ -27,7 +24,6 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
         CBehaviour = GetComponent<CharacterBehaviour>();
     }
     void Update()
@@ -41,7 +37,6 @@ public class PlayerController : MonoBehaviour, ISaveable
             dashInput,
             AttackInput()
         );
-        Animation();
 
         if (drawnInput)
         {
@@ -66,23 +61,6 @@ public class PlayerController : MonoBehaviour, ISaveable
         }
 
     }
-    private void Animation()
-    {
-        animator.SetBool("isDead", CBehaviour.die.isDead);
-        animator.SetFloat("move", Mathf.Abs(inputDirection));
-        animator.SetFloat("verticalForce", CBehaviour.rb.linearVelocity.y);
-        animator.SetInteger("attacks", CBehaviour.attack.currentAttack);
-        animator.SetBool("isLanding", CBehaviour.isLanding);
-        animator.SetBool("isGrounded", CBehaviour.isGrounded);
-        animator.SetBool("isRunning", CBehaviour.movement.isRunning);
-        animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
-        animator.SetBool("isComboWindow", CBehaviour.attack.isComboWindow);
-
-        if (CBehaviour.climb.StartAction) animator.SetTrigger("climb");
-        if (CBehaviour.jump.IsExecuting) animator.SetTrigger("jump");
-        if (CBehaviour.dash.StartAction) animator.SetTrigger("dash");    
-
-    }
 
     private bool AttackInput()
     {
@@ -91,15 +69,6 @@ public class PlayerController : MonoBehaviour, ISaveable
             return false;
         }
         else return attackInput;
-    }
-    public void SpawnParticleDash()
-    {
-        Instantiate
-        (
-            particleDash, 
-            checkpoint.position, 
-            checkpoint.rotation
-        );
     }
     public void DieEvent()
     {

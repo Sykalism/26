@@ -12,7 +12,7 @@ public class Climb : CharacterAction
     public override bool IsExecuting => isClimbing;
 
     public Climb(ActionContext context, Rigidbody2D rb, CharacterBehaviour CBehaviour)
-     : base(context, 7)
+     : base(context, 8)
     {
         this.rb = rb;
         this.CBehaviour = CBehaviour;

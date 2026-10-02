@@ -1,20 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.XR.ARFoundation.VisualScripting;
 
 public class Movement : CharacterAction
 {
-
-
     private Rigidbody2D rb;
-    private float direction;
+    
     private float speed;
     private float moveSpeed = 0;
     private float runSpeed = 0f;
     private bool moveInput;
+    private bool automaticFlip => character.autoFlip;
+    public float direction {get; private set;}
     public bool isRunning {get; private set;}
     private Transform target;
     private Vector3 startScale;
-    private CharacterBehaviour behaviour;
+    private CharacterBehaviour character;
     
 
     public Movement
@@ -23,12 +25,12 @@ public class Movement : CharacterAction
         Rigidbody2D rb, 
         CharacterBaseData data,
         Transform self,
-        CharacterBehaviour behaviour
+        CharacterBehaviour character
     ) : base(context, 1)
     {
         this.rb = rb;
         target = self;
-        this.behaviour = behaviour;
+        this.character = character;
         moveSpeed = data.MovementSpeed;
         runSpeed = data.RunSpeed;
         startScale = target.localScale;
@@ -42,17 +44,19 @@ public class Movement : CharacterAction
     public override bool Condition()
     { 
         if (actionContext.isLocked) return false;
-        return moveInput && !behaviour.isLanding;
+        return moveInput && !character.isLanding;
     }
     public override void Execute()
     {
         speed = isRunning? runSpeed : moveSpeed;
-        
-        Flip();
+        if (automaticFlip)
+        {
+            Flip();
+        }
     }
     public override void FixedExecute()
     {
-        if (behaviour.isTouchingObstacle && !behaviour.isGrounded)
+        if (character.isTouchingObstacle && !character.isGrounded)
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         }
@@ -61,16 +65,14 @@ public class Movement : CharacterAction
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         }
     }
-        private void Flip()
+    public void Flip()
     {
-
         float flipValue = startScale.x;
         float dirX = direction;
-        const float minus = -1;
 
         if (dirX != 0)
         {
-            flipValue = dirX < 0? startScale.x * minus : startScale.x;
+            flipValue = dirX < 0? startScale.x * -1 : startScale.x;
             Vector3 newScale = new Vector3
             (
                 flipValue,

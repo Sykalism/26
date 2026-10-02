@@ -11,6 +11,11 @@ public class CharacterBehaviour : MonoBehaviour
     [Header("Checkers")]
     [SerializeField] Transform groundChecker;
     public Transform climbingPoint;
+
+
+    public bool autoFlip;
+
+    
  
     //Input
     public ActionInput actionInput;
