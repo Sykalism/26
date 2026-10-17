@@ -7,7 +7,6 @@ public class Weapon : MonoBehaviour
     public bool isDrawn = true;
 
     private bool trigger;
-
     void OnTriggerStay2D(Collider2D collision)
     {
         if (IsColliding(collision) && trigger)

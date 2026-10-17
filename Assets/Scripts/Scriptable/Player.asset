@@ -18,11 +18,11 @@ MonoBehaviour:
   MovementSpeed: 5
   RunSpeed: 8
   JumpForce: 55
-  HeightForLanding: 1
+  HeightForLanding: 0.5
   LandingDelay: 0.2
   HitRadius: 4
   comboWindowTime: 3
   DashForce: 20
   DashDuration: 0.3
   knockbackForce: 30
-  AttackVariant: 3
+  AttackVariant: 2

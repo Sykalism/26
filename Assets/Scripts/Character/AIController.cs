@@ -26,8 +26,8 @@ public class AIController : MonoBehaviour
             this, 
             transform, 
             target,
-            CBehaviour.characterData.HitRadius,
-            CBehaviour.attack.isAttacking 
+            CBehaviour.data.HitRadius,
+            CBehaviour.attack.IsExecuting 
         );
         
         conditions = new List<CharacterCondition>() {moveCondition, attackCondition};
@@ -60,7 +60,7 @@ public class AIController : MonoBehaviour
     {
         animator.SetFloat("movement", Mathf.Abs(CBehaviour.rb.linearVelocity.x));
         animator.SetInteger("attackVariation", CBehaviour.attack.currentAttack);
-        animator.SetBool("isAttacking", CBehaviour.attack.isAttacking);
+        animator.SetBool("isAttacking", CBehaviour.attack.IsExecuting);
     }
     private void DebugConsole()
     {

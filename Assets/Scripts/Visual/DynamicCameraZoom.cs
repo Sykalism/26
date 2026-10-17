@@ -14,7 +14,7 @@ public class DynamicCameraZoom : MonoBehaviour
     {
         idleSize = Camera.main.orthographicSize;
         playerRb = player.GetComponent<Rigidbody2D>();
-        maxSpeed = player.characterData.RunSpeed;
+        maxSpeed = player.data.RunSpeed;
     }
     void Update()
     {

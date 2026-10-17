@@ -1,8 +1,8 @@
 public class GameTimer
 {
     private float duration;
-    private float timeRemaining;
 
+    public float timeRemaining {get; private set;}
     public bool IsRunning { get; private set; }
     public bool IsFinished => IsRunning && timeRemaining <= 0f;
 
@@ -21,7 +21,11 @@ public class GameTimer
     {
         IsRunning = false;
     }
-
+    public void Reset()
+    {
+        timeRemaining = duration;
+        IsRunning = false;
+    }
     public void Tick(float deltaTime)
     {
         if (!IsRunning) return;

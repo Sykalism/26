@@ -3,7 +3,7 @@ using UnityEngine;
 public class Attack : CharacterAction
 {
     public int currentAttack {get; private set;}
-    public bool isAttacking {get; private set;}
+    private bool isAttacking;
     public bool isComboWindow {get; private set;}
     private Rigidbody2D rb;
     private Weapon weapon;
@@ -11,7 +11,7 @@ public class Attack : CharacterAction
     private int attackVariations;
     private bool attackInput;
     private bool hasAttacked = false;
-    private GameTimer comboTimer;
+    public GameTimer comboTimer {get; private set;}
     public override bool IsExecuting => isAttacking;
 
     
@@ -56,10 +56,10 @@ public class Attack : CharacterAction
             {
                 isComboWindow = false;
                 currentAttack = 0;
-                comboTimer.Stop();
             }
+            return attackInput;
         }
-        return attackInput;
+        else return false;
     }
     public override void OnEnter()
     {

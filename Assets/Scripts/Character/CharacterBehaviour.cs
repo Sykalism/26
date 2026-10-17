@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterBehaviour : MonoBehaviour
 {
     [Header("Main Data")]
-    public CharacterBaseData characterData;
+    public CharacterBaseData data;
     public GameObject weaponObject;
     
 
@@ -13,7 +13,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Transform climbingPoint;
 
 
-    public bool autoFlip;
+    public bool autoFlip = true;
 
     
  
@@ -59,11 +59,11 @@ public class CharacterBehaviour : MonoBehaviour
         actionInput = new ActionInput();
         selector = new ActionSelector();
 
-        knockback = new Knockback(actContext, rb, healthPoint, characterData.knockbackForce, 0.2f);
-        movement = new Movement(actContext, rb, characterData, transform, this);
-        dash = new Dash(actContext, rb, characterData, this);
-        jump = new Jump(actContext, rb, characterData, this);
-        attack = new Attack(actContext, rb, characterData, weapon);
+        knockback = new Knockback(actContext, rb, healthPoint, data.knockbackForce, 0.2f);
+        movement = new Movement(actContext, rb, data, transform, this);
+        dash = new Dash(actContext, rb, data, this);
+        jump = new Jump(actContext, rb, data, this);
+        attack = new Attack(actContext, rb, data, weapon);
         climb = new Climb(actContext, rb, this);
         die = new Die(actContext, rb, healthPoint);
 
@@ -90,10 +90,9 @@ public class CharacterBehaviour : MonoBehaviour
             ObstacleCheck(groundChecker.position);
         }
         Landing
-        (
-            transform.position, 
-            characterData.HeightForLanding, 
-            characterData.LandingDelay
+        ( 
+            data.HeightForLanding, 
+            data.LandingDelay
         );
         selector.Execute(actions);
     }
@@ -127,11 +126,11 @@ public class CharacterBehaviour : MonoBehaviour
         );
 
     }
-    public void Landing(Vector2 position, float height, float delay)
+    public void Landing( float height, float delay)
     {
         var ray = Physics2D.Raycast
         (
-            position,
+            transform.position,
             Vector2.down,
             Mathf.Infinity
         );
