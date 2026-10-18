@@ -13,7 +13,7 @@ public class Dash : CharacterAction
     private bool isDashing;
     private bool stopDashing;
     private GameTimer cooldown;
-    private float cooldownTime = 1.5f;
+    private float cooldownTime = 0.5f;
     public override bool IsExecuting => isDashing;
     public Dash
     (

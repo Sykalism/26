@@ -44,7 +44,7 @@ public class PlayerAnimationController : MonoBehaviour
             }
         }
         else character.autoFlip = false;
-        Debug.Log(visualDirection);
+        Debug.Log(directional.level);
     }
     public void Flip()
     {
@@ -106,6 +106,7 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("on combat window", character.attack.isComboWindow);
         animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
         animator.SetBool("is landing", character.isLanding);
+        animator.SetBool("is dashing", character.dash.IsExecuting);
     }
 
     private void OpeningAttack()
