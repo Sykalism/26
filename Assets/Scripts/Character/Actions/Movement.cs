@@ -35,11 +35,11 @@ public class Movement : CharacterAction
         runSpeed = data.RunSpeed;
         startScale = target.localScale;
     }
-    public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0f)
+    public void SetInput(bool runInput, bool sprintInput, float inputDirection)
     {
-        moveInput = inputA;
-        direction = valueA;
-        isRunning = inputB;
+        moveInput = runInput;
+        direction = inputDirection;
+        isRunning = sprintInput;
     }
     public override bool Condition()
     { 
@@ -51,7 +51,7 @@ public class Movement : CharacterAction
         speed = isRunning? runSpeed : moveSpeed;
         if (automaticFlip)
         {
-            Flip();
+            Flip(direction);
         }
     }
     public override void FixedExecute()
@@ -65,7 +65,7 @@ public class Movement : CharacterAction
             rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
         }
     }
-    public void Flip()
+    public void Flip(float targetDirection)
     {
         float flipValue = startScale.x;
         float dirX = direction;

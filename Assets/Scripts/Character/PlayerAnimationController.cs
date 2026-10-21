@@ -1,5 +1,7 @@
 using UnityEngine;
 using NaughtyAttributes;
+using System;
+using NUnit.Framework;
 
 public class PlayerAnimationController : MonoBehaviour
 {
@@ -15,7 +17,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     private Animator animator;
     private Animator weaponAnim;
-    private DirectionalLevel visualDirection;
 
     void OnValidate()
     {
@@ -34,47 +35,52 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         Animation();
-        if (!character.isGrounded)
+        if (character.isGrounded || !character.attack.isComboWindow)
         {
-            character.autoFlip = true;
-            if (directional.isFlipped)
-            {
-                ChangeVisualByDirection();
-                directional.SetNewDirection();
-            }
+            character.autoFlip = false;
         }
-        else character.autoFlip = false;
-        Debug.Log(directional.level);
+        else character.autoFlip = true;
+    }
+    private void Animation()
+    {
+        Sheathe();
+        if (directional.isFlipped)
+        {
+            animator.SetTrigger("turning around");
+            directional.SetNewDirection();
+        }
+        if (character.actionInput.jump) animator.SetTrigger("jump");
+        animator.SetInteger("attacks", character.attack.currentAttack);
+        animator.SetFloat("move", Math.Abs(character.rb.linearVelocity.x));
+        animator.SetFloat("y force", character.rb.linearVelocity.y);
+        animator.SetBool("is grounded", character.isGrounded);
+        animator.SetBool("is dashing", character.dash.IsExecuting);
+        animator.SetBool("is landing", character.isLanding);
+        animator.SetBool("is attacking", character.attack.IsExecuting);
+        animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
+        animator.SetBool("on combo window", character.attack.isComboWindow);
     }
     public void Flip()
     {
-        character.movement.Flip();
+        character.movement.Flip((int)directional.GetNewDirection());
         ChangeVisualByDirection();
-
     }
     private void ChangeVisualByDirection()
     {
         if (directional.GetNewDirection() == DirectionalLevel.Left)
         {
-            LeftSide();
+            VisualDirection("Left");
         }
         if (directional.GetNewDirection() == DirectionalLevel.Right)
         {
-            RightSide();
+            VisualDirection("Right");
         }
 
     }
-    private void RightSide()
+    private void VisualDirection(string direction)
     {
-        sideSprite?.SetSprite("Right Side");
-        obliqueSprite?.SetSprite("Right");
-        visualDirection = DirectionalLevel.Right;
-    }
-    private void LeftSide()
-    {
-        sideSprite?.SetSprite("Left Side");
-        obliqueSprite?.SetSprite("Left");
-        visualDirection = DirectionalLevel.Left;
+        sideSprite?.SetSprite(direction);
+        obliqueSprite?.SetSprite(direction);
     }
     public void SetOblique()
     {
@@ -86,27 +92,6 @@ public class PlayerAnimationController : MonoBehaviour
     {
         oblique.SetActive(false);
         side.SetActive(true);
-    }
-
-    private void Animation()
-    {
-        Sheathe();
-        animator.SetFloat("move", Mathf.Abs(character.movement.direction));
-        animator.SetFloat("y force", character.rb.linearVelocity.y); 
-        animator.SetInteger("attacks", character.attack.currentAttack);
-        if (directional.isFlipped && character.isGrounded)
-        {
-            animator.SetTrigger("turning around");
-            directional.SetNewDirection();
-        }
-        if (character.actionInput.attack) animator.SetTrigger("attack");
-        if (character.actionInput.jump) animator.SetTrigger("jump");
-        animator.SetBool("is grounded", character.isGrounded);
-        animator.SetBool("is attacking", character.attack.IsExecuting);
-        animator.SetBool("on combat window", character.attack.isComboWindow);
-        animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
-        animator.SetBool("is landing", character.isLanding);
-        animator.SetBool("is dashing", character.dash.IsExecuting);
     }
 
     private void OpeningAttack()

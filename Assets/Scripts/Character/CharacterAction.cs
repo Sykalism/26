@@ -10,8 +10,6 @@ public abstract class CharacterAction
         this.priority = priority;
 
     }
-    public virtual void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0f){}
-
     public virtual void OnEnter(){}
     public virtual void OnExit(){}
     public abstract bool Condition();

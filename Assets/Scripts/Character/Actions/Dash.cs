@@ -4,11 +4,11 @@ using UnityEngine;
 public class Dash : CharacterAction
 {
     private Rigidbody2D rb;
-    private CharacterBehaviour behaviour;
+    private CharacterBehaviour character;
     private bool dashInput;
     private float dashVelocity;
     private float inputDirection;
-    private float direction;
+    public float dashDirection {get; private set;}
     private GameTimer dashTimer;
     private bool isDashing;
     private bool stopDashing;
@@ -20,34 +20,31 @@ public class Dash : CharacterAction
         ActionContext context, 
         Rigidbody2D rb, 
         CharacterBaseData data,
-        CharacterBehaviour behaviour
+        CharacterBehaviour character
     ) : base(context, 4)
     {
         this.rb = rb;
-        this.behaviour = behaviour;
+        this.character = character;
         dashVelocity = data.DashForce;
         dashTimer = new GameTimer(data.DashDuration);
         cooldown = new GameTimer(cooldownTime);
     }
-    public override void SetInput(bool inputA = false, float valueA = 0, bool inputB = false, float valueB = 0)
+    public void SetInput(bool dashInput, float direction)
     {
-        dashInput = inputA;
-        inputDirection = valueA;
+        this.dashInput = dashInput;
+        inputDirection = direction;
     }
     public override bool Condition()
     {
         if(actionContext.isLocked) return false;
         if (!isDashing) cooldown.Tick(Time.deltaTime);
-        if (inputDirection != 0f)
-        {
-            direction = Mathf.Sign(inputDirection);
-        }
+        dashDirection = inputDirection;
         return 
             dashInput 
-            && direction != 0 
             && !isDashing 
+            && dashDirection != 0
             && !cooldown.IsRunning 
-            && !behaviour.isLanding;
+            && !character.isLanding;
     }
     public override void OnEnter()
     {
@@ -56,6 +53,11 @@ public class Dash : CharacterAction
         StartAction = true;
         dashTimer.Start();
         actionContext.Lock();
+
+        if (!character.autoFlip)
+        {
+            character.movement.Flip(dashDirection);
+        }
     }
     public override void Execute()
     {
@@ -78,7 +80,7 @@ public class Dash : CharacterAction
             StartAction = false;
             rb.linearVelocity = Vector2.zero;
         }
-        if (!stopDashing) rb.linearVelocity = new Vector2(direction * dashVelocity, 0f);
+        if (!stopDashing) rb.linearVelocity = new Vector2(dashDirection * dashVelocity, 0f);
         else
         {
             rb.linearVelocity = Vector2.zero;

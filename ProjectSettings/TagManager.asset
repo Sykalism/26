@@ -65,11 +65,11 @@ TagManager:
   - name: Platform
     uniqueID: 2437096195
     locked: 0
-  - name: Close Objects
-    uniqueID: 3268916289
-    locked: 0
   - name: Slash Effect
     uniqueID: 3288238701
+    locked: 0
+  - name: Close Objects
+    uniqueID: 3268916289
     locked: 0
   m_RenderingLayers:
   - Default

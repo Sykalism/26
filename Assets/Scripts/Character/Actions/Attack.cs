@@ -7,6 +7,7 @@ public class Attack : CharacterAction
     public bool isComboWindow {get; private set;}
     private Rigidbody2D rb;
     private Weapon weapon;
+    private CharacterBehaviour character;
     private float startGravity;
     private int attackVariations;
     private bool attackInput;
@@ -19,22 +20,24 @@ public class Attack : CharacterAction
     (
         ActionContext context, 
         Rigidbody2D rb, 
-        CharacterBaseData data,
+        CharacterBehaviour character,
         Weapon weapon
     ) : base(context, 5)
     {
         this.rb = rb;
         this.weapon = weapon;
 
-        attackVariations = data.AttackVariant;
+        attackVariations = character.data.AttackVariant;
         startGravity = rb.gravityScale;
 
-        comboTimer = new GameTimer(data.comboWindowTime);
+        comboTimer = new GameTimer(character.data.comboWindowTime);
 
     }
-    public override void SetInput(bool inputA = false, float valueA = 0f, bool inputB = false, float valueB = 0)
+    public void SetInput(bool attackInput)
     {
-        attackInput = inputA;
+        this.attackInput = attackInput;
+
+
     }
     public void StopAttackEvent()
     {

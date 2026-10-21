@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 189564445244208397, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 613813569411319099, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 893347470967054119, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423038628973267644, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: isObliqued
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2423038628973267644, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: directional

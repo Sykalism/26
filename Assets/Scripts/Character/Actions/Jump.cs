@@ -24,9 +24,9 @@ public class Jump : CharacterAction
         jumpForce = data.JumpForce;
         this.behaviour = behaviour;
     }
-    public override void SetInput(bool inputA = false, float valueA = 0, bool inputB = false, float valueB = 0)
+    public void SetInput(bool jumpInput)
     {
-        jumpInput = inputA;
+        this.jumpInput = jumpInput;
     }
     public override bool Condition()
     {

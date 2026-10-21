@@ -7,7 +7,11 @@ public enum DirectionalLevel
 }
 public class DirectionalLevelControl : MonoBehaviour
 {
-    [SerializeField] private bool autoFlip;
+    //<<SUMMARY>> 
+    // -pokoknya ada 'level direction' (arah saat ini) sama 'new direction' (arah selanjutnya)
+    // -lier gusti
+
+    [SerializeField] private bool autoSet;
     private float inputAxis;
     public DirectionalLevel level {get; private set;} = DirectionalLevel.Right;
     private int newDirection;
@@ -30,16 +34,14 @@ public class DirectionalLevelControl : MonoBehaviour
                 if (level == DirectionalLevel.Right) return;
                 newDirection = 1;
                 isFlipped = true;
-                Debug.Log(newDirection);
-                if (autoFlip) SetNewDirection();
+                if (autoSet) SetNewDirection();
             }
             if (inputAxis < 0)
             {
                 if (level == DirectionalLevel.Left) return;
                 newDirection = -1;
                 isFlipped = true;
-                Debug.Log(newDirection);
-                if (autoFlip) SetNewDirection();
+                if (autoSet) SetNewDirection();
             }
         }
       
@@ -49,7 +51,6 @@ public class DirectionalLevelControl : MonoBehaviour
     {
         level = (DirectionalLevel)newDirection;
         isFlipped = false;
-        Debug.Log(level);
     }
     public DirectionalLevel GetNewDirection()
     {

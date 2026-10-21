@@ -6,7 +6,6 @@ public class CharacterBehaviour : MonoBehaviour
     [Header("Main Data")]
     public CharacterBaseData data;
     public GameObject weaponObject;
-    
 
     [Header("Checkers")]
     [SerializeField] Transform groundChecker;
@@ -33,9 +32,11 @@ public class CharacterBehaviour : MonoBehaviour
     public Rigidbody2D rb {get; private set;}
     public Weapon weapon {get; set;}
     public HealthPoint healthPoint {get; set;}
+    public DirectionalLevelControl directional {get; private set;}
     private List<CharacterAction> actions;
     private ActionContext actContext;
     private ActionSelector selector;
+    
 
     
     
@@ -53,6 +54,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         healthPoint = GetComponent<HealthPoint>();
+        directional = GetComponent<DirectionalLevelControl>();
         weapon = weaponObject.GetComponent<Weapon>();
 
         actContext = new ActionContext();
@@ -63,7 +65,7 @@ public class CharacterBehaviour : MonoBehaviour
         movement = new Movement(actContext, rb, data, transform, this);
         dash = new Dash(actContext, rb, data, this);
         jump = new Jump(actContext, rb, data, this);
-        attack = new Attack(actContext, rb, data, weapon);
+        attack = new Attack(actContext, rb, this, weapon);
         climb = new Climb(actContext, rb, this);
         die = new Die(actContext, rb, healthPoint);
 
@@ -102,8 +104,14 @@ public class CharacterBehaviour : MonoBehaviour
     }
     private void InitiateActionInput()
     {
-        movement.SetInput(actionInput.move, actionInput.direction, actionInput.run);
-        dash.SetInput(actionInput.dash, actionInput.direction);
+        
+        movement.SetInput(actionInput.move, actionInput.run, actionInput.direction);
+        if (directional != null)
+        {
+            dash.SetInput(actionInput.dash, (int)directional.GetNewDirection());
+            attack.SetInput(actionInput.attack);
+        }
+        else dash.SetInput(actionInput.dash, actionInput.direction);
         jump.SetInput(actionInput.jump);
         attack.SetInput(actionInput.attack);
     }
