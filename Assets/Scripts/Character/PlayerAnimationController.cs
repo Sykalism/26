@@ -1,14 +1,12 @@
 using UnityEngine;
 using NaughtyAttributes;
 using System;
-using NUnit.Framework;
 
 public class PlayerAnimationController : MonoBehaviour
 {
     [Foldout("References")] [SerializeField] private GameObject oblique;
     [Foldout("References")] [SerializeField] private GameObject side;
     [Foldout("References")] [SerializeField] private CharacterBehaviour character;
-    [Foldout("References")] [SerializeField] private DirectionalLevelControl directional;
     private CharacterSpriteController obliqueSprite;
     private CharacterSpriteController sideSprite;
 
@@ -44,11 +42,6 @@ public class PlayerAnimationController : MonoBehaviour
     private void Animation()
     {
         Sheathe();
-        if (directional.isFlipped)
-        {
-            animator.SetTrigger("turning around");
-            directional.SetNewDirection();
-        }
         if (character.actionInput.jump) animator.SetTrigger("jump");
         animator.SetInteger("attacks", character.attack.currentAttack);
         animator.SetFloat("move", Math.Abs(character.rb.linearVelocity.x));
@@ -60,21 +53,8 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
         animator.SetBool("on combo window", character.attack.isComboWindow);
     }
-    public void Flip()
-    {
-        character.movement.Flip((int)directional.GetNewDirection());
-        ChangeVisualByDirection();
-    }
     private void ChangeVisualByDirection()
     {
-        if (directional.GetNewDirection() == DirectionalLevel.Left)
-        {
-            VisualDirection("Left");
-        }
-        if (directional.GetNewDirection() == DirectionalLevel.Right)
-        {
-            VisualDirection("Right");
-        }
 
     }
     private void VisualDirection(string direction)

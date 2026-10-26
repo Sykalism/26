@@ -1,4 +1,3 @@
-using System.Data.Common;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
@@ -11,7 +10,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private CharacterBehaviour character;
 
     //Inputs
-    private float inputDirection => Input.GetAxis("Horizontal"); 
+    private float inputDirection => Input.GetAxisRaw("Horizontal"); 
     private bool moveInput => inputDirection != 0f;
     private bool runInput => Input.GetKey(KeyCode.LeftShift);
     private bool jumpInput => Input.GetKeyDown(KeyCode.Z);

@@ -53,11 +53,6 @@ public class Dash : CharacterAction
         StartAction = true;
         dashTimer.Start();
         actionContext.Lock();
-
-        if (!character.autoFlip)
-        {
-            character.movement.Flip(dashDirection);
-        }
     }
     public override void Execute()
     {
