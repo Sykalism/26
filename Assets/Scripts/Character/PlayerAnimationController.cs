@@ -1,12 +1,11 @@
 using UnityEngine;
-using NaughtyAttributes;
 using System;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    [Foldout("References")] [SerializeField] private GameObject oblique;
-    [Foldout("References")] [SerializeField] private GameObject side;
-    [Foldout("References")] [SerializeField] private CharacterBehaviour character;
+    [SerializeField] private GameObject oblique;
+    [SerializeField] private GameObject side;
+    [SerializeField] private CharacterBehaviour character;
     private CharacterSpriteController obliqueSprite;
     private CharacterSpriteController sideSprite;
 

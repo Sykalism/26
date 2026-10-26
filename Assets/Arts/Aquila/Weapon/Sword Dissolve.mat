@@ -58,7 +58,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Fade: 1
+    - _Fade: 0
     - _Noise_Scale: 100
     - _ZWrite: 0
     m_Colors:

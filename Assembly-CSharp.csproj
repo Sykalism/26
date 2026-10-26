@@ -71,6 +71,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\System Manager\Save&amp;Load System\SaveManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Character\DirectionalControl.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Flip.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Assets\Scripts\Debug\GamepadInput.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Scripts\Character\DirectionalLevelControl.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Movement.cs" />
     <Compile Include="Assets\Scripts\Tools\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\Material Controller\Dissolve.cs" />
@@ -1573,9 +1573,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NaughtyAttributes.Core.csproj" />
-    <ProjectReference Include="NaughtyAttributes.Test.csproj" />
-    <ProjectReference Include="NaughtyAttributes.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

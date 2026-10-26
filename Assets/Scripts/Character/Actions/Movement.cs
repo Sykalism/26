@@ -8,7 +8,7 @@ public class Movement : CharacterAction
     private float moveSpeed = 0;
     private float runSpeed = 0f;
     private bool moveInput;
-    public DirecttionalLevel direction {get; private set;}
+    public DirectionalLevel direction {get; private set;}
     public bool isRunning {get; private set;}
     private Transform target;
     private CharacterBehaviour character;
@@ -32,7 +32,7 @@ public class Movement : CharacterAction
     public void SetInput(bool runInput, bool sprintInput, float inputDirection)
     {
         moveInput = runInput;
-        direction = (DirecttionalLevel)inputDirection;
+        direction = (DirectionalLevel)inputDirection;
         isRunning = sprintInput;
     }
     public override bool Condition()
