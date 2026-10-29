@@ -7,7 +7,7 @@ public class AIController : MonoBehaviour
     public Transform headPoint;
     private Animator animator;
     private List<CharacterCondition> conditions;
-    private CharacterBehaviour CBehaviour;
+    private CharacterBehaviour character;
 
     //Conditions
     private AI_MoveCondition moveCondition;
@@ -16,7 +16,7 @@ public class AIController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        CBehaviour = GetComponent<CharacterBehaviour>();
+        character = GetComponent<CharacterBehaviour>();
     }
     void Start()
     {
@@ -26,22 +26,24 @@ public class AIController : MonoBehaviour
             this, 
             transform, 
             target,
-            CBehaviour.data.HitRadius,
-            CBehaviour.attack.IsExecuting 
+            character.data.HitRadius,
+            character.attack.IsExecuting 
         );
         
         conditions = new List<CharacterCondition>() {moveCondition, attackCondition};
     }
     void Update()
     {
-        CBehaviour.actionInput.InitiateInput
+        character.actionInput.InitiateInput
         (
             moveCondition.Direction.x,
             moveCondition.ActionInput,
             false,
             false,
             false,
-            attackCondition.ActionInput
+            attackCondition.ActionInput,
+            character.directional.isFlipped
+            
         );
 
         Animation();
@@ -58,9 +60,9 @@ public class AIController : MonoBehaviour
 
     private void Animation()
     {
-        animator.SetFloat("movement", Mathf.Abs(CBehaviour.rb.linearVelocity.x));
-        animator.SetInteger("attackVariation", CBehaviour.attack.currentAttack);
-        animator.SetBool("isAttacking", CBehaviour.attack.IsExecuting);
+        animator.SetFloat("movement", Mathf.Abs(character.rb.linearVelocity.x));
+        animator.SetInteger("attackVariation", character.attack.currentAttack);
+        animator.SetBool("isAttacking", character.attack.IsExecuting);
     }
     private void DebugConsole()
     {

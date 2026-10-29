@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public enum DirectionalLevel
 {
@@ -5,52 +6,55 @@ public enum DirectionalLevel
     flipping = 0,
     Right = 1,
 }
-public class DirectionalLevelControl : MonoBehaviour
+public class DirectionalLevelControl
 {
     //<<SUMMARY>> 
     // -pokoknya ada 'level direction' (arah saat ini) sama 'new direction' (arah selanjutnya)
     // -lier gusti
 
-    [SerializeField] private bool autoSet;
-    private float inputAxis;
-    public DirectionalLevel level {get; private set;} = DirectionalLevel.Right;
+    public bool autoSet = true;
+
+    public DirectionalLevel level {get; private set;}
+    public bool flipLocked;
     private int newDirection;
+    private CharacterBehaviour character;
     public bool isFlipped {get; private set;}
-    void Start()
+
+    public DirectionalLevelControl(CharacterBehaviour character)
     {
-        
+        this.character = character;
     }
-    void Update()
-    {
-        inputAxis = Input.GetAxis("Horizontal");
-        Control();
-    }
-    private void Control()
+
+    public void Control(float inputAxis)
     {
         if (inputAxis != 0)
         {
             if (inputAxis > 0)
             {
-                if (level == DirectionalLevel.Right) return;
+                if (level == DirectionalLevel.Right || flipLocked) return;
                 newDirection = 1;
-                isFlipped = true;
+                character.StartCoroutine(NextFrame());
                 if (autoSet) SetNewDirection();
             }
             if (inputAxis < 0)
             {
-                if (level == DirectionalLevel.Left) return;
+                if (level == DirectionalLevel.Left || flipLocked) return;
                 newDirection = -1;
-                isFlipped = true;
+                character.StartCoroutine(NextFrame());
                 if (autoSet) SetNewDirection();
             }
         }
       
     }
-
+    private IEnumerator NextFrame()
+    {
+        isFlipped = true;
+        yield return null;
+        isFlipped = false;
+    }
     public void SetNewDirection()
     {
         level = (DirectionalLevel)newDirection;
-        isFlipped = false;
     }
     public DirectionalLevel GetNewDirection()
     {

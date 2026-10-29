@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Data.Common;
 using UnityEngine;
 
@@ -6,17 +7,21 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     [Header("Sword Material")]
     [SerializeField] Dissolve dissolve;
+
+    [Header("General")]
+    public bool autoFlip;
     
 
-    private CharacterBehaviour character;
+    public CharacterBehaviour character {get; private set;}
 
     //Inputs
-    private float inputDirection => Input.GetAxis("Horizontal"); 
+    private float inputDirection => Input.GetAxisRaw("Horizontal"); 
     private bool moveInput => inputDirection != 0f;
     private bool runInput => Input.GetKey(KeyCode.LeftShift);
     private bool jumpInput => Input.GetKeyDown(KeyCode.Z);
     private bool dashInput => Input.GetKeyDown(KeyCode.C);
     private bool attackInput => Input.GetKeyDown(KeyCode.X);
+    private bool flipInput;
 
 
     void Awake()
@@ -25,7 +30,10 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void Update()
     {
-        if (character.jump.IsExecuting) Debug.Log("negga");
+        if (autoFlip)
+        {
+            flipInput = character.directional.isFlipped;
+        }
         character.actionInput.InitiateInput
         (
             inputDirection, 
@@ -33,7 +41,9 @@ public class PlayerController : MonoBehaviour, ISaveable
             runInput,
             jumpInput,
             dashInput,
-            attackInput
+            attackInput,
+            flipInput
+            
         );
 
         if (character.rb.linearVelocity.y > 0f)
@@ -55,6 +65,14 @@ public class PlayerController : MonoBehaviour, ISaveable
         GameManager.Instance.GameOver();
     }
 
+    public bool GetFlipInput()
+    {
+        return flipInput;
+    }
+    public void SetFlipInput(bool value)
+    {
+        flipInput = value;
+    }
 
     //get save and load data
     public void Save(SaveData data)

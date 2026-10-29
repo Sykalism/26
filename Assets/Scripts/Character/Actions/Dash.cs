@@ -53,11 +53,7 @@ public class Dash : CharacterAction
         StartAction = true;
         dashTimer.Start();
         actionContext.Lock();
-
-        if (!character.autoFlip)
-        {
-            character.movement.Flip(dashDirection);
-        }
+        character.directional.flipLocked = true;
     }
     public override void Execute()
     {
@@ -72,6 +68,7 @@ public class Dash : CharacterAction
     {
         cooldown.Start();
         actionContext.Unlock();
+        character.directional.flipLocked = false;
     }
     public override void FixedExecute()
     {

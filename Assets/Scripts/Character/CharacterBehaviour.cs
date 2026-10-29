@@ -11,10 +11,8 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField] Transform groundChecker;
     public Transform climbingPoint;
 
-
     public bool autoFlip = true;
 
-    
  
     //Input
     public ActionInput actionInput;
@@ -27,6 +25,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Attack attack {get; private set;}
     public Climb climb {get; private set;}
     public Die die {get; private set;}
+    public Flip flip {get; private set;}
 
     //Components
     public Rigidbody2D rb {get; private set;}
@@ -39,8 +38,6 @@ public class CharacterBehaviour : MonoBehaviour
     
 
     
-    
-
     //Checkers
     public float footstepStrenght {get; set;}
     public float heightToGround {get; private set;}
@@ -54,20 +51,22 @@ public class CharacterBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         healthPoint = GetComponent<HealthPoint>();
-        directional = GetComponent<DirectionalLevelControl>();
         weapon = weaponObject.GetComponent<Weapon>();
 
         actContext = new ActionContext();
         actionInput = new ActionInput();
         selector = new ActionSelector();
+        directional = new DirectionalLevelControl(this);
 
         knockback = new Knockback(actContext, rb, healthPoint, data.knockbackForce, 0.2f);
-        movement = new Movement(actContext, rb, data, transform, this);
+        movement = new Movement(actContext, rb, data, this);
         dash = new Dash(actContext, rb, data, this);
         jump = new Jump(actContext, rb, data, this);
         attack = new Attack(actContext, rb, this, weapon);
         climb = new Climb(actContext, rb, this);
         die = new Die(actContext, rb, healthPoint);
+        flip = new Flip(actContext, this);
+
 
     }
     void Start()
@@ -80,11 +79,14 @@ public class CharacterBehaviour : MonoBehaviour
             jump,
             attack,
             climb,
-            die
+            die,
+            flip
+            
         };
     }
     void Update()
     {
+        directional.Control(actionInput.direction);
         InitiateActionInput();
         if (groundChecker != null)
         {
@@ -106,14 +108,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         
         movement.SetInput(actionInput.move, actionInput.run, actionInput.direction);
-        if (directional != null)
-        {
-            dash.SetInput(actionInput.dash, (int)directional.GetNewDirection());
-            attack.SetInput(actionInput.attack);
-        }
-        else dash.SetInput(actionInput.dash, actionInput.direction);
+        dash.SetInput(actionInput.dash, actionInput.direction);
         jump.SetInput(actionInput.jump);
         attack.SetInput(actionInput.attack);
+        flip.SetInput((int)directional.level, actionInput.flip);
+
     }
 
     //Checkers Func
@@ -218,7 +217,8 @@ public class ActionInput
     run,
     jump,
     dash,
-    attack;
+    attack,
+    flip;
 
 
     public void InitiateInput
@@ -228,7 +228,8 @@ public class ActionInput
         bool run = false, 
         bool jump = false, 
         bool dash = false,
-        bool attack = false
+        bool attack = false,
+        bool flip = false
     )
     {
         this.direction = direction;
@@ -237,5 +238,6 @@ public class ActionInput
         this.jump = jump;
         this.dash = dash;
         this.attack = attack;
+        this.flip = flip;
     }
 }

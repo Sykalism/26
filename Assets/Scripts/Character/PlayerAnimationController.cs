@@ -2,13 +2,15 @@ using UnityEngine;
 using NaughtyAttributes;
 using System;
 using NUnit.Framework;
+using System.Collections;
 
 public class PlayerAnimationController : MonoBehaviour
 {
     [Foldout("References")] [SerializeField] private GameObject oblique;
     [Foldout("References")] [SerializeField] private GameObject side;
-    [Foldout("References")] [SerializeField] private CharacterBehaviour character;
-    [Foldout("References")] [SerializeField] private DirectionalLevelControl directional;
+    [Foldout("References")] [SerializeField] private PlayerController player;
+
+    private CharacterBehaviour character => player.character;
     private CharacterSpriteController obliqueSprite;
     private CharacterSpriteController sideSprite;
 
@@ -17,6 +19,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private Animator animator;
     private Animator weaponAnim;
+    private DirectionalLevelControl directional => character.directional;
 
     void OnValidate()
     {
@@ -29,25 +32,23 @@ public class PlayerAnimationController : MonoBehaviour
         sideSprite = side?.GetComponent<CharacterSpriteController>();
 
         animator = GetComponent<Animator>();
+        
+    }
+    void Start()
+    {
         weaponAnim = character.weaponObject.GetComponent<Animator>();
     }
 
     void Update()
     {
-        Animation();
-        if (character.isGrounded || !character.attack.isComboWindow)
-        {
-            character.autoFlip = false;
-        }
-        else character.autoFlip = true;
+        Animation();    
     }
     private void Animation()
     {
         Sheathe();
-        if (directional.isFlipped)
+        if (!player.autoFlip && directional.isFlipped)
         {
             animator.SetTrigger("turning around");
-            directional.SetNewDirection();
         }
         if (character.actionInput.jump) animator.SetTrigger("jump");
         animator.SetInteger("attacks", character.attack.currentAttack);
@@ -60,10 +61,16 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
         animator.SetBool("on combo window", character.attack.isComboWindow);
     }
-    public void Flip()
+    public void FlipEvent()
     {
-        character.movement.Flip((int)directional.GetNewDirection());
+        StartCoroutine(NextFrame());
         ChangeVisualByDirection();
+    }
+    private IEnumerator NextFrame()
+    {
+        player.SetFlipInput(true);
+        yield return null;
+        player.SetFlipInput(false);
     }
     private void ChangeVisualByDirection()
     {
