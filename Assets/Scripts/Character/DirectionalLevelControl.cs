@@ -32,6 +32,7 @@ public class DirectionalLevelControl
             if (inputAxis > 0)
             {
                 if (level == DirectionalLevel.Right || flipLocked) return;
+                isFlipped = true;
                 newDirection = 1;
                 character.StartCoroutine(NextFrame());
                 if (autoSet) SetNewDirection();
@@ -39,6 +40,7 @@ public class DirectionalLevelControl
             if (inputAxis < 0)
             {
                 if (level == DirectionalLevel.Left || flipLocked) return;
+                isFlipped = true;
                 newDirection = -1;
                 character.StartCoroutine(NextFrame());
                 if (autoSet) SetNewDirection();
@@ -48,7 +50,6 @@ public class DirectionalLevelControl
     }
     private IEnumerator NextFrame()
     {
-        isFlipped = true;
         yield return null;
         isFlipped = false;
     }

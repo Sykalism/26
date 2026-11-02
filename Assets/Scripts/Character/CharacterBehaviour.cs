@@ -8,10 +8,11 @@ public class CharacterBehaviour : MonoBehaviour
     public GameObject weaponObject;
 
     [Header("Checkers")]
-    [SerializeField] Transform groundChecker;
+    [SerializeField] Transform groundCheckpoint;
+    public Transform ObstacleAheadCheckpoint;
     public Transform climbingPoint;
 
-    public bool autoFlip = true;
+    public bool controlFlipViaAnimation = false;
 
  
     //Input
@@ -61,9 +62,9 @@ public class CharacterBehaviour : MonoBehaviour
         knockback = new Knockback(actContext, rb, healthPoint, data.knockbackForce, 0.2f);
         movement = new Movement(actContext, rb, data, this);
         dash = new Dash(actContext, rb, data, this);
-        jump = new Jump(actContext, rb, data, this);
-        attack = new Attack(actContext, rb, this, weapon);
-        climb = new Climb(actContext, rb, this);
+        jump = new Jump(actContext, this);
+        attack = new Attack(actContext, this);
+        climb = new Climb(actContext, this);
         die = new Die(actContext, rb, healthPoint);
         flip = new Flip(actContext, this);
 
@@ -88,10 +89,10 @@ public class CharacterBehaviour : MonoBehaviour
     {
         directional.Control(actionInput.direction);
         InitiateActionInput();
-        if (groundChecker != null)
+        if (groundCheckpoint != null || ObstacleAheadCheckpoint != null)
         {
-            GroundCheck(groundChecker.position);
-            ObstacleCheck(groundChecker.position);
+            GroundCheck(groundCheckpoint.position);
+            ObstacleCheck(groundCheckpoint.position);
         }
         Landing
         ( 
@@ -108,10 +109,10 @@ public class CharacterBehaviour : MonoBehaviour
     {
         
         movement.SetInput(actionInput.move, actionInput.run, actionInput.direction);
-        dash.SetInput(actionInput.dash, actionInput.direction);
+        dash.SetInput(actionInput.dash, (int)directional.GetNewDirection());
         jump.SetInput(actionInput.jump);
         attack.SetInput(actionInput.attack);
-        flip.SetInput((int)directional.level, actionInput.flip);
+        flip.SetInput((int)directional.GetNewDirection(), actionInput.flip);
 
     }
 
@@ -164,19 +165,19 @@ public class CharacterBehaviour : MonoBehaviour
     }
     public void RippleInteract()
     {
-        if (groundChecker == null) return;
+        if (groundCheckpoint == null) return;
         RippleManager ripple;
 
         Collider2D hit = Physics2D.OverlapCircle
         (
-            groundChecker.position, 
+            groundCheckpoint.position, 
             0.4f, 
             LayerMask.GetMask("Water")
         );
         if (hit)
         {
             ripple = hit.GetComponent<RippleManager>();
-            ripple.AddRipple(groundChecker.position);
+            ripple.AddRipple(groundCheckpoint.position);
             ripple.rippleStrenght = 0.02f;
         }
     }

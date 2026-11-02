@@ -5,11 +5,11 @@ public class Attack : CharacterAction
     public int currentAttack {get; private set;}
     private bool isAttacking;
     public bool isComboWindow {get; private set;}
-    private Rigidbody2D rb;
-    private Weapon weapon;
+    private Rigidbody2D rb => character.rb;
+    private Weapon weapon => character.weapon;
     private CharacterBehaviour character;
     private float startGravity;
-    private int attackVariations;
+    private int attackVariations => character.data.AttackVariant;
     private bool attackInput;
     private bool hasAttacked = false;
     public GameTimer comboTimer {get; private set;}
@@ -19,15 +19,11 @@ public class Attack : CharacterAction
     public Attack
     (
         ActionContext context, 
-        Rigidbody2D rb, 
-        CharacterBehaviour character,
-        Weapon weapon
+        CharacterBehaviour character
     ) : base(context, 5)
     {
-        this.rb = rb;
-        this.weapon = weapon;
+        this.character = character;
 
-        attackVariations = character.data.AttackVariant;
         startGravity = rb.gravityScale;
 
         comboTimer = new GameTimer(character.data.comboWindowTime);
@@ -48,6 +44,8 @@ public class Attack : CharacterAction
         actionContext.Unlock();
         comboTimer.Start();
         rb.gravityScale = startGravity;
+
+        character.directional.flipLocked = false;
     }
     public override bool Condition()
     {
@@ -69,6 +67,8 @@ public class Attack : CharacterAction
         actionContext.Lock();
         isAttacking = true;
         StartAction = true;
+        
+        character.directional.flipLocked = true;
     }
     public override void Execute()
     {

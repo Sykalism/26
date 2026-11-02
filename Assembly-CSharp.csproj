@@ -48,6 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.1.6f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Animation Scripts\PlayerAnimationController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Assets\Scripts\UI\Player Menu.cs" />
     <Compile Include="Assets\Scripts\Character\AIController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterCondition.cs" />
+    <Compile Include="Assets\Scripts\Animation Scripts\IKTargetHandler.cs" />
     <Compile Include="Assets\Scripts\Scriptable\CharacterData.cs" />
     <Compile Include="Assets\Scripts\Tools\SlashSpawner.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterAction.cs" />
@@ -79,9 +81,9 @@
     <Compile Include="Assets\Scripts\Character\Conditions\AI_MoveCondition.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
+    <Compile Include="Assets\Scripts\Tools\ObjectSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Climb.cs" />
-    <Compile Include="Assets\Scripts\Character\PlayerAnimationController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\System Manager\Save&amp;Load System\SaveID.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

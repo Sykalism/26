@@ -37,6 +37,7 @@ public class PlayerAnimationController : MonoBehaviour
     void Start()
     {
         weaponAnim = character.weaponObject.GetComponent<Animator>();
+        directional.autoSet = false;
     }
 
     void Update()
@@ -46,11 +47,11 @@ public class PlayerAnimationController : MonoBehaviour
     private void Animation()
     {
         Sheathe();
-        if (!player.autoFlip && directional.isFlipped)
+        if (character.controlFlipViaAnimation && directional.isFlipped)
         {
             animator.SetTrigger("turning around");
         }
-        if (character.actionInput.jump) animator.SetTrigger("jump");
+        if (character.jump.IsExecuting) animator.SetTrigger("jump");
         animator.SetInteger("attacks", character.attack.currentAttack);
         animator.SetFloat("move", Math.Abs(character.rb.linearVelocity.x));
         animator.SetFloat("y force", character.rb.linearVelocity.y);
@@ -60,10 +61,22 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("is attacking", character.attack.IsExecuting);
         animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
         animator.SetBool("on combo window", character.attack.isComboWindow);
+        animator.SetBool("is flipping", character.flip.IsExecuting);
+        animator.SetBool("is climbing", character.climb.IsExecuting); 
+    }
+    public void StartFlipEvent()
+    {
+        player.SetFlipInput(true);
+    }
+    public void StopFlipEvent()
+    {
+        player.SetFlipInput(false);
+        directional.SetNewDirection();
+        character.flip.StopActionEvent();
     }
     public void FlipEvent()
     {
-        StartCoroutine(NextFrame());
+        character.flip.Run();
         ChangeVisualByDirection();
     }
     private IEnumerator NextFrame()
@@ -116,7 +129,6 @@ public class PlayerAnimationController : MonoBehaviour
             if (character.attack.comboTimer.timeRemaining < character.data.comboWindowTime - 2.5 || 
                 IsPlaying("idle"))
             {
-                Debug.Log("woilah");
                 weaponAnim.SetTrigger("sheathe");
                 character.weapon.ToggleDrawnOff();
             }

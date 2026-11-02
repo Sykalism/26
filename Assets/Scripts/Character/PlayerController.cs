@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Data.Common;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
@@ -8,14 +6,15 @@ public class PlayerController : MonoBehaviour, ISaveable
     [Header("Sword Material")]
     [SerializeField] Dissolve dissolve;
 
-    [Header("General")]
-    public bool autoFlip;
+    [Header("Effect")]
+    [SerializeField] GameObject dashParticle;
+    [SerializeField] Transform spawnPoint;
     
 
     public CharacterBehaviour character {get; private set;}
 
     //Inputs
-    private float inputDirection => Input.GetAxisRaw("Horizontal"); 
+    private float inputDirection => Input.GetAxis("Horizontal"); 
     private bool moveInput => inputDirection != 0f;
     private bool runInput => Input.GetKey(KeyCode.LeftShift);
     private bool jumpInput => Input.GetKeyDown(KeyCode.Z);
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void Update()
     {
-        if (autoFlip)
+        if (!character.controlFlipViaAnimation)
         {
             flipInput = character.directional.isFlipped;
         }
@@ -46,6 +45,17 @@ public class PlayerController : MonoBehaviour, ISaveable
             
         );
 
+        if (character.isGrounded)
+        {
+            character.controlFlipViaAnimation = true;
+            character.directional.autoSet = false;
+        }
+        else
+        {
+            character.controlFlipViaAnimation = false;
+            character.directional.autoSet = true;
+        }
+
         if (character.rb.linearVelocity.y > 0f)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -57,8 +67,13 @@ public class PlayerController : MonoBehaviour, ISaveable
                 EnvironmentManager.Instance.DecreaseDepth();
             }
         }
-
+        if (character.dash.StartAction)
+        {
+            Instantiate(dashParticle, spawnPoint.position, spawnPoint.rotation );
+            
+        }
     }
+
 
     public void DieEvent()
     {

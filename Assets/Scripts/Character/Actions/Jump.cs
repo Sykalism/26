@@ -1,11 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class Jump : CharacterAction
 {
 
-    private Rigidbody2D rb;
-    private CharacterBehaviour behaviour;
-    private float jumpForce;
+    private Rigidbody2D rb => character.rb;
+    private CharacterBehaviour character;
+    private float jumpForce => character.data.JumpForce;
     private bool jumpInput;
     private bool isJumping;
     private int jumpAttemp;
@@ -15,14 +16,10 @@ public class Jump : CharacterAction
     public Jump
     (
         ActionContext context, 
-        Rigidbody2D rb, 
-        CharacterBaseData data,
-        CharacterBehaviour behaviour
+        CharacterBehaviour character
     ) : base(context, 2)
     {
-        this.rb = rb;
-        jumpForce = data.JumpForce;
-        this.behaviour = behaviour;
+        this.character = character;
     }
     public void SetInput(bool jumpInput)
     {
@@ -39,20 +36,26 @@ public class Jump : CharacterAction
     }
     public override void Execute()
     {
+        
     }
     public override void FixedExecute()
     {
         if (isJumping)
         {
+            character.StartCoroutine(NextFrame());
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = false;
         }
         
     }
+    private IEnumerator NextFrame()
+    {
+        yield return null;
+        isJumping = false;
+    }
     private bool CanJump()
     {
-        if (behaviour.isGrounded) jumpAttemp = 1;
+        if (character.isGrounded) jumpAttemp = 1;
         if (jumpInput && jumpAttemp <= 2 && !isJumping)
         {
             jumpAttemp += 1;

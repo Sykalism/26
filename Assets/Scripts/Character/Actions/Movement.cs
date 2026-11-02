@@ -36,7 +36,7 @@ public class Movement : CharacterAction
     public override bool Condition()
     { 
         if (actionContext.isLocked) return false;
-        return moveInput && !character.isLanding;
+        return moveInput && !character.isLanding && Mathf.Sign(direction) == (int)character.directional.level;
     }
     public override void Execute()
     {
