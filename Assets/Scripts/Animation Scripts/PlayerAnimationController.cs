@@ -21,6 +21,8 @@ public class PlayerAnimationController : MonoBehaviour
     private Animator weaponAnim;
     private DirectionalLevelControl directional => character.directional;
 
+    private bool startFlipAnim;
+
     void OnValidate()
     {
         if (isObliqued) SetOblique();
@@ -43,15 +45,15 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         Animation();    
+        Debug.Log(startFlipAnim);
     }
     private void Animation()
     {
         Sheathe();
         if (character.controlFlipViaAnimation && directional.isFlipped)
         {
-            animator.SetTrigger("turning around");
+            startFlipAnim = true;
         }
-        if (character.jump.IsExecuting) animator.SetTrigger("jump");
         animator.SetInteger("attacks", character.attack.currentAttack);
         animator.SetFloat("move", Math.Abs(character.rb.linearVelocity.x));
         animator.SetFloat("y force", character.rb.linearVelocity.y);
@@ -61,8 +63,10 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("is attacking", character.attack.IsExecuting);
         animator.SetBool("readiness", character.attack.isComboWindow && character.movement.direction == 0);
         animator.SetBool("on combo window", character.attack.isComboWindow);
-        animator.SetBool("is flipping", character.flip.IsExecuting);
+        animator.SetBool("is flipping", startFlipAnim && character.controlFlipViaAnimation);
         animator.SetBool("is climbing", character.climb.IsExecuting); 
+        animator.SetBool("is taking hit", character.knockback.IsExecuting);
+        animator.SetBool("is dead", character.die.IsExecuting);
     }
     public void StartFlipEvent()
     {
@@ -73,6 +77,7 @@ public class PlayerAnimationController : MonoBehaviour
         player.SetFlipInput(false);
         directional.SetNewDirection();
         character.flip.StopActionEvent();
+        startFlipAnim = false;
     }
     public void FlipEvent()
     {

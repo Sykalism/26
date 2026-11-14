@@ -5174,8 +5174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oblique: {fileID: 189564445244208397}
   side: {fileID: 613813569411319099}
-  character: {fileID: 8249787166463009017}
-  directional: {fileID: 0}
+  player: {fileID: 0}
   isObliqued: 0
 --- !u!95 &8710513591228508851
 Animator:
@@ -5212,6 +5211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dissolve: {fileID: 7888734934970829912}
+  dashParticle: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!114 &8249787166463009017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,9 +5227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e40236b14985e574fb221b4820433cd1, type: 2}
   weaponObject: {fileID: 8140670378089607270}
-  groundChecker: {fileID: 2119588564977835732}
+  groundCheckpoint: {fileID: 0}
+  ObstacleAheadCheckpoint: {fileID: 0}
   climbingPoint: {fileID: 5033184632092501227}
-  autoFlip: 0
+  controlFlipViaAnimation: 0
 --- !u!114 &3189522616311236294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5324,6 +5326,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 4917997518678667298, guid: 9e11c476613fb6049959ae0b3a93d859, type: 3}
   - {fileID: 2591182404718822753, guid: 4de6c3dd70562f6429ce80811f46e625, type: 3}
+  - {fileID: 1537732880958112733, guid: a0a3e2e990609df47ad7d540887c96c4, type: 3}
   spawnPoint: {fileID: 8609322770718482149}
   parent: {fileID: 1796364636015476753}
   index: 0

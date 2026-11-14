@@ -31,6 +31,7 @@ public class Climb : CharacterAction
         isClimbing = true;
         GetClimbingTarget();
 
+        if (handClimb == null) return;
         handClimb.target.position = climbingTarget;
         handClimb.SetAllTarget(handClimb.target);
 
@@ -45,7 +46,7 @@ public class Climb : CharacterAction
         actionContext.Unlock();
         climbingTarget = Vector2.zero;
 
-        handClimb.ResetAllTarget();
+        if (handClimb != null) handClimb.ResetAllTarget();
     }
     public override void FixedExecute()
     {
@@ -113,6 +114,7 @@ public class Climb : CharacterAction
             && !isClimbing 
             && character.isTouchingObstacle 
             && rb.linearVelocity.y > 0.1f;
+            
     }
 
 }

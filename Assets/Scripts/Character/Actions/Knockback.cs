@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Knockback : CharacterAction
 {
-    private Rigidbody2D rb;
-    private HealthPoint health;
-    private float strength;
+    private CharacterBehaviour character;
+    private Rigidbody2D rb => character.rb;
+    private HealthPoint health => character.healthPoint;
+    private float strength => character.data.knockbackForce;
     private GameTimer KnockbackTimer;
     private bool isKnocking;
     public override bool IsExecuting => isKnocking;
@@ -12,18 +13,13 @@ public class Knockback : CharacterAction
     public Knockback
     (
         ActionContext context,
-        Rigidbody2D rb,
-        HealthPoint health, 
-        float strength,
-        float duration
-        )
+        CharacterBehaviour character
+
+    )
     : base(context, 6)
     {
-        this.rb = rb;
-        this.health = health;
-        this.strength = strength;
-
-        KnockbackTimer = new GameTimer(duration);
+        this.character = character;
+        KnockbackTimer = new GameTimer(character.data.knockbackDuration);
     }
 
     public override bool Condition()
@@ -35,6 +31,7 @@ public class Knockback : CharacterAction
     {
         actionContext.Lock();
         KnockbackTimer.Start();
+        character.directional.flipLocked = true;
         StartAction = true;    
         isKnocking = true;    
     }
@@ -50,6 +47,7 @@ public class Knockback : CharacterAction
     {
         actionContext.Unlock();
         isKnocking = false;
+        character.directional.flipLocked = false;
     }
     public override void FixedExecute()
     {

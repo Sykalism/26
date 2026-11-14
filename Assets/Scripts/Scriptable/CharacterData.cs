@@ -17,7 +17,8 @@ public class CharacterBaseData : ScriptableObject
     comboWindowTime,
     DashForce,
     DashDuration,
-    knockbackForce;
+    knockbackForce,
+    knockbackDuration;
     
     public int AttackVariant;
 }

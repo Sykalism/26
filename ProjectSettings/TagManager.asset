@@ -50,6 +50,9 @@ TagManager:
   - name: Reflection Background
     uniqueID: 1031715739
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Environment
     uniqueID: 3398865613
     locked: 0
@@ -58,9 +61,6 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1574036285
-    locked: 0
-  - name: Default
-    uniqueID: 0
     locked: 0
   - name: Platform
     uniqueID: 2437096195

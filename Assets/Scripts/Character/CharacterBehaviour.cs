@@ -59,7 +59,7 @@ public class CharacterBehaviour : MonoBehaviour
         selector = new ActionSelector();
         directional = new DirectionalLevelControl(this);
 
-        knockback = new Knockback(actContext, rb, healthPoint, data.knockbackForce, 0.2f);
+        knockback = new Knockback(actContext, this);
         movement = new Movement(actContext, rb, data, this);
         dash = new Dash(actContext, rb, data, this);
         jump = new Jump(actContext, this);

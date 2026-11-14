@@ -29,7 +29,10 @@ public class AIController : MonoBehaviour
             character.data.HitRadius,
             character.attack.IsExecuting 
         );
-        
+        if (character.die.IsExecuting)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
         conditions = new List<CharacterCondition>() {moveCondition, attackCondition};
     }
     void Update()
@@ -45,7 +48,6 @@ public class AIController : MonoBehaviour
             character.directional.isFlipped
             
         );
-
         Animation();
         ExecuteConditions();
     }
@@ -63,6 +65,8 @@ public class AIController : MonoBehaviour
         animator.SetFloat("movement", Mathf.Abs(character.rb.linearVelocity.x));
         animator.SetInteger("attackVariation", character.attack.currentAttack);
         animator.SetBool("isAttacking", character.attack.IsExecuting);
+        animator.SetBool("isTakingDamage", character.knockback.IsExecuting);
+        animator.SetBool("isDead", character.die.IsExecuting);
     }
     private void DebugConsole()
     {
