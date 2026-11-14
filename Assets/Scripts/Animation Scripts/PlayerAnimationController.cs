@@ -6,13 +6,13 @@ using System.Collections;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    [Foldout("References")] [SerializeField] private GameObject oblique;
-    [Foldout("References")] [SerializeField] private GameObject side;
+    [Foldout("References")] [SerializeField] private GameObject[] obliqueParts;
+    [Foldout("References")] [SerializeField] private GameObject[] sideParts;
+    [Foldout("References")] [SerializeField] private CharacterSpriteController obliqueController;
+    [Foldout("References")] [SerializeField] private CharacterSpriteController sideController;
     [Foldout("References")] [SerializeField] private PlayerController player;
 
     private CharacterBehaviour character => player.character;
-    private CharacterSpriteController obliqueSprite;
-    private CharacterSpriteController sideSprite;
 
     [Header("General")]
     [SerializeField] private bool isObliqued;
@@ -25,14 +25,12 @@ public class PlayerAnimationController : MonoBehaviour
 
     void OnValidate()
     {
+        if (obliqueParts == null || sideParts == null) return;
         if (isObliqued) SetOblique();
         else SetSide();
     }
     void Awake()
     {
-        obliqueSprite = oblique?.GetComponent<CharacterSpriteController>();
-        sideSprite = side?.GetComponent<CharacterSpriteController>();
-
         animator = GetComponent<Animator>();
         
     }
@@ -104,21 +102,26 @@ public class PlayerAnimationController : MonoBehaviour
     }
     private void VisualDirection(string direction)
     {
-        sideSprite?.SetSprite(direction);
-        obliqueSprite?.SetSprite(direction);
+        sideController?.SetSprite(direction);
+        obliqueController?.SetSprite(direction);
     }
     public void SetOblique()
     {
-        oblique.SetActive(true);
-        side.SetActive(false);
+        PartsActive(obliqueParts, true);
+        PartsActive(sideParts, false);
     }
     public void SetSide()
-    
     {
-        oblique.SetActive(false);
-        side.SetActive(true);
+        PartsActive(obliqueParts, false);
+        PartsActive(sideParts, true);
     }
-
+    private void PartsActive(GameObject[] parts, bool value)
+    {
+        for(int i = 0; i < parts.Length; i++)
+        {
+            parts[i].SetActive(value);
+        }
+    }
     private void OpeningAttack()
     {
         if (!character.weapon.isDrawn)
