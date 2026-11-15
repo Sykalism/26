@@ -26,6 +26,10 @@ public class FollowTarget : MonoBehaviour
             smoothTime
         ) + offset;
     }
+    private void OnValidate()
+    {
+        Execute();
+    }
     private void LateUpdate()
     {
         if (updateExecute == UpdateExecute.LateUpdate)

@@ -3,9 +3,13 @@ using NaughtyAttributes;
 using System;
 using NUnit.Framework;
 using System.Collections;
+using UnityEngine.U2D.Animation;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    [Foldout("Library")] [SerializeField] private SpriteLibrary spriteLibrary;
+    [Foldout("Library")] [SerializeField] private SpriteLibraryAsset obliqueLibAsset;
+    [Foldout("Library")] [SerializeField] private SpriteLibraryAsset sideLibAsset;
     [Foldout("References")] [SerializeField] private GameObject[] obliqueParts;
     [Foldout("References")] [SerializeField] private GameObject[] sideParts;
     [Foldout("References")] [SerializeField] private CharacterSpriteController obliqueController;
@@ -28,6 +32,7 @@ public class PlayerAnimationController : MonoBehaviour
         if (obliqueParts == null || sideParts == null) return;
         if (isObliqued) SetOblique();
         else SetSide();
+        SetLibraryAsset();
     }
     void Awake()
     {
@@ -43,7 +48,12 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         Animation();    
+        SetLibraryAsset();
         Debug.Log(startFlipAnim);
+    }
+    private void SetLibraryAsset()
+    {
+        spriteLibrary.spriteLibraryAsset = isObliqued ? obliqueLibAsset : sideLibAsset;
     }
     private void Animation()
     {
@@ -98,7 +108,6 @@ public class PlayerAnimationController : MonoBehaviour
         {
             VisualDirection("Right");
         }
-
     }
     private void VisualDirection(string direction)
     {
@@ -107,11 +116,13 @@ public class PlayerAnimationController : MonoBehaviour
     }
     public void SetOblique()
     {
+        isObliqued = true;
         PartsActive(obliqueParts, true);
         PartsActive(sideParts, false);
     }
     public void SetSide()
     {
+        isObliqued = false;
         PartsActive(obliqueParts, false);
         PartsActive(sideParts, true);
     }

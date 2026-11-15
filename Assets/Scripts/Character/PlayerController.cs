@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
 {
-
-    [Header("Sword Material")]
-    [SerializeField] Dissolve dissolve;
-
     [Header("Effect")]
     [SerializeField] GameObject dashParticle;
     [SerializeField] Transform spawnPoint;

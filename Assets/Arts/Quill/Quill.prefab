@@ -270,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 3415103722212078907}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.078665, y: 5.096311, z: 0}
+  m_LocalPosition: {x: 4.41407, y: 5.2270927, z: 0}
   m_LocalScale: {x: 0.59999985, y: 0.59999985, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1367,9 +1367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a92f5c28c3445439d08662f7a88c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleDash: {fileID: 0}
-  checkpoint: {fileID: 0}
-  dissolve: {fileID: 3897764205963057339}
+  dashParticle: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!50 &6629805853015272121
 Rigidbody2D:
   serializedVersion: 5
@@ -1565,14 +1564,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6821806991771925084, guid: ae124b69463df224f92929f31f1c871b, type: 3}
   m_PrefabInstance: {fileID: 7982345240217505681}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3897764205963057339 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -2823370690842274006, guid: ae124b69463df224f92929f31f1c871b, type: 3}
-  m_PrefabInstance: {fileID: 7982345240217505681}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ade5b79a9c9e342851ac1dce8dae68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
