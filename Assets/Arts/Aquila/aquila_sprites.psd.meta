@@ -11756,8 +11756,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 854
-      y: 1435
+      x: 1120
+      y: 197
       width: 55
       height: 68
     spriteID: f73da0984ccba0948a738119e2c1ac0f
@@ -12072,8 +12072,8 @@ ScriptedImporter:
     - {x: 23, y: 24}
     - {x: 24, y: 25}
     tessellationDetail: 0
-    uvTransform: {x: 854, y: 1435}
-    spritePosition: {x: 637, y: 865}
+    uvTransform: {x: 1120, y: 197}
+    spritePosition: {x: 640, y: 865}
   - name: right lower arm (o_left)
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -12082,8 +12082,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1042
-      y: 1534
+      x: 842
+      y: 358
       width: 48
       height: 177
     spriteID: 20740602802d7fd4aabce266807989b4
@@ -12400,7 +12400,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
-    uvTransform: {x: 1042, y: 1534}
+    uvTransform: {x: 842, y: 358}
     spritePosition: {x: 631, y: 922}
   - name: shoulder
     originalName: 
@@ -19378,8 +19378,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 854
-      y: 1511
+      x: 1043
+      y: 1997
       width: 48
       height: 24
     spriteID: eac40f5f25f1ea745b2a15873849fff5
@@ -19663,7 +19663,7 @@ ScriptedImporter:
     - {x: 21, y: 22}
     - {x: 22, y: 23}
     tessellationDetail: 0
-    uvTransform: {x: 854, y: 1511}
+    uvTransform: {x: 1043, y: 1997}
     spritePosition: {x: 576, y: 1430}
   - name: closed eye
     originalName: 
@@ -22313,8 +22313,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 842
-      y: 358
+      x: 1042
+      y: 1534
       width: 49
       height: 174
     spriteID: 0c715b021d1dd8a44ba7e62c816be9e0
@@ -22631,7 +22631,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
-    uvTransform: {x: 842, y: 358}
+    uvTransform: {x: 1042, y: 1534}
     spritePosition: {x: 595, y: 886}
   - name: left lower arm (left)
     originalName: 
@@ -28106,7 +28106,7 @@ ScriptedImporter:
     parentIndex: 53
     spriteID: f73da0984ccba0948a738119e2c1ac0f
     layerID: -254894831
-    mosaicPosition: {x: 854, y: 1435}
+    mosaicPosition: {x: 1120, y: 197}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -28116,7 +28116,7 @@ ScriptedImporter:
     parentIndex: 53
     spriteID: 20740602802d7fd4aabce266807989b4
     layerID: -1150854473
-    mosaicPosition: {x: 1042, y: 1534}
+    mosaicPosition: {x: 842, y: 358}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -28356,7 +28356,7 @@ ScriptedImporter:
     parentIndex: 75
     spriteID: eac40f5f25f1ea745b2a15873849fff5
     layerID: -1025407087
-    mosaicPosition: {x: 854, y: 1511}
+    mosaicPosition: {x: 1043, y: 1997}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -28466,7 +28466,7 @@ ScriptedImporter:
     parentIndex: 90
     spriteID: 0c715b021d1dd8a44ba7e62c816be9e0
     layerID: 1627470647
-    mosaicPosition: {x: 842, y: 358}
+    mosaicPosition: {x: 1042, y: 1534}
     flatten: 0
     isImported: 1
     isVisible: 1

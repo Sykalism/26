@@ -9,7 +9,7 @@ public class Jump : CharacterAction
     private float jumpForce => character.data.JumpForce;
     private bool jumpInput;
     private bool isJumping;
-    private int jumpAttemp;
+    public int jumpAttemp {get; private set;}
 
     public override bool IsExecuting => isJumping;
 
@@ -55,8 +55,8 @@ public class Jump : CharacterAction
     }
     private bool CanJump()
     {
-        if (character.isGrounded) jumpAttemp = 1;
-        if (jumpInput && jumpAttemp <= 2 && !isJumping)
+        if (character.isGrounded) jumpAttemp = 0;
+        if (jumpInput && jumpAttemp < 2 && !isJumping)
         {
             jumpAttemp += 1;
             return true;

@@ -13,7 +13,7 @@ public class Climb : CharacterAction
     public override bool IsExecuting => isClimbing;
 
     public Climb(ActionContext context, CharacterBehaviour character)
-     : base(context, 8)
+     : base(context, 9)
     {
         this.character = character;
         handClimb = character.GetComponent<IKTargetHandler>();

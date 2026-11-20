@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
+  m_Name: Water 2
   m_Shader: {fileID: -6465566751694194690, guid: 2db8550d72d149a4bb7f1e8c935ac54d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Render_Texture:
-        m_Texture: {fileID: 8400000, guid: 3fe553fa919690145a0c6e0f135a7c41, type: 2}
+        m_Texture: {fileID: 8400000, guid: ce900ae141920194488bb9a9ab828d41, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Ripple_Texture:

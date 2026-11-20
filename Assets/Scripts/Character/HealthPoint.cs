@@ -35,6 +35,8 @@ public class HealthPoint : MonoBehaviour
     }
     public void TakeDamage(float amount, LayerMask damageOrigin)
     {
+        if (GetComponent<CharacterBehaviour>().parry.IsExecuting) return;
+        
         this.damageOrigin = damageOrigin;
         CurrentHealth -= amount;
         StartCoroutine(NextFrame());

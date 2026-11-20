@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private bool jumpInput => Input.GetKeyDown(KeyCode.Z);
     private bool dashInput => Input.GetKeyDown(KeyCode.C);
     private bool attackInput => Input.GetKeyDown(KeyCode.X);
+    private bool parryInput => Input.GetKey(KeyCode.LeftControl);
     private bool flipInput;
 
 
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void Update()
     {
+        Debug.Log(character.parry.IsExecuting);
         if (!character.controlFlipViaAnimation)
         {
             flipInput = character.directional.isFlipped;
@@ -41,7 +43,8 @@ public class PlayerController : MonoBehaviour, ISaveable
             jumpInput,
             dashInput,
             attackInput,
-            flipInput
+            flipInput,
+            parryInput
             
         );
 

@@ -45,16 +45,17 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         Animation();    
-        Debug.Log(startFlipAnim);
+        Debug.Log(character.jump.jumpAttemp);
     }
     private void Animation()
     {
         Sheathe();
         if (character.controlFlipViaAnimation && directional.isFlipped)
         {
-            startFlipAnim = true;
+            animator.SetTrigger("turning around");
         }
         animator.SetInteger("attacks", character.attack.currentAttack);
+        animator.SetInteger("jump attemp", character.jump.jumpAttemp);
         animator.SetFloat("move", Math.Abs(character.rb.linearVelocity.x));
         animator.SetFloat("y force", character.rb.linearVelocity.y);
         animator.SetBool("is grounded", character.isGrounded);
@@ -67,17 +68,20 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("is climbing", character.climb.IsExecuting); 
         animator.SetBool("is taking hit", character.knockback.IsExecuting);
         animator.SetBool("is dead", character.die.IsExecuting);
+        animator.SetBool("is parrying", character.parry.IsExecuting);
+        
     }
     public void StartFlipEvent()
     {
+        character.directional.flipLocked = true;
         player.SetFlipInput(true);
     }
     public void StopFlipEvent()
     {
+        character.directional.flipLocked = false;
         player.SetFlipInput(false);
         directional.SetNewDirection();
         character.flip.StopActionEvent();
-        startFlipAnim = false;
     }
     public void FlipEvent()
     {

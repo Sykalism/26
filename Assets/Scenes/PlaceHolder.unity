@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 189564445244208397, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 613813569411319099, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 893347470967054119, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2036053097198890850, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -17.562
+      value: -124.752
       objectReference: {fileID: 0}
     - target: {fileID: 2390553796153254583, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_Enabled
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459468670976097291, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.011
+      value: -70.593
       objectReference: {fileID: 0}
     - target: {fileID: 4681030561992482428, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: m_Name
@@ -357,10 +357,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7888734934970829912, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: fade
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7919977998979435977, guid: d1888904956c0524da336c685634c5b1, type: 3}
       propertyPath: isDrawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140670378089607270, guid: d1888904956c0524da336c685634c5b1, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167314946645464719, guid: d1888904956c0524da336c685634c5b1, type: 3}
@@ -391,7 +395,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000045255288
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2390553796153254583, guid: d1888904956c0524da336c685634c5b1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -710,7 +715,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -896101683
-  m_SortingLayer: -3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.34947184, g: 0.34947184, b: 0.38993704, a: 1}

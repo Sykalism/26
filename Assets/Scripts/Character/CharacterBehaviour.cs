@@ -27,6 +27,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Climb climb {get; private set;}
     public Die die {get; private set;}
     public Flip flip {get; private set;}
+    public Parry parry {get; private set;}
 
     //Components
     public Rigidbody2D rb {get; private set;}
@@ -67,6 +68,7 @@ public class CharacterBehaviour : MonoBehaviour
         climb = new Climb(actContext, this);
         die = new Die(actContext, rb, healthPoint);
         flip = new Flip(actContext, this);
+        parry = new Parry(actContext, this);
 
 
     }
@@ -81,7 +83,8 @@ public class CharacterBehaviour : MonoBehaviour
             attack,
             climb,
             die,
-            flip
+            flip,
+            parry
             
         };
     }
@@ -109,10 +112,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         
         movement.SetInput(actionInput.move, actionInput.run, actionInput.direction);
-        dash.SetInput(actionInput.dash, (int)directional.GetNewDirection());
+        dash.SetInput(actionInput.dash, (int)directional.level);
         jump.SetInput(actionInput.jump);
         attack.SetInput(actionInput.attack);
         flip.SetInput((int)directional.GetNewDirection(), actionInput.flip);
+        parry.SetInput(actionInput.parry);
 
     }
 
@@ -219,7 +223,8 @@ public class ActionInput
     jump,
     dash,
     attack,
-    flip;
+    flip,
+    parry;
 
 
     public void InitiateInput
@@ -230,7 +235,8 @@ public class ActionInput
         bool jump = false, 
         bool dash = false,
         bool attack = false,
-        bool flip = false
+        bool flip = false,
+        bool parry = false
     )
     {
         this.direction = direction;
@@ -240,5 +246,6 @@ public class ActionInput
         this.dash = dash;
         this.attack = attack;
         this.flip = flip;
+        this.parry = parry;
     }
 }

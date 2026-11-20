@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\Tools\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\Material Controller\Dissolve.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Character\Actions\Parry.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Character\ActionSelector.cs" />
     <Compile Include="Assets\Scripts\Character\HealthPoint.cs" />
