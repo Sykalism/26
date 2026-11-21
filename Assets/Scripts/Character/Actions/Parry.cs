@@ -27,7 +27,7 @@ public class Parry : CharacterAction
     }
     public override void Execute()
     {
-        if (character.health.IsParried)
+        if (character.stats.health.IsParried)
         {
             Debug.Log("parry succeed");
         }

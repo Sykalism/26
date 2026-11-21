@@ -9,13 +9,13 @@ public class CollisionDamage : MonoBehaviour
     {
         if (IsColliding(collision))
         {
-            Health targetHP = collision.gameObject.GetComponent<Health>();
+            Health targetHP = collision.gameObject.GetComponent<CharacterBehaviour>().stats.health;
             CharacterBehaviour character = collision.gameObject.GetComponent<CharacterBehaviour>();
             if (targetHP != null && character != null)
             {
                 if (!character.dash.IsExecuting)
                 {
-                    float totalDamage = damagePercentage / 100 * targetHP.MaxHealth;
+                    float totalDamage = damagePercentage / 100 * targetHP.max;
                     targetHP.TakeDamage(totalDamage, LayerMask.GetMask("Hit Collider"));
                 }
             }

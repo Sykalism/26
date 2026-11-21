@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         data.player.position[0] = transform.position.x;
         data.player.position[1] = transform.position.y;
 
-        data.player.currentHealth = character.health.CurrentHealth;
+        data.player.currentHealth = character.stats.health.current;
     }
     public void Load(SaveData data)
     {
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour, ISaveable
             0f
         );
 
-        character.health.CurrentHealth = data.player.currentHealth;
+        character.stats.health.SetCurrent(data.player.currentHealth);
     }
 
 

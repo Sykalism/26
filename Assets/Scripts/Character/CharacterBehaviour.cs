@@ -32,7 +32,7 @@ public class CharacterBehaviour : MonoBehaviour
     //Components
     public Rigidbody2D rb {get; private set;}
     public Weapon weapon {get; set;}
-    public Health health {get; set;}
+    public Stats stats {get; private set;}
     public DirectionalLevelControl directional {get; private set;}
     private List<CharacterAction> actions;
     private ActionContext actContext;
@@ -49,16 +49,29 @@ public class CharacterBehaviour : MonoBehaviour
     private bool beLanding;
     private float timer;
 
-    void Awake()
+    public class Stats
+    {
+        public Health health;
+        public Endurance endurance;
+
+        public Stats(CharacterBehaviour character)
+        {
+            health = new Health(character.data.MaxHealth, character);
+            endurance = new Endurance(100);
+        }
+    }
+
+    // Main Methods
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        health = GetComponent<Health>();
         weapon = weaponObject.GetComponent<Weapon>();
 
         actContext = new ActionContext();
         actionInput = new ActionInput();
         selector = new ActionSelector();
         directional = new DirectionalLevelControl(this);
+        stats = new Stats(this);
 
         knockback = new Knockback(actContext, this);
         movement = new Movement(actContext, rb, data, this);
@@ -66,13 +79,13 @@ public class CharacterBehaviour : MonoBehaviour
         jump = new Jump(actContext, this);
         attack = new Attack(actContext, this);
         climb = new Climb(actContext, this);
-        die = new Die(actContext, rb, health);
+        die = new Die(actContext, this);
         flip = new Flip(actContext, this);
         parry = new Parry(actContext, this);
 
 
     }
-    void Start()
+    private void Start()
     {
         actions = new List<CharacterAction>
         {
@@ -88,7 +101,7 @@ public class CharacterBehaviour : MonoBehaviour
             
         };
     }
-    void Update()
+    private void Update()
     {
         directional.Control(actionInput.direction);
         InitiateActionInput();
@@ -104,10 +117,21 @@ public class CharacterBehaviour : MonoBehaviour
         );
         selector.Execute(actions);
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         selector.FixedExecute();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        stats.health.CheckAffectedDamage(collision);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        stats.health.ResetAffectedDamage(collision);
+    }
+
+
+
     private void InitiateActionInput()
     {
         

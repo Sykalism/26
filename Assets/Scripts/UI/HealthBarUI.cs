@@ -3,10 +3,12 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public Health health;
+    public CharacterBehaviour character;
     public Image fillImage;
     public Image delayImage;
     public float delaySpeed = 2f;
+
+    private Health health => character.stats.health;
 
     void Update()
     {
@@ -15,7 +17,7 @@ public class HealthBarUI : MonoBehaviour
     }
     private void SetBarFill()
     {
-        fillImage.fillAmount = health.CurrentHealth / health.MaxHealth;
+        fillImage.fillAmount = health.current / health.max;
     }
     private void SetBarDelay()
     {

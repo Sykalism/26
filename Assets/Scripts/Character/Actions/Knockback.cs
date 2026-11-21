@@ -4,7 +4,7 @@ public class Knockback : CharacterAction
 {
     private CharacterBehaviour character;
     private Rigidbody2D rb => character.rb;
-    private Health health => character.health;
+    private Health health => character.stats.health;
     private float strength => character.data.KnockbackForce;
     private GameTimer KnockbackTimer;
     private bool isKnocking;

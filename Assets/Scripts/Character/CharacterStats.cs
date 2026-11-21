@@ -8,11 +8,15 @@ public abstract class CharacterStats
     public CharacterStats(float maxValue)
     {
         SetMax(maxValue);
-        Add(max);
+        SetCurrent(max);
     }
     public void SetMax(float value)
     {
         max = value;
+    }
+    public void SetCurrent(float value)
+    {
+        current = value;
     }
     public virtual void Add(float value)
     {

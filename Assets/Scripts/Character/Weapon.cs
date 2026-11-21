@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class Weapon : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Weapon : MonoBehaviour
     {
         if (IsColliding(collision) && trigger)
         {
-            Health targetHP = collision.gameObject.GetComponent<Health>();
+            Health targetHP = collision.gameObject.GetComponent<CharacterBehaviour>().stats.health;
             if (targetHP != null)
             {
                 targetHP.TakeDamage(characterData.Damage, LayerMask.GetMask("Weapon"));

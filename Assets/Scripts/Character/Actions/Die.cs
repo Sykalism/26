@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class Die : CharacterAction
 {
-    public bool isDead {get; private set;}
-    private Health health;
-    private Rigidbody2D rb;
+    private bool isDead;
+    private Health health => character.stats.health;
+    private Rigidbody2D rb => character.rb;
+    private CharacterBehaviour character;
     public override bool IsExecuting => isDead;
     public Die
     (
-        ActionContext context, Rigidbody2D rb, Health health
+        ActionContext context, CharacterBehaviour character
     ) : base(context, 100)
     {
-        this.rb = rb;
-        this.health = health;
+        this.character = character;
     }
     public override bool Condition()
     {
-        isDead = health.CurrentHealth <= 0f ? true : false;
+        isDead = health.current <= 0f ? true : false;
         return isDead;
     }
     public override void Execute()
     {
-        if (health.CurrentHealth > 0f)
+        if (health.current > 0f)
         {
             isDead = false;
             actionContext.Unlock();

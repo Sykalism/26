@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour, ISaveable
 {
-    private CharacterBehaviour CBehaviour;
+    private CharacterBehaviour character;
     private SaveID saveID;
 
     private void Awake()
     {
-        CBehaviour = GetComponent<CharacterBehaviour>();
+        character = GetComponent<CharacterBehaviour>();
         saveID = GetComponent<SaveID>();
     }
     public void Save(SaveData data)
@@ -26,7 +26,7 @@ public class Boss : MonoBehaviour, ISaveable
         bossData.position[1] = transform.position.y;
 
         //set current health
-        bossData.currentHealth = CBehaviour.health.CurrentHealth;
+        bossData.currentHealth = character.stats.health.current;
 
         //apply data
         data.bosses.Add(bossData);
@@ -45,6 +45,6 @@ public class Boss : MonoBehaviour, ISaveable
             0f
         );
 
-        CBehaviour.health.CurrentHealth = bossData.currentHealth;
+        character.stats.health.SetCurrent(bossData.currentHealth);
     }
 }
