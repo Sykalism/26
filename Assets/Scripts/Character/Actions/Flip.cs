@@ -13,7 +13,7 @@ public class Flip : CharacterAction
     private bool isFlipping;
     private Vector2 startScale;
 
-    public Flip(ActionContext context, CharacterBehaviour character) : base(context, 7)
+    public Flip(ActionContext context, CharacterBehaviour character) : base(context, 6)
     {
         this.character = character;
 

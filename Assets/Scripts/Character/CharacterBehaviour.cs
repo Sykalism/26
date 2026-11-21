@@ -32,7 +32,7 @@ public class CharacterBehaviour : MonoBehaviour
     //Components
     public Rigidbody2D rb {get; private set;}
     public Weapon weapon {get; set;}
-    public HealthPoint healthPoint {get; set;}
+    public Health health {get; set;}
     public DirectionalLevelControl directional {get; private set;}
     private List<CharacterAction> actions;
     private ActionContext actContext;
@@ -52,7 +52,7 @@ public class CharacterBehaviour : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        healthPoint = GetComponent<HealthPoint>();
+        health = GetComponent<Health>();
         weapon = weaponObject.GetComponent<Weapon>();
 
         actContext = new ActionContext();
@@ -66,7 +66,7 @@ public class CharacterBehaviour : MonoBehaviour
         jump = new Jump(actContext, this);
         attack = new Attack(actContext, this);
         climb = new Climb(actContext, this);
-        die = new Die(actContext, rb, healthPoint);
+        die = new Die(actContext, rb, health);
         flip = new Flip(actContext, this);
         parry = new Parry(actContext, this);
 

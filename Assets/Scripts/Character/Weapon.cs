@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     {
         if (IsColliding(collision) && trigger)
         {
-            HealthPoint targetHP = collision.gameObject.GetComponent<HealthPoint>();
+            Health targetHP = collision.gameObject.GetComponent<Health>();
             if (targetHP != null)
             {
                 targetHP.TakeDamage(characterData.Damage, LayerMask.GetMask("Weapon"));

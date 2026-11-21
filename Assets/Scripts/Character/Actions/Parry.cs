@@ -5,9 +5,10 @@ public class Parry : CharacterAction
     private bool isParrying => parryInput;
     private bool parryInput;
     private Rigidbody2D rb => character.rb;
+
     public override bool IsExecuting => isParrying;
 
-    public Parry(ActionContext context, CharacterBehaviour character) : base(context, 8)
+    public Parry(ActionContext context, CharacterBehaviour character) : base(context, 7)
     {
         this.character = character;
     }
@@ -20,9 +21,20 @@ public class Parry : CharacterAction
         if (actionContext.isLocked) return false;
         return parryInput && character.isGrounded;
     }
+    public override void OnEnter()
+    {
+        character.directional.flipLocked = true;
+    }
     public override void Execute()
     {
-        
+        if (character.health.IsParried)
+        {
+            Debug.Log("parry succeed");
+        }
+    }
+    public override void OnExit()
+    {
+        character.directional.flipLocked = false;
     }
     public override void FixedExecute()
     {

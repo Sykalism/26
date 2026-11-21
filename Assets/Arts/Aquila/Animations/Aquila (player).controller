@@ -41,6 +41,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: is attacking
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: is parrying
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6571230385745437058}
   m_Solo: 0
@@ -536,6 +539,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: is parrying
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: is attacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: is grounded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4708596886371863598}
   m_Solo: 0
@@ -777,7 +786,7 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7229198703329589370}
-    m_Position: {x: 210, y: 520, z: 0}
+    m_Position: {x: 210, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1586273931856823276}
     m_Position: {x: 590, y: 160, z: 0}
@@ -807,7 +816,7 @@ AnimatorStateMachine:
     m_Position: {x: 10, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6041283799177544978}
-    m_Position: {x: 210, y: 470, z: 0}
+    m_Position: {x: 210, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5923082448175459158}
     m_Position: {x: -890, y: 40, z: 0}
@@ -816,7 +825,7 @@ AnimatorStateMachine:
     m_Position: {x: -260, y: -350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4708596886371863598}
-    m_Position: {x: 210, y: 570, z: 0}
+    m_Position: {x: 210, y: 450, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1862567010897037157}
@@ -1178,6 +1187,9 @@ AnimatorStateTransition:
     m_EventTreshold: 2
   - m_ConditionMode: 1
     m_ConditionEvent: is attacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: is parrying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5033747661528110987}
@@ -1619,6 +1631,9 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: is attacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: is parrying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8298392310095604909}

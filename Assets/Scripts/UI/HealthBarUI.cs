@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public HealthPoint health;
+    public Health health;
     public Image fillImage;
     public Image delayImage;
     public float delaySpeed = 2f;

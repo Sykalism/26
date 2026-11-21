@@ -3,12 +3,12 @@ using UnityEngine;
 public class Die : CharacterAction
 {
     public bool isDead {get; private set;}
-    private HealthPoint health;
+    private Health health;
     private Rigidbody2D rb;
     public override bool IsExecuting => isDead;
     public Die
     (
-        ActionContext context, Rigidbody2D rb, HealthPoint health
+        ActionContext context, Rigidbody2D rb, Health health
     ) : base(context, 100)
     {
         this.rb = rb;

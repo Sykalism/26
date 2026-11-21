@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Visual\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\Character\Actions\Die.cs" />
     <Compile Include="Assets\Scripts\UI\Player Menu.cs" />
+    <Compile Include="Assets\Scripts\Character\Health.cs" />
     <Compile Include="Assets\Scripts\Character\AIController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterCondition.cs" />
     <Compile Include="Assets\Scripts\Animation Scripts\IKTargetHandler.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\Character\Endurance.cs" />
     <Compile Include="Assets\Scripts\Character\Conditions\AI_MoveCondition.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
@@ -106,7 +108,7 @@
     <Compile Include="Assets\Scripts\Character\Actions\Parry.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Character\ActionSelector.cs" />
-    <Compile Include="Assets\Scripts\Character\HealthPoint.cs" />
+    <Compile Include="Assets\Scripts\Debug\CharaDebug.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel.cs" />
     <Compile Include="Assets\Scripts\Tools\GameTimer.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Debug\BoundsDebug.cs" />
     <Compile Include="Assets\Scripts\Character\CollisionDamage.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />

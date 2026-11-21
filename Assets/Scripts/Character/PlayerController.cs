@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISaveable
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void Update()
     {
-        Debug.Log(character.parry.IsExecuting);
         if (!character.controlFlipViaAnimation)
         {
             flipInput = character.directional.isFlipped;
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         data.player.position[0] = transform.position.x;
         data.player.position[1] = transform.position.y;
 
-        data.player.currentHealth = character.healthPoint.CurrentHealth;
+        data.player.currentHealth = character.health.CurrentHealth;
     }
     public void Load(SaveData data)
     {
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour, ISaveable
             0f
         );
 
-        character.healthPoint.CurrentHealth = data.player.currentHealth;
+        character.health.CurrentHealth = data.player.currentHealth;
     }
 
 

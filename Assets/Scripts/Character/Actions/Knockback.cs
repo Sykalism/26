@@ -4,8 +4,8 @@ public class Knockback : CharacterAction
 {
     private CharacterBehaviour character;
     private Rigidbody2D rb => character.rb;
-    private HealthPoint health => character.healthPoint;
-    private float strength => character.data.knockbackForce;
+    private Health health => character.health;
+    private float strength => character.data.KnockbackForce;
     private GameTimer KnockbackTimer;
     private bool isKnocking;
     public override bool IsExecuting => isKnocking;
@@ -16,10 +16,10 @@ public class Knockback : CharacterAction
         CharacterBehaviour character
 
     )
-    : base(context, 6)
+    : base(context, 8)
     {
         this.character = character;
-        KnockbackTimer = new GameTimer(character.data.knockbackDuration);
+        KnockbackTimer = new GameTimer(character.data.KnockbackDuration);
     }
 
     public override bool Condition()
@@ -58,7 +58,7 @@ public class Knockback : CharacterAction
             rb.linearVelocity = Vector2.zero;
 
             Vector2 force = new Vector2(
-                strength * health.affectedDirection.x * -1 / 2,
+                strength * health.affectedDamage.x * -1 / 2,
                 strength
             );
 

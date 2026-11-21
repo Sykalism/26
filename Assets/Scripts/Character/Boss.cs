@@ -26,7 +26,7 @@ public class Boss : MonoBehaviour, ISaveable
         bossData.position[1] = transform.position.y;
 
         //set current health
-        bossData.currentHealth = CBehaviour.healthPoint.CurrentHealth;
+        bossData.currentHealth = CBehaviour.health.CurrentHealth;
 
         //apply data
         data.bosses.Add(bossData);
@@ -45,6 +45,6 @@ public class Boss : MonoBehaviour, ISaveable
             0f
         );
 
-        CBehaviour.healthPoint.CurrentHealth = bossData.currentHealth;
+        CBehaviour.health.CurrentHealth = bossData.currentHealth;
     }
 }

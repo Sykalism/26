@@ -48,10 +48,10 @@ Material:
     - _RippleSpeed: 1.47
     - _RippleStrenght: 0.02
     - _RippleThickness: 0.1
-    - _RippleTime: 1.5133259
+    - _RippleTime: 1.500144
     - _ZWrite: 0
     m_Colors:
-    - _Center: {r: 0.51553506, g: 0.9227152, b: 0, a: 0}
+    - _Center: {r: 0.62966204, g: 0.9227135, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _RippleColor: {r: 1, g: 1, b: 1, a: 1}

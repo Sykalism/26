@@ -45,7 +45,6 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         Animation();    
-        Debug.Log(character.jump.jumpAttemp);
     }
     private void Animation()
     {

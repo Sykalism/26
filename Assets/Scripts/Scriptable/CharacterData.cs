@@ -9,6 +9,7 @@ public class CharacterBaseData : ScriptableObject
     MaxHealth, 
     Damage, 
     MovementSpeed, 
+    Endurance,
     RunSpeed, 
     JumpForce, 
     HeightForLanding, 
@@ -17,8 +18,8 @@ public class CharacterBaseData : ScriptableObject
     comboWindowTime,
     DashForce,
     DashDuration,
-    knockbackForce,
-    knockbackDuration;
+    KnockbackForce,
+    KnockbackDuration;
     
     public int AttackVariant;
 }

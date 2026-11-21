@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class HealthPoint : MonoBehaviour
+public class Health : MonoBehaviour
 {
     public float MaxHealth = 100f;
     private float _currentHealth;
     public bool IsTakingDamage {get; private set;}
-    public Vector2 affectedDirection {get; private set;}
+    public bool IsParried {get; private set;}
+    public Vector2 affectedDamage {get; private set;}
+    private CharacterBehaviour character;
     public float CurrentHealth
     {
         get => _currentHealth;
@@ -26,20 +28,25 @@ public class HealthPoint : MonoBehaviour
     private void Start()
     {
         CurrentHealth = MaxHealth;
+        character = GetComponent<CharacterBehaviour>();
     }
-    private IEnumerator NextFrame()
+    private IEnumerator NextFrame(System.Action<bool> callback)
     {
-        IsTakingDamage = true;
+        callback?.Invoke(true);
         yield return null;
-        IsTakingDamage = false;
+        callback?.Invoke(false);
     }
     public void TakeDamage(float amount, LayerMask damageOrigin)
     {
-        if (GetComponent<CharacterBehaviour>().parry.IsExecuting) return;
-        
+        if (character.parry.IsExecuting && (int)character.directional.level == affectedDamage.x)
+        {
+            StartCoroutine(NextFrame(value => IsParried = value));
+            return;
+        }
+
         this.damageOrigin = damageOrigin;
         CurrentHealth -= amount;
-        StartCoroutine(NextFrame());
+        StartCoroutine(NextFrame(value => IsTakingDamage = value));
     }
     public void TakeHeal(float amount)
     {
@@ -55,11 +62,11 @@ public class HealthPoint : MonoBehaviour
         {
             Vector2 dir = (collision.transform.position - transform.position).normalized;
 
-            affectedDirection = new Vector2(
+            affectedDamage = new Vector2(
                 Math.Sign(dir.x),
                 Mathf.Sign(dir.y)
             );
-            Debug.Log(affectedDirection);
+            Debug.Log(affectedDamage);
             
         }
     }
@@ -67,7 +74,7 @@ public class HealthPoint : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Weapon"))
         {
-            affectedDirection = Vector2.zero;
+            affectedDamage = Vector2.zero;
         }
     }
  

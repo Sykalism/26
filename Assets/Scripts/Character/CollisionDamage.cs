@@ -9,7 +9,7 @@ public class CollisionDamage : MonoBehaviour
     {
         if (IsColliding(collision))
         {
-            HealthPoint targetHP = collision.gameObject.GetComponent<HealthPoint>();
+            Health targetHP = collision.gameObject.GetComponent<Health>();
             CharacterBehaviour character = collision.gameObject.GetComponent<CharacterBehaviour>();
             if (targetHP != null && character != null)
             {

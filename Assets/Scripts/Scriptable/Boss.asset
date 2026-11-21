@@ -16,6 +16,7 @@ MonoBehaviour:
   MaxHealth: 500
   Damage: 43
   MovementSpeed: 3.6
+  Endurance: 0
   RunSpeed: 0
   JumpForce: 0
   HeightForLanding: 0
@@ -24,6 +25,6 @@ MonoBehaviour:
   comboWindowTime: 3
   DashForce: 0
   DashDuration: 0
-  knockbackForce: 20
-  knockbackDuration: 0.3
+  KnockbackForce: 20
+  KnockbackDuration: 0.2
   AttackVariant: 2
