@@ -37,8 +37,6 @@ public class Dash : CharacterAction
     public override bool Condition()
     {
         if(actionContext.isLocked) return false;
-        if (!isDashing) cooldown.Tick(Time.deltaTime);
-        dashDirection = inputDirection;
         return 
             dashInput 
             && !isDashing 
@@ -83,5 +81,10 @@ public class Dash : CharacterAction
             rb.linearVelocity = Vector2.zero;
             isDashing = false;
         }
+    }
+    public override void OnUpdate()
+    {
+        if (!isDashing) cooldown.Tick(Time.deltaTime);
+        dashDirection = inputDirection;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class CharacterBehaviour : MonoBehaviour
         public Stats(CharacterBehaviour character)
         {
             health = new Health(character.data.MaxHealth, character);
-            endurance = new Endurance(100);
+            endurance = new Endurance(character.data.Endurance);
         }
     }
 

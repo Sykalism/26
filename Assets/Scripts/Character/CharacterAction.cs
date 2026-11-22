@@ -6,7 +6,7 @@ public abstract class CharacterAction
     public bool StartAction {get; protected set;}
     public CharacterAction(ActionContext context, int priority)
     {
-        this.actionContext = context;
+        actionContext = context;
         this.priority = priority;
 
     }
@@ -15,6 +15,7 @@ public abstract class CharacterAction
     public abstract bool Condition();
     public abstract void Execute();
     public virtual void FixedExecute(){}
+    public virtual void OnUpdate(){}
 }
 public class ActionContext
 {

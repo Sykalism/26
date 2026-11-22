@@ -13,6 +13,8 @@ public class ActionSelector
         CharacterAction selected = null;
         foreach (var action in actions)
         {
+            action.OnUpdate();
+            
             if (!action.Condition())
             {
                 continue;

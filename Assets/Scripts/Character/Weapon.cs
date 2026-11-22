@@ -3,7 +3,7 @@ using UnityEngine.TextCore.Text;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] CharacterBaseData characterData;
+    [SerializeField] CharacterBaseData data;
     [SerializeField] LayerMask targetHit;
     public bool isDrawn = true;
 
@@ -15,8 +15,7 @@ public class Weapon : MonoBehaviour
             Health targetHP = collision.gameObject.GetComponent<CharacterBehaviour>().stats.health;
             if (targetHP != null)
             {
-                targetHP.TakeDamage(characterData.Damage, LayerMask.GetMask("Weapon"));
-                Debug.Log("hit");
+                targetHP.TakeDamage(data.Damage, LayerMask.GetMask("Weapon"));
                 TriggerOff();
             }
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : CharacterStats
 {
     public bool IsTakingDamage {get; private set;}
-    public bool IsParried {get; private set;}
+    public bool Hitted {get; private set;}
     public Vector2 affectedDamage {get; private set;}
     private CharacterBehaviour character;
     public LayerMask damageOrigin;
@@ -22,7 +22,8 @@ public class Health : CharacterStats
     {
         if (character.parry.IsExecuting && (int)character.directional.level == affectedDamage.x)
         {
-            character.StartCoroutine(NextFrame(value => IsParried = value));
+            character.StartCoroutine(NextFrame(value => Hitted = value));
+            character.parry.Parried();
             return;
         }
         Remove(value);

@@ -50,17 +50,7 @@ public class Attack : CharacterAction
     public override bool Condition()
     {
         if (actionContext.isLocked) return false;
-        if (!isAttacking)
-        {
-            comboTimer.Tick(Time.deltaTime);
-            if (!comboTimer.IsRunning)
-            {
-                isComboWindow = false;
-                currentAttack = 0;
-            }
-            return attackInput;
-        }
-        else return false;
+        return !isAttacking && attackInput;
     }
     public override void OnEnter()
     {
@@ -88,6 +78,19 @@ public class Attack : CharacterAction
         if (isAttacking)
         {
             rb.gravityScale = 1f;
+        }
+    }
+    public override void OnUpdate()
+    {
+        if (!isAttacking)
+        {
+            comboTimer.Tick(Time.deltaTime);
+            if (!comboTimer.IsRunning)
+            {
+                isComboWindow = false;
+                currentAttack = 0;
+            }
+
         }
     }
     private void ComboStep()

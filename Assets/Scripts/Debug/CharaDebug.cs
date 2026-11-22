@@ -2,38 +2,29 @@ using UnityEngine;
 
 public class CharaDebug : MonoBehaviour
 {
-    public class Stats
-    {
-        public Endurance endurance;
-        public Stats()
-        {
-            endurance = new Endurance(100);
-        }
-
-    }
-    private Stats stats;
-
-    void Start()
-    {
-        stats = new Stats();
-    }
+    private bool timerStart;
+    private float num;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (timerStart) Test();
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            stats.endurance.Remove(50);
+            num = 0;
+            timerStart = false;
         }
-        else if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            stats.endurance.Add(50);
+            timerStart = true;
         }
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            Debug.Log(stats.endurance.max);
-        }
-        else if (Input.GetKey(KeyCode.LeftControl)) Debug.Log(stats.endurance.current);
-
+        Debug.Log (num);
     }
+    private void Test()
+    {
+        num += 10f * Time.deltaTime;
+        
+    }
+
+
 }
 
 

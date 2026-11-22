@@ -19,7 +19,8 @@ public class CharacterBaseData : ScriptableObject
     DashForce,
     DashDuration,
     KnockbackForce,
-    KnockbackDuration;
+    KnockbackDuration,
+    ParryCost;
     
     public int AttackVariant;
 }

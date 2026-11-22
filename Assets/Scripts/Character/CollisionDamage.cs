@@ -16,7 +16,7 @@ public class CollisionDamage : MonoBehaviour
                 if (!character.dash.IsExecuting)
                 {
                     float totalDamage = damagePercentage / 100 * targetHP.max;
-                    targetHP.TakeDamage(totalDamage, LayerMask.GetMask("Hit Collider"));
+                    targetHP.Remove(totalDamage);
                 }
             }
         }

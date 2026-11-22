@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void Update()
     {
+        Debug.Log(character.stats.endurance.current);
         if (!character.controlFlipViaAnimation)
         {
             flipInput = character.directional.isFlipped;
